@@ -1,0 +1,103 @@
+.wrapper {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form {
+  position: relative;
+}
+
+.inputGroup {
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(195, 176, 145, 0.2);
+  padding: 4px;
+  transition: all 0.3s ease;
+}
+
+.inputGroup:focus-within {
+  border-color: var(--accent-khaki);
+  box-shadow: 0 0 0 4px rgba(195, 176, 145, 0.1);
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 16px 20px;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(244, 245, 240, 0.4);
+}
+
+.button {
+  background: var(--accent-khaki);
+  color: #000;
+  border: none;
+  padding: 0 24px;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--accent-khaki-dark);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.success {
+  color: var(--accent-khaki);
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+@media (max-width: 600px) {
+  .inputGroup {
+    flex-direction: column;
+    padding: 0;
+    background: transparent;
+    border: none;
+    gap: 12px;
+  }
+  
+  .inputGroup:focus-within {
+    box-shadow: none;
+  }
+  
+  .input {
+    border: 1px solid rgba(195, 176, 145, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  
+  .input:focus {
+    border-color: var(--accent-khaki);
+  }
+  
+  .button {
+    padding: 16px;
+  }
+}

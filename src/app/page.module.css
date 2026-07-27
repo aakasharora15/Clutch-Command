@@ -1,0 +1,229 @@
+.container {
+  width: 100%;
+  background-color: var(--background);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 24px;
+}
+
+.heroImageWrapper {
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vw;
+  height: 60vh;
+  min-width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none; /* Let clicks pass through to image if needed */
+}
+
+.heroTextContainer {
+  position: relative;
+  width: 100%;
+  margin-top: 5vh;
+}
+
+.headline {
+  font-family: var(--font-heading);
+  font-size: clamp(6rem, 18vw, 15rem);
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: var(--foreground);
+  margin: 0;
+  white-space: nowrap;
+  mix-blend-mode: overlay; /* Creates the overlapping blend effect */
+  opacity: 0.95;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.subheadline {
+  position: absolute;
+  top: -40px;
+  left: 10%;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--foreground);
+  max-width: 300px;
+  text-align: left;
+  line-height: 1.5;
+  font-weight: 500;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   PROGRAMS / PROCESS SECTION (BENTO GRID)
+   ========================================================================== */
+.programsSection {
+  padding: 120px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  margin-bottom: 80px;
+  color: var(--foreground);
+  line-height: 1.2;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  grid-auto-flow: dense;
+}
+
+.bentoCard {
+  background: var(--accent-green);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Large image cards */
+.cardImageLarge {
+  grid-column: span 8;
+  height: 400px;
+}
+
+.cardImageSmall {
+  grid-column: span 4;
+  height: 400px;
+}
+
+/* Text cards */
+.cardTextLarge {
+  grid-column: span 8;
+  padding: 60px;
+  justify-content: center;
+}
+
+.cardTextSmall {
+  grid-column: span 4;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.bentoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bentoCard:hover .bentoImage {
+  transform: scale(1.05);
+}
+
+.bentoTitle {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--foreground);
+}
+
+.bentoDesc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(232, 227, 211, 0.8);
+  margin-bottom: 24px;
+}
+
+.bentoLink {
+  color: var(--accent-khaki);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 992px) {
+  .cardImageLarge, .cardTextLarge,
+  .cardImageSmall, .cardTextSmall {
+    grid-column: span 12;
+    height: auto;
+    min-height: 300px;
+  }
+}
+
+/* ==========================================================================
+   STATS SECTION
+   ========================================================================== */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 60px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin: 60px 0;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: rgba(232, 227, 211, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .statsRow {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

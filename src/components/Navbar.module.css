@@ -1,0 +1,45 @@
+.navbar {
+  width: 100%;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background: rgba(15, 17, 16, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--accent-khaki);
+  text-transform: uppercase;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--foreground);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--accent-khaki);
+}
