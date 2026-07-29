@@ -93,7 +93,7 @@ export default function HeartbeatIntro() {
   if (stage === 'done') return null;
 
   return (
-    <div className={`${styles.overlay} ${stage === 'done' ? styles.fadeOut : ''}`}>
+    <div className={`${styles.overlay}`}>
       {stage === 'initial' && (
         <button className={styles.startBtn} onClick={startSequence}>
           Enter the arena
@@ -102,7 +102,7 @@ export default function HeartbeatIntro() {
 
       {stage !== 'initial' && (
         <div className={styles.sequenceContainer}>
-          <div className={`${styles.vignette} ${stage !== 'initial' ? styles.vignetteActive : ''}`}></div>
+          <div className={`${styles.vignette} ${styles.vignetteActive}`}></div>
           
           <div className={`${styles.scoreboard} ${(stage === 'scoreboard' || stage === 'release') ? styles.scoreboardActive : ''} ${stage === 'release' ? styles.scoreboardFade : ''}`}>
             30 - 30
