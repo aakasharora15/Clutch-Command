@@ -87,6 +87,7 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
       if (pressureEl) pressureEl.textContent = (p * 87.4).toFixed(1);
 
       if (analyser && dataArr) {
+        // @ts-ignore - Bypass strict Uint8Array generic type mismatch in newer TS versions
         analyser.getByteTimeDomainData(dataArr);
         let maxDev = 0;
         for (let i = 0; i < dataArr.length; i++) {
