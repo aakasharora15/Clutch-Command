@@ -9,7 +9,7 @@ export default function OfferPage() {
           <div className="prog-card">
             <h3>CLUTCH<br />Singles Academy</h3>
             <p>Grand Slam singles coaching with Vlado Platenik — tactics, repetition, and pressure training from the coach behind tour-level players.</p>
-            <a href="https://diagnostic.clutchcommand.com">Take The Diagnostic →</a>
+            <a href="https://theclutchquotient.scoreapp.com">Start the Diagnostic →</a>
           </div>
           <div className="ph"><em>Singles Academy</em></div>
 
@@ -17,13 +17,13 @@ export default function OfferPage() {
           <div className="prog-card">
             <h3>CLUTCH<br />Doubles Academy</h3>
             <p>Doubles mastery with Dan Kiernan — the coach who took Dabrowski &amp; Routliffe to World No.1 and two US Open titles.</p>
-            <a href="https://diagnostic.clutchcommand.com">Take The Diagnostic →</a>
+            <a href="https://theclutchquotient.scoreapp.com">Start the Diagnostic →</a>
           </div>
 
           <div className="prog-card">
             <h3>AI Pressure<br />Scoring</h3>
             <p>Upload match footage and get scored against the Clutch Quotient — pressure performance made objective for the first time.</p>
-            <a href="https://diagnostic.clutchcommand.com">Take The Diagnostic →</a>
+            <a href="https://theclutchquotient.scoreapp.com">Take The Diagnostic →</a>
           </div>
           <div className="ph"><em>AI Scoring</em></div>
         </div>

@@ -189,6 +189,7 @@ export default function Home() {
                 Clutch Command Is A Modern Pressure-Training System Helping Players Of All Levels
                 Win The Points That Decide Matches, Built With Grand Slam Coaches And AI.
               </p>
+              <a href="https://theclutchquotient.scoreapp.com" className="pill" style={{ marginTop: '30px', display: 'inline-block' }}>Start the Diagnostic</a>
               <div className="hero-badge"></div>
             </div>
           </div>

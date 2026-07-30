@@ -17,7 +17,7 @@ export default function ProductPage() {
             <div className="ph"><em>Coaching</em></div>
             <div className="ph"><em>Progress</em></div>
           </div>
-          <div className="moments-cta"><a href="https://diagnostic.clutchcommand.com" className="pill">Take The Diagnostic</a></div>
+          <div className="moments-cta"><a href="https://theclutchquotient.scoreapp.com" className="pill">Start the Diagnostic</a></div>
         </div>
       </section>
 
@@ -26,7 +26,7 @@ export default function ProductPage() {
           <div className="tips-left">
             <h2>Pressure Tips &amp;<br />Training Insights</h2>
             <p>Expert Advice, Drills, And Strategies From Grand Slam Coaches To Help You Win The Points That Matter — On And Off The Court.</p>
-            <a href="https://diagnostic.clutchcommand.com" className="pill">Take The Diagnostic</a>
+            <a href="https://theclutchquotient.scoreapp.com" className="pill">Start the Diagnostic</a>
           </div>
           <div>
             <div className="article">
