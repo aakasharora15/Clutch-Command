@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 
 const ECG_PATH =
   "M0,75 L14,75 Q16,52 18,60 L22,75 L34,75 L38,83 L42,75 L46,40 L50,130 L54,70 L58,92 L62,68 L66,75 L150,75 " +
@@ -182,22 +181,6 @@ export default function Home() {
     <>
       {!introDone && <PressureIntro onDone={() => setIntroDone(true)} />}
 
-      <nav>
-        <div className="nav-inner">
-          <div className="logo">
-            <Image src="/logo.png" alt="Clutch Command" width={140} height={40} className="logo-img" style={{ objectFit: 'contain', width: 'auto', height: '24px' }} />
-          </div>
-          <ul className="nav-links">
-            <li><a href="#programs">Product</a></li>
-            <li><a href="#coaches">Coaches</a></li>
-            <li><a href="#moments">Academy</a></li>
-            <li><a href="#offer">Pricing</a></li>
-            <li><a href="#tips">Blog</a></li>
-          </ul>
-          <a href="#offer" className="nav-cta">Join Now</a>
-        </div>
-      </nav>
-
       <header className="hero">
         <div className="hero-photo">
           <div className="hero-copy">
@@ -212,143 +195,6 @@ export default function Home() {
         </div>
         <div className="wordmark"><span>clutch</span></div>
       </header>
-
-      <section className="statement">
-        <div className="wrap">
-          <h2>At Clutch Command, We Train Players To Win Two More Points — The Ones That Decide Every Match.</h2>
-          <div className="statement-row">
-            <p>
-              We focus on the moments matches turn on — 30-30, 5-5 in the breaker, 8-8 in the decider.
-              TRUST training and AI scoring are built for juniors, club players, and competitive athletes
-              who want real progress under pressure.
-            </p>
-            <div className="statement-photos">
-              <div className="ph"><em>Match Point</em></div>
-              <div className="ph"><em>Coaching Session</em></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="programs wrap" id="programs" style={{ marginTop: 110 }}>
-        <h2>Training For<br />Every Competitive Level</h2>
-        <div className="prog-grid">
-          <div className="prog-card">
-            <h3>CLUTCH<br />Singles Academy</h3>
-            <p>Grand Slam singles coaching with Vlado Platenik — tactics, repetition, and pressure training from the coach behind tour-level players.</p>
-            <a href="#">Explore Program →</a>
-          </div>
-          <div className="ph"><em>Singles Academy</em></div>
-
-          <div className="ph"><em>Doubles Academy</em></div>
-          <div className="prog-card">
-            <h3>CLUTCH<br />Doubles Academy</h3>
-            <p>Doubles mastery with Dan Kiernan — the coach who took Dabrowski &amp; Routliffe to World No.1 and two US Open titles.</p>
-            <a href="#">Explore Program →</a>
-          </div>
-
-          <div className="prog-card">
-            <h3>AI Pressure<br />Scoring</h3>
-            <p>Upload match footage and get scored against the Clutch Quotient — pressure performance made objective for the first time.</p>
-            <a href="#">Explore Program →</a>
-          </div>
-          <div className="ph"><em>AI Scoring</em></div>
-        </div>
-      </section>
-
-      <section className="moments" id="moments">
-        <div className="wrap">
-          <h2>Moments From The Court</h2>
-          <p className="moments-sub">A Glimpse Into The Training, The Matches, And The Pressure Moments That Drive Clutch Command Forward.</p>
-        </div>
-        <div className="wrap" style={{ overflow: 'visible' }}>
-          <div className="carousel">
-            <div className="ph"><em>Academy</em></div>
-            <div className="ph"><em>Training</em></div>
-            <div className="ph"><em>Match Play</em></div>
-            <div className="ph"><em>The Breaker</em></div>
-            <div className="ph"><em>Coaching</em></div>
-            <div className="ph"><em>Progress</em></div>
-          </div>
-          <div className="moments-cta"><a href="#" className="pill">View Gallery</a></div>
-        </div>
-      </section>
-
-      <section className="trusted" id="coaches">
-        <div className="wrap">
-          <h2>Trusted By<br />Players &amp; Coaches</h2>
-          <div className="testi-grid">
-            <div className="testi">
-              <div className="testi-quote">&quot;[Testimonial slot — an academy student on what changed once their pressure game was scored objectively, not self-assessed.]&quot;</div>
-              <div className="testi-person"><div className="avatar"></div><div><div className="testi-name">Player Name</div><div className="testi-role">Academy Student</div></div></div>
-            </div>
-            <div className="testi">
-              <div className="testi-quote">&quot;[Testimonial slot — a parent or coach on the difference TRUST training made in tight matches.]&quot;</div>
-              <div className="testi-person"><div className="avatar"></div><div><div className="testi-name">Player Name</div><div className="testi-role">Parent / Coach</div></div></div>
-            </div>
-            <div className="testi">
-              <div className="testi-quote">&quot;[Testimonial slot — a military academy testimonial crediting Mark&apos;s methodology under real pressure.]&quot;</div>
-              <div className="testi-person"><div className="avatar"></div><div><div className="testi-name">Player Name</div><div className="testi-role">Military Academy</div></div></div>
-            </div>
-          </div>
-          <div className="stats">
-            <div className="stat"><div className="stat-num">30</div><div className="stat-lab">Clutch Quotient Skills Scored</div></div>
-            <div className="stat"><div className="stat-num">3</div><div className="stat-lab">Grand Slam-Credentialed Coaches</div></div>
-            <div className="stat"><div className="stat-num">2+2=5</div><div className="stat-lab">AI + Coaches, The Complete Package</div></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="tips" id="tips">
-        <div className="wrap tips-grid">
-          <div className="tips-left">
-            <h2>Pressure Tips &amp;<br />Training Insights</h2>
-            <p>Expert Advice, Drills, And Strategies From Grand Slam Coaches To Help You Win The Points That Matter — On And Off The Court.</p>
-            <a href="#" className="pill">View Blog</a>
-          </div>
-          <div>
-            <div className="article">
-              <div className="ph"></div>
-              <div className="article-meta">Tactics <i></i> 4 Min</div>
-              <h3>Two More Points At 5-5: How To Win The Tiebreak</h3>
-            </div>
-            <div className="article">
-              <div className="ph"></div>
-              <div className="article-meta">Identity <i></i> 3 Min</div>
-              <h3>The Identity Shift That Survives Championship Point</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer id="offer">
-        <div className="wrap">
-          <div className="foot-top">
-            <div>
-              <div className="foot-head">Train Smart.<br />Win Clutch.</div>
-              <ul className="socials">
-                <li><b>Facebook</b><span>f</span></li>
-                <li><b>Instagram</b><span>◎</span></li>
-                <li><b>LinkedIn</b><span>in</span></li>
-                <li><b>X</b><span>x</span></li>
-              </ul>
-            </div>
-            <div className="foot-right">
-              <p>Clutch Command Is A Modern Training System Focused On Pressure Performance — Built With Grand Slam Coaches For Players Who Want To Win The Close Ones.</p>
-              <a href="#" className="pill">Start Your Journey</a>
-              <ul className="foot-links">
-                <li><a href="#programs">Product</a></li>
-                <li><a href="#coaches">Coaches</a></li>
-                <li><a href="#moments">Academy</a></li>
-                <li><a href="#offer">Pricing</a></li>
-                <li><a href="#tips">Blog</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="foot-wordmark"><span>clutch</span></div>
-          <p className="credit">Homepage concept — internal design reference for the Clutch Command build.</p>
-        </div>
-      </footer>
     </>
   );
 }
