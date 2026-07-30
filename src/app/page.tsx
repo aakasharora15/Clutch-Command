@@ -189,7 +189,6 @@ export default function Home() {
                 Clutch Command Is A Modern Pressure-Training System Helping Players Of All Levels
                 Win The Points That Decide Matches, Built With Grand Slam Coaches And AI.
               </p>
-              <a href="https://theclutchquotient.scoreapp.com" className="pill" style={{ marginTop: '30px', display: 'inline-block' }}>Start the Diagnostic</a>
               <div className="hero-badge"></div>
             </div>
           </div>
@@ -302,6 +301,19 @@ export default function Home() {
               <h3>The Identity Shift That Survives Championship Point</h3>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="diagnostic-hero">
+        <div className="diagnostic-overlay"></div>
+        <div className="wrap diagnostic-content">
+          <div className="diagnostic-eyebrow">FOR COMPETITIVE PLAYERS WHO CAN'T CLOSE</div>
+          <h2>You don't lose matches by much. You lose them by two points. The same two, every time.</h2>
+          <p>
+            You've drilled the technique. You've done the fitness. And still, in the match or the tiebreak, when you have chances to close out, something else takes over. That's not a skill you're missing. It's something that's never actually been measured, until now.
+          </p>
+          <a href="https://theclutchquotient.scoreapp.com" className="btn-orange">Start the Diagnostic</a>
+          <div className="diagnostic-meta">FREE &bull; 15 QUESTIONS &bull; UNDER 3 MINUTES</div>
         </div>
       </section>
     </>

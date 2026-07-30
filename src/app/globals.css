@@ -156,3 +156,14 @@ footer{padding:200px 0 60px;}
 .enter-btn:hover{transform:translateY(-2px);}
 #intro.pulsing .enter-btn,#intro.pulsing .intro-readout{opacity:0;pointer-events:none;transition:opacity .4s ease;}
 .intro-skip{margin-top:22px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);background:none;border:none;cursor:pointer;}
+
+/* ===== DIAGNOSTIC HERO ===== */
+.diagnostic-hero{position:relative;margin-top:140px;min-height:500px;background:url('/hero_tennis_court_1783528122643.jpg');background-size:cover;background-position:center;display:flex;align-items:center;padding:100px 0;}
+.diagnostic-overlay{position:absolute;inset:0;background:rgba(20,26,16,0.85);}
+.diagnostic-content{position:relative;z-index:2;max-width:700px;margin:0;}
+.diagnostic-eyebrow{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#C7532B;font-weight:600;margin-bottom:20px;}
+.diagnostic-hero h2{font-size:clamp(32px,4vw,48px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;color:#fff;margin-bottom:24px;}
+.diagnostic-hero p{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;font-weight:300;max-width:540px;margin-bottom:36px;}
+.btn-orange{display:inline-block;font-size:14px;font-weight:600;background:#B44621;color:#fff;padding:16px 36px;border-radius:4px;transition:background 0.2s ease;}
+.btn-orange:hover{background:#D35226;}
+.diagnostic-meta{margin-top:24px;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);}

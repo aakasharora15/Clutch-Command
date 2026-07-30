@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <Image src="/logo-heartbeat.png" alt="Clutch Command" width={60} height={40} style={{ objectFit: 'contain' }} priority />
+          <Image src="/logo-heartbeat.png" alt="Clutch Command" width={110} height={60} style={{ objectFit: 'contain' }} priority />
         </Link>
         <div className={styles.links}>
           <Link href="/product" className={styles.link}>Product</Link>
