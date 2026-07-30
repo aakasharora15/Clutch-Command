@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -6,7 +7,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          Clutch Command
+          <Image src="/logo-clutch.png" alt="Clutch Command" width={160} height={40} style={{ objectFit: 'contain' }} priority />
         </Link>
         <div className={styles.links}>
           <Link href="/product" className={styles.link}>Product</Link>
