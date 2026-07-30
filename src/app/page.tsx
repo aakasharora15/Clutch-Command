@@ -198,13 +198,21 @@ export default function Home() {
 
       <section className="statement">
         <div className="wrap">
-          <h2>At Clutch Command, We Train Players To Win Two More Points — The Ones That Decide Every Match.</h2>
+          <h2>At Clutch Command, We Train Players To Win Two More Points - The Ones That Decide Every Match.</h2>
           <div className="statement-row">
-            <p>
-              We focus on the moments matches turn on — 30-30, 5-5 in the breaker, 8-8 in the decider.
-              TRUST training and AI scoring are built for juniors, club players, and competitive athletes
-              who want real progress under pressure.
-            </p>
+            <div>
+              <p>
+                We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation. 
+              </p>
+              <br />
+              <p>
+                When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.
+              </p>
+              <br />
+              <p>
+                The TRUST training methodology was originally forged in elite military environments and has now been adapted specifically for Grand Slam tennis. Combined with our proprietary AI scoring system, we isolate and train the 30 specific cognitive skills that define the Clutch Quotient. This system is built for juniors, club players, and competitive athletes who want real, measurable progress under immense pressure.
+              </p>
+            </div>
             <div className="statement-photos">
               <div className="ph"><em>Match Point</em></div>
               <div className="ph"><em>Coaching Session</em></div>
@@ -218,22 +226,22 @@ export default function Home() {
         <div className="prog-grid">
           <div className="prog-card">
             <h3>CLUTCH<br />Singles Academy</h3>
-            <p>Grand Slam singles coaching with Vlado Platenik — tactics, repetition, and pressure training from the coach behind tour-level players.</p>
-            <a href="https://theclutchquotient.scoreapp.com">Start the Diagnostic →</a>
+            <p>Step onto the court with Grand Slam singles coaching led by Vlado Platenik. We provide exact weekly tactical blueprints, high-intensity repetition drills, and pressure conditioning. Learn directly from the coach who has guided multiple tour-level players to deep runs at the majors, transforming your baseline game into a weapon.</p>
+            <a href="https://theclutchquotient.scoreapp.com">Start the Diagnostic &rarr;</a>
           </div>
           <div className="ph"><em>Singles Academy</em></div>
 
           <div className="ph"><em>Doubles Academy</em></div>
           <div className="prog-card">
             <h3>CLUTCH<br />Doubles Academy</h3>
-            <p>Doubles mastery with Dan Kiernan — the coach who took Dabrowski &amp; Routliffe to World No.1 and two US Open titles.</p>
-            <a href="https://theclutchquotient.scoreapp.com">Start the Diagnostic →</a>
+            <p>Achieve doubles mastery with Dan Kiernan, the elite coach who took Dabrowski and Routliffe to World No.1 and two US Open titles. This academy focuses heavily on court positioning, rapid communication under fire, and systematically exploiting opponent weaknesses when the margins are razor thin.</p>
+            <a href="https://theclutchquotient.scoreapp.com">Start the Diagnostic &rarr;</a>
           </div>
 
           <div className="prog-card">
             <h3>AI Pressure<br />Scoring</h3>
-            <p>Upload match footage and get scored against the Clutch Quotient — pressure performance made objective for the first time.</p>
-            <a href="https://theclutchquotient.scoreapp.com">Start the Diagnostic →</a>
+            <p>Upload your match footage and let our proprietary AI engine score you against the 30 variables of the Clutch Quotient. For the first time ever, pressure performance is completely objective. You will receive a 3D Memory Surface report detailing exactly where your cognitive execution breaks down.</p>
+            <a href="https://theclutchquotient.scoreapp.com">Start the Diagnostic &rarr;</a>
           </div>
           <div className="ph"><em>AI Scoring</em></div>
         </div>
@@ -262,15 +270,15 @@ export default function Home() {
           <h2>Trusted By<br />Players &amp; Coaches</h2>
           <div className="testi-grid">
             <div className="testi">
-              <div className="testi-quote">&quot;[Testimonial slot — an academy student on what changed once their pressure game was scored objectively, not self-assessed.]&quot;</div>
+              <div className="testi-quote">&quot;[Testimonial slot - an academy student on what changed once their pressure game was scored objectively, not self-assessed.]&quot;</div>
               <div className="testi-person"><div className="avatar"></div><div><div className="testi-name">Player Name</div><div className="testi-role">Academy Student</div></div></div>
             </div>
             <div className="testi">
-              <div className="testi-quote">&quot;[Testimonial slot — a parent or coach on the difference TRUST training made in tight matches.]&quot;</div>
+              <div className="testi-quote">&quot;[Testimonial slot - a parent or coach on the difference TRUST training made in tight matches.]&quot;</div>
               <div className="testi-person"><div className="avatar"></div><div><div className="testi-name">Player Name</div><div className="testi-role">Parent / Coach</div></div></div>
             </div>
             <div className="testi">
-              <div className="testi-quote">&quot;[Testimonial slot — a military academy testimonial crediting Mark&apos;s methodology under real pressure.]&quot;</div>
+              <div className="testi-quote">&quot;[Testimonial slot - a military academy testimonial crediting Mark&apos;s methodology under real pressure.]&quot;</div>
               <div className="testi-person"><div className="avatar"></div><div><div className="testi-name">Player Name</div><div className="testi-role">Military Academy</div></div></div>
             </div>
           </div>
@@ -286,7 +294,7 @@ export default function Home() {
         <div className="wrap tips-grid">
           <div className="tips-left">
             <h2>Pressure Tips &amp;<br />Training Insights</h2>
-            <p>Expert Advice, Drills, And Strategies From Grand Slam Coaches To Help You Win The Points That Matter — On And Off The Court.</p>
+            <p>Gain access to expert advice, tactical drills, and mental strategies from Grand Slam coaches. We break down the exact mechanics required to help you win the points that matter - both on and off the court. Learn how to shift your identity when facing championship point.</p>
             <a href="https://theclutchquotient.scoreapp.com" className="pill">Start the Diagnostic</a>
           </div>
           <div>

@@ -25,7 +25,7 @@ export default function ProductPage() {
         <div className="wrap tips-grid">
           <div className="tips-left">
             <h2>Pressure Tips &amp;<br />Training Insights</h2>
-            <p>Expert Advice, Drills, And Strategies From Grand Slam Coaches To Help You Win The Points That Matter — On And Off The Court.</p>
+            <p>Gain access to expert advice, tactical drills, and mental strategies from Grand Slam coaches. We break down the exact mechanics required to help you win the points that matter - both on and off the court. Learn how to shift your identity when facing championship point.</p>
             <a href="https://theclutchquotient.scoreapp.com" className="pill">Start the Diagnostic</a>
           </div>
           <div>
