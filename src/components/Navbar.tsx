@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { CTA } from '../config/cta';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -14,6 +15,7 @@ export default function Navbar() {
           <Link href="/promises" className={styles.link}>Promises</Link>
           <Link href="/co-founders" className={styles.link}>Co-Founders</Link>
         </div>
+        <a href={CTA.url} className={styles.ctaPill}>{CTA.label}</a>
       </div>
     </nav>
   );

@@ -182,34 +182,46 @@ export default function Home() {
     <>
       {!introDone && <PressureIntro onDone={() => setIntroDone(true)} />}
 
+      {/* ===== HERO ===== */}
       <header className="hero">
-        <div className="hero-photo">
-          <div className="hero-copy">
-            <div className="hero-copy-inner">
-              <p className="hero-para">
-                Clutch Command Is A Modern Pressure-Training System Helping Players Of All Levels
-                Win The Points That Decide Matches, Built With Grand Slam Coaches And AI.
-              </p>
-              <div className="hero-badge"></div>
+        <div className="hero-overlay"></div>
+        <div className="hero-inner wrap">
+          <div className="hero-text">
+            <h1>Win The Points<br />That Decide<br />Matches.</h1>
+            <p className="hero-sub">A modern pressure-training system built with Grand Slam coaches and AI, helping competitive players close out the moments that matter most.</p>
+            <div className="hero-actions">
+              <a href={CTA.url} className="pill">{CTA.label}</a>
+              <div className="hero-proof">
+                <div className="avatar-stack">
+                  <div className="avatar-sm"></div>
+                  <div className="avatar-sm"></div>
+                  <div className="avatar-sm"></div>
+                </div>
+                <span>Trusted by Grand Slam Coaches</span>
+              </div>
             </div>
           </div>
+          <div className="hero-card">
+            <div className="hero-card-num">87.4</div>
+            <div className="hero-card-label">Pressure Index</div>
+            <div className="hero-card-sub">Clutch Quotient Score</div>
+          </div>
         </div>
-        <div className="wordmark"><span>clutch</span></div>
       </header>
 
+      {/* ===== STATEMENT ===== */}
       <section className="statement">
         <div className="wrap">
-          <h2>At Clutch Command, We Train Players To Win Two More Points - The Ones That Decide Every Match.</h2>
+          <div className="section-eyebrow">THE PROBLEM</div>
+          <h2>You Don't Lose Matches Because Of Technique. You Lose Them In Two Points.</h2>
           <div className="statement-row">
-            <div>
+            <div className="statement-text">
               <p>
-                We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation. 
+                We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.
               </p>
-              <br />
               <p>
                 When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.
               </p>
-              <br />
               <p>
                 The TRUST training methodology was originally forged in elite military environments and has now been adapted specifically for Grand Slam tennis. Combined with our proprietary AI scoring system, we isolate and train the 30 specific cognitive skills that define the Clutch Quotient. This system is built for juniors, club players, and competitive athletes who want real, measurable progress under immense pressure.
               </p>
@@ -222,36 +234,46 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="programs wrap" id="programs" style={{ marginTop: 110 }}>
-        <h2>Training For<br />Every Competitive Level</h2>
-        <div className="prog-grid">
-          <div className="prog-card">
-            <h3>CLUTCH<br />Singles Academy</h3>
-            <p>Step onto the court with Grand Slam singles coaching led by Vlado Platenik. We provide exact weekly tactical blueprints, high-intensity repetition drills, and pressure conditioning. Learn directly from the coach who has guided multiple tour-level players to deep runs at the majors, transforming your baseline game into a weapon.</p>
-            <a href={CTA.url}>{CTA.labelArrow}</a>
+      {/* ===== PROGRAMS ===== */}
+      <section className="programs" id="programs">
+        <div className="wrap">
+          <div className="section-eyebrow">OUR PROGRAMS</div>
+          <h2>Training For Every<br />Competitive Level</h2>
+          <div className="prog-img-grid">
+            <div className="prog-img-card" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
+              <div className="prog-img-overlay"></div>
+              <div className="prog-img-content">
+                <h3>CLUTCH Singles Academy</h3>
+                <p>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints, high-intensity repetition drills, and pressure conditioning from a coach behind tour-level players.</p>
+                <a href={CTA.url}>{CTA.labelArrow}</a>
+              </div>
+            </div>
+            <div className="prog-img-card" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}>
+              <div className="prog-img-overlay"></div>
+              <div className="prog-img-content">
+                <h3>CLUTCH Doubles Academy</h3>
+                <p>Doubles mastery with Dan Kiernan, the coach who took Dabrowski and Routliffe to World No.1 and two US Open titles. Court positioning, communication, and exploiting opponent weaknesses.</p>
+                <a href={CTA.url}>{CTA.labelArrow}</a>
+              </div>
+            </div>
+            <div className="prog-img-card" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')" }}>
+              <div className="prog-img-overlay"></div>
+              <div className="prog-img-content">
+                <h3>AI Pressure Scoring</h3>
+                <p>Upload your match footage and get scored against the 30 variables of the Clutch Quotient. Receive a 3D Memory Surface report detailing exactly where your cognitive execution breaks down.</p>
+                <a href={CTA.url}>{CTA.labelArrow}</a>
+              </div>
+            </div>
           </div>
-          <div className="ph"><em>Singles Academy</em></div>
-
-          <div className="ph"><em>Doubles Academy</em></div>
-          <div className="prog-card">
-            <h3>CLUTCH<br />Doubles Academy</h3>
-            <p>Achieve doubles mastery with Dan Kiernan, the elite coach who took Dabrowski and Routliffe to World No.1 and two US Open titles. This academy focuses heavily on court positioning, rapid communication under fire, and systematically exploiting opponent weaknesses when the margins are razor thin.</p>
-            <a href={CTA.url}>{CTA.labelArrow}</a>
-          </div>
-
-          <div className="prog-card">
-            <h3>AI Pressure<br />Scoring</h3>
-            <p>Upload your match footage and let our proprietary AI engine score you against the 30 variables of the Clutch Quotient. For the first time ever, pressure performance is completely objective. You will receive a 3D Memory Surface report detailing exactly where your cognitive execution breaks down.</p>
-            <a href={CTA.url}>{CTA.labelArrow}</a>
-          </div>
-          <div className="ph"><em>AI Scoring</em></div>
         </div>
       </section>
 
+      {/* ===== MOMENTS ===== */}
       <section className="moments" id="moments">
         <div className="wrap">
+          <div className="section-eyebrow">ON THE COURT</div>
           <h2>Moments From The Court</h2>
-          <p className="moments-sub">A Glimpse Into The Training, The Matches, And The Pressure Moments That Drive Clutch Command Forward.</p>
+          <p className="moments-sub">A glimpse into the training, the matches, and the pressure moments that drive Clutch Command forward.</p>
         </div>
         <div className="wrap" style={{ overflow: 'visible' }}>
           <div className="carousel">
@@ -262,15 +284,15 @@ export default function Home() {
             <div className="ph"><em>Coaching</em></div>
             <div className="ph"><em>Progress</em></div>
           </div>
-          <div className="moments-cta"><a href={CTA.url} className="pill">{CTA.label}</a></div>
         </div>
       </section>
 
+      {/* ===== ABOUT FOUNDER ===== */}
       <section className="about-founder">
         <div className="wrap about-founder-grid">
           <div className="founder-photo" style={{ backgroundImage: "url('/mark_jeffery.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-          <div>
-            <div className="founder-eyebrow">WHO BUILT THIS</div>
+          <div className="founder-text">
+            <div className="section-eyebrow">WHO BUILT THIS</div>
             <h2>Built to answer a question no one could answer him.</h2>
             <h3>Mark Jeffery, Founder</h3>
             <p>
@@ -283,21 +305,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== TESTIMONIALS ===== */}
       <section className="trusted" id="coaches">
         <div className="wrap">
-          <h2>Trusted By<br />Players &amp; Coaches</h2>
-          <div className="testi-grid">
-            <div className="testi">
-              <div className="testi-quote">&quot;[Testimonial slot - an academy student on what changed once their pressure game was scored objectively, not self-assessed.]&quot;</div>
-              <div className="testi-person"><div className="avatar"></div><div><div className="testi-name">Player Name</div><div className="testi-role">Academy Student</div></div></div>
-            </div>
-            <div className="testi">
-              <div className="testi-quote">&quot;[Testimonial slot - a parent or coach on the difference TRUST training made in tight matches.]&quot;</div>
-              <div className="testi-person"><div className="avatar"></div><div><div className="testi-name">Player Name</div><div className="testi-role">Parent / Coach</div></div></div>
-            </div>
-            <div className="testi">
-              <div className="testi-quote">&quot;[Testimonial slot - a military academy testimonial crediting Mark&apos;s methodology under real pressure.]&quot;</div>
-              <div className="testi-person"><div className="avatar"></div><div><div className="testi-name">Player Name</div><div className="testi-role">Military Academy</div></div></div>
+          <div className="section-eyebrow">TESTIMONIALS</div>
+          <h2>Trusted By Players &amp; Coaches</h2>
+          <div className="testi-featured">
+            <div className="testi-photo"></div>
+            <div className="testi-content">
+              <div className="testi-quote-mark">&ldquo;</div>
+              <div className="testi-quote">[Testimonial slot - an academy student on what changed once their pressure game was scored objectively, not self-assessed.]</div>
+              <div className="testi-person">
+                <div className="avatar"></div>
+                <div>
+                  <div className="testi-name">Player Name</div>
+                  <div className="testi-role">Academy Student</div>
+                </div>
+              </div>
+              <div className="testi-nav">
+                <button className="testi-arrow">&larr;</button>
+                <span>1 / 3</span>
+                <button className="testi-arrow">&rarr;</button>
+              </div>
             </div>
           </div>
           <div className="stats">
@@ -308,9 +337,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== TIPS ===== */}
       <section className="tips" id="tips">
         <div className="wrap tips-grid">
           <div className="tips-left">
+            <div className="section-eyebrow">INSIGHTS</div>
             <h2>Pressure Tips &amp;<br />Training Insights</h2>
             <p>Gain access to expert advice, tactical drills, and mental strategies from Grand Slam coaches. We break down the exact mechanics required to help you win the points that matter - both on and off the court. Learn how to shift your identity when facing championship point.</p>
             <a href={CTA.url} className="pill">{CTA.label}</a>
@@ -330,10 +361,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== DIAGNOSTIC CTA ===== */}
       <section className="diagnostic-hero">
         <div className="diagnostic-overlay"></div>
         <div className="wrap diagnostic-content">
-          <div className="diagnostic-eyebrow">FOR COMPETITIVE PLAYERS WHO CAN'T CLOSE</div>
+          <div className="section-eyebrow" style={{ color: '#C7532B' }}>FOR COMPETITIVE PLAYERS WHO CAN'T CLOSE</div>
           <h2>You don't lose matches by much. You lose them by two points. The same two, every time.</h2>
           <p>
             You've drilled the technique. You've done the fitness. And still, in the match or the tiebreak, when you have chances to close out, something else takes over. That's not a skill you're missing. It's something that's never actually been measured, until now.
