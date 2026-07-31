@@ -1,4 +1,5 @@
 import React from 'react';
+import { CTA } from '../../config/cta';
 
 export default function ProductPage() {
   return (
@@ -17,7 +18,7 @@ export default function ProductPage() {
             <div className="ph"><em>Coaching</em></div>
             <div className="ph"><em>Progress</em></div>
           </div>
-          <div className="moments-cta"><a href="https://theclutchquotient.scoreapp.com" className="pill">Start the Diagnostic</a></div>
+          <div className="moments-cta"><a href={CTA.url} className="pill">{CTA.label}</a></div>
         </div>
       </section>
 
@@ -26,7 +27,7 @@ export default function ProductPage() {
           <div className="tips-left">
             <h2>Pressure Tips &amp;<br />Training Insights</h2>
             <p>Gain access to expert advice, tactical drills, and mental strategies from Grand Slam coaches. We break down the exact mechanics required to help you win the points that matter - both on and off the court. Learn how to shift your identity when facing championship point.</p>
-            <a href="https://theclutchquotient.scoreapp.com" className="pill">Start the Diagnostic</a>
+            <a href={CTA.url} className="pill">{CTA.label}</a>
           </div>
           <div>
             <div className="article">

@@ -27,14 +27,15 @@ Clutch Command is an AI-powered tennis pressure-performance platform, merging Ma
 
 **Scope changed significantly since the original plan.** It is no longer an email/capture funnel, it's a lean, four-page **branding and communications site**. Full detail lives in the separate file `Clutch_Command_Website_Approach.md` (see file inventory); summary below.
 
-- **Purpose now**: tell the story, then hand off. Not a diagnostic funnel, not an email/contact capture system, not the offer. One CTA only, every page routes to the Clutch Quotient diagnostic. Email/contact capture happens inside **Score App** and **Kit**, not on the site.
-- **The funnel, confirmed by Mark as "fully aligned"**: Website (the story: military + Grand Slam coaches + AI, hook = "closing out", winning two more points) → CQ Diagnostic (the first step: bespoke report, 3D chart location, what to train for the Clutch Box) → VSL (the offer: Vlado's Singles Academy first, Dan's Doubles Academy to follow) → Clutch Command AI (same syllabus/videos delivered at scale, mid-match reminders).
-- **Traffic strategy**: paid/organic traffic should go straight to the Score App diagnostic (30-40% conversion), not through the website first (3-5% conversion). Exactly when/how the website gets introduced to people is still undecided on Mark's side.
-- **Confirmed signature feature**: an interactive heartbeat/pulse signal and sound on the homepage, entry phrase "Enter the Arena." The Vibration API version was dropped (App Store/Play Store licensing); it's custom-coded audio/visual instead. Named explicitly in the contract's Build Scope clause.
-- **Branding**: military khaki/green + existing black/red/grey palette, needs to be consistent across the website, the Score App landing page, and the VSL. Mark is cross-checking this himself; he's asked Aakash to send him the VSL and landing page so he can log them in his tracker.
+- **Purpose now**: tell the story, then hand off.
+- **The funnel**: Website → CQ Diagnostic → VSL → Clutch Command AI. **However, final conversion strategy is DEFERRED until after the professor meeting (2nd/3rd August).**
+- **Single CTA Strategy Shift**: Agreed in principle to sell beta waitlist access (£59-£69) as the primary CTA. The Diagnostic can be mentioned, but NOT as a co-equal sell, to avoid confusing users. Final structure deferred.
+- **Copy Ownership**: Prernaa (Marketing) owns the final copy. Aakash to coordinate with her directly and CC her on all future website updates.
+- **Diagnostic Coordination**: Diagnostic / Score App coordination to go directly through Prernaa, not via Dan.
+- **Confirmed signature feature**: Splash screen ("Enter the Arena" + heartbeat animation) confirmed as intentional during live review.
 - **Unresolved**: a separate "Courtix" Project Brief (Bento grid, Web Audio API amplitude analysis, editorial collage) describes a far more elaborate build than what's actually agreed and scoped/fee'd for — not yet reconciled with Mark.
 - Built so the codebase can merge with the beta platform in a couple of months — not a rebuild later, just sensible structure now.
-- **Priority**: launch by end of July 2026 (original 15 July target passed). Build was gated on the contract; that's now essentially resolved (see below).
+- **Priority**: Prepare tech stack PDF for Professor Meeting (2nd/3rd August). Send combined PDF to Dan before meeting.
 
 ## The Contract (Website Development Services Agreement)
 
@@ -58,7 +59,8 @@ This triggered a real strategic discussion: Mark's challenge was "everything is 
 
 - **AI lead-generation agent ask**: Mark wants a 24/7 AI agent for lead-gen, split into (1) individual players and (2) bulk channels — influencers/affiliates/promo partners, and coaches/coach-education bodies (International Coaches Association, ~30,000-coach network). Still **not scoped or committed to**.
 - **Aakash's own role**: Mark asked whether Aakash wants to be more involved in marketing/AI agents/revenue share. Aakash's stance: open to it, but needs concrete detail (scope, revenue split, fit alongside existing tech scope) before committing.
-- **Branding cross-check owed both ways**: Mark wants the VSL and landing page sent over so he can log them in his tracker and confirm the khaki branding is consistent everywhere; separately, Mark owes Aakash examples of "balls landing in clusters" (shot-tracking/data visuals) from a call the two of them had, this was left outstanding when Mark had to leave the call abruptly.
+- **David (Investor) Update**: David is investing personally (can likely raise £100k, strong Dubai government/royal network connections). Interested in edutech/AI as a separate business. Pondering if online business and AI should be one entity or two. Dan to send David the website and diagnostic front-end early next week. Next touchpoint with David: week of 10th/11th August.
+- **Pricing Benchmark**: Aakash to research Swing Vision pricing (£14-£25/month). Clutch likely positioned at £25-£30/month.
 - **Health note**: Mark mentioned earlier in the project that he had a scare resembling a second stroke (he is a stroke survivor); it passed and he said he was okay. Worth keeping in mind as context, not something to reference unprompted.
 
 ## The Progress Tracker (separate file)
