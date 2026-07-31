@@ -167,3 +167,15 @@ footer{padding:200px 0 60px;}
 .btn-orange{display:inline-block;font-size:14px;font-weight:600;background:#B44621;color:#fff;padding:16px 36px;border-radius:4px;transition:background 0.2s ease;}
 .btn-orange:hover{background:#D35226;}
 .diagnostic-meta{margin-top:24px;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+
+/* ===== ABOUT FOUNDER ===== */
+.about-founder{padding:140px 0;background:var(--bg);}
+.about-founder-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;}
+.founder-photo{position:relative;width:100%;aspect-ratio:0.85;border-radius:2px;overflow:hidden;background:#e5e5e5;box-shadow:0 20px 40px rgba(0,0,0,0.4);}
+.founder-eyebrow{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#C7532B;font-weight:600;margin-bottom:16px;}
+.about-founder h2{font-size:clamp(32px,3.8vw,42px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;color:#fff;margin-bottom:12px;max-width:540px;}
+.about-founder h3{font-size:18px;color:#C7532B;font-weight:600;margin-bottom:32px;}
+.about-founder p{font-size:13.5px;color:rgba(237,233,218,0.7);line-height:1.8;font-weight:300;margin-bottom:24px;max-width:560px;}
+@media (max-width:860px){
+  .about-founder-grid{grid-template-columns:1fr;gap:50px;}
+}
