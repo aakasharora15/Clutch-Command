@@ -13,7 +13,6 @@ export default function Navbar() {
           <Link href="/product" className={styles.link}>Product</Link>
           <Link href="/promises" className={styles.link}>Promises</Link>
           <Link href="/co-founders" className={styles.link}>Co-Founders</Link>
-          <Link href="/offer" className="btn-primary">The Offer →</Link>
         </div>
       </div>
     </nav>
