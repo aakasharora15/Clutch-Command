@@ -4,24 +4,24 @@ import { CTA } from '../../config/cta';
 export default function ProductPage() {
   return (
     <div className="page-wrapper" style={{ paddingTop: '100px' }}>
-      <section className="moments light-section" id="moments">
-        <div className="wrap">
-          <div className="section-eyebrow dark-text btn-outline-pill">On The Court</div>
-          <h2 className="dark-text mt-4" style={{ fontSize: 'clamp(28px, 4vw, 42px)' }}>Moments From The Court</h2>
-          <p className="dark-text mt-4 mb-8" style={{ maxWidth: '500px' }}>
-            A Glimpse Into The Training, The Matches, And The Pressure Moments That Drive Clutch Command Forward.
-          </p>
+      <section className="carousel-3d-section" id="moments">
+        <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>&bull; On The Court</div>
+          <div className="carousel-3d-header">
+            <h2>Moments From The Court: The Training, Matches, And Pressure</h2>
+          </div>
           
-          <div className="bento-3-col mt-8">
-             <div className="bento-img-card" style={{ backgroundImage: "url('/media__1783528039061.png')", minHeight: '300px' }}>
-                <div className="bento-card-label">Academy</div>
-             </div>
-             <div className="bento-img-card" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')", minHeight: '300px' }}>
-                <div className="bento-card-label">Training</div>
-             </div>
-             <div className="bento-img-card" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')", minHeight: '300px' }}>
-                <div className="bento-card-label">Match Play</div>
-             </div>
+          <div className="carousel-3d-container">
+            <div className="carousel-3d-card left-outer" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')" }}></div>
+            <div className="carousel-3d-card left" style={{ backgroundImage: "url('/media__1783528047317.jpg')" }}></div>
+            <div className="carousel-3d-card center" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}></div>
+            <div className="carousel-3d-card right" style={{ backgroundImage: "url('/media__1783528039061.png')" }}></div>
+            <div className="carousel-3d-card right-outer" style={{ backgroundImage: "url('/hero_tennis_court_1783528122643.jpg')" }}></div>
+          </div>
+
+          <div className="carousel-nav">
+            <button className="carousel-nav-btn">&larr;</button>
+            <button className="carousel-nav-btn active">&rarr;</button>
           </div>
         </div>
       </section>
