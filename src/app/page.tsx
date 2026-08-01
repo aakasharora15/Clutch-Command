@@ -228,11 +228,11 @@ export default function Home() {
             <a href={CTA.url} className="btn-dark mt-6">{CTA.labelArrow}</a>
           </div>
           <div className="bento-images-right">
-             <div className="bento-img-card" style={{ backgroundImage: "url('/media__1783528039061.png')" }}>
+             <div className="bento-img-card large" style={{ backgroundImage: "url('/media__1783528039061.png')" }}>
                 <div className="bento-card-label">Match Point</div>
              </div>
-             <div className="bento-img-card" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
-                <div className="bento-card-label">Coaching Session</div>
+             <div className="bento-img-card small" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
+                <div className="bento-card-label">Coaching</div>
              </div>
           </div>
         </div>
@@ -316,21 +316,25 @@ export default function Home() {
       {/* ===== BLACK & WHITE CARDS (Like the Padel Reference) ===== */}
       <section className="about-founder light-section" id="co-founders">
         <div className="wrap bento-split-reverse">
-          <div className="bento-black-card">
-            <h2>Built to answer a question no one could answer him.</h2>
-            <p>Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay. Mark Jeffery took that same thinking and turned it into a way to diagnose tennis.</p>
-            <div className="bento-black-footer">
-              <div className="founder-name">Mark Jeffery</div>
-              <div className="founder-title">Founder</div>
+          <div className="bento-black-card-split">
+            <div className="img-side" style={{ backgroundImage: "url('/media__1783528039061.png')" }}></div>
+            <div className="text-side">
+              <h3>Built to answer a question no one could answer him.</h3>
+              <p>Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay.</p>
+              <a href={CTA.url} className="btn-outline-pill mt-6" style={{ alignSelf: 'flex-start', color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>Read Story &rarr;</a>
             </div>
           </div>
           <div className="bento-white-text">
-            <div className="section-eyebrow dark-text">Who Built This</div>
             <h2 className="dark-text">Experience the best in pressure training</h2>
-            <div className="bento-img-card-small" style={{ backgroundImage: "url('/mark_jeffery.png')" }}></div>
-            <p className="dark-text mt-4">
-              He didn't build it from a theory. He built it from a memory. Two match points up against the RAF's number one, on the grass at Wimbledon, and still finding a way to give it away. Pressure hijacked his brain and body, and the next thing he knew, it was game, set, and match to his opponent. He had no way, then, to know why. That's the gap Clutch Quotient closes.
-            </p>
+            <div className="bento-white-text-split">
+               <div className="bento-img-card-small" style={{ backgroundImage: "url('/mark_jeffery.png')" }}></div>
+               <div style={{ flex: 1 }}>
+                 <p className="dark-text">
+                   He didn't build it from a theory. He built it from a memory. Two match points up against the RAF's number one, on the grass at Wimbledon, and still finding a way to give it away. Pressure hijacked his brain and body, and the next thing he knew, it was game, set, and match to his opponent.
+                 </p>
+                 <div className="founder-name mt-4" style={{ fontSize: '14px', color: '#111' }}>Mark Jeffery, <span style={{ fontWeight: '400', color: '#666' }}>Founder</span></div>
+               </div>
+            </div>
           </div>
         </div>
       </section>

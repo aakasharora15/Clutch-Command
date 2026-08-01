@@ -21,11 +21,11 @@ export default function PromisesPage() {
             <a href={CTA.url} className="btn-dark mt-6">{CTA.labelArrow}</a>
           </div>
           <div className="bento-images-right">
-             <div className="bento-img-card" style={{ backgroundImage: "url('/media__1783528039061.png')" }}>
+             <div className="bento-img-card large" style={{ backgroundImage: "url('/media__1783528039061.png')" }}>
                 <div className="bento-card-label">Match Point</div>
              </div>
-             <div className="bento-img-card" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
-                <div className="bento-card-label">Coaching Session</div>
+             <div className="bento-img-card small" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
+                <div className="bento-card-label">Coaching</div>
              </div>
           </div>
         </div>
