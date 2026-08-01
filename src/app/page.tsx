@@ -87,7 +87,7 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
       if (pressureEl) pressureEl.textContent = (p * 87.4).toFixed(1);
 
       if (analyser && dataArr) {
-        // @ts-ignore - Bypass strict Uint8Array generic type mismatch in newer TS versions
+        // @ts-ignore
         analyser.getByteTimeDomainData(dataArr);
         let maxDev = 0;
         for (let i = 0; i < dataArr.length; i++) {
@@ -179,126 +179,100 @@ export default function Home() {
   const [introDone, setIntroDone] = useState(false);
 
   return (
-    <>
+    <div className="page-wrapper">
       {!introDone && <PressureIntro onDone={() => setIntroDone(true)} />}
 
       {/* ===== HERO ===== */}
       <header className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-inner wrap">
-          <div className="hero-text">
-            <h1>Win The Points<br />That Decide<br />Matches.</h1>
-            <p className="hero-sub">A modern pressure-training system built with Grand Slam coaches and AI, helping competitive players close out the moments that matter most.</p>
-            <div className="hero-actions">
-              <a href={CTA.url} className="pill">{CTA.label}</a>
-              <div className="hero-proof">
-                <div className="avatar-stack">
-                  <div className="avatar-sm"></div>
-                  <div className="avatar-sm"></div>
-                  <div className="avatar-sm"></div>
-                </div>
-                <span>Trusted by Grand Slam Coaches</span>
-              </div>
-            </div>
+          <div className="hero-social-proof">
+             <div className="avatar-stack">
+                <div className="avatar-sm"></div>
+                <div className="avatar-sm"></div>
+                <div className="avatar-sm"></div>
+             </div>
+             <p>AI scoring and training for competitive players.<br/>Build pressure resilience.</p>
           </div>
-          <div className="hero-card">
-            <div className="hero-card-num">87.4</div>
-            <div className="hero-card-label">Pressure Index</div>
-            <div className="hero-card-sub">Clutch Quotient Score</div>
+          
+          <div className="hero-text-bottom">
+            <div className="hero-eyebrow">Clutch Command</div>
+            <h1>Win The Points<br/>That Decide Matches.</h1>
           </div>
         </div>
       </header>
 
-      {/* ===== STATEMENT ===== */}
-      <section className="statement">
-        <div className="wrap">
-          <div className="section-eyebrow">THE PROBLEM</div>
-          <h2>You Don't Lose Matches Because Of Technique. You Lose Them In Two Points.</h2>
-          <div className="statement-row">
-            <div className="statement-text">
-              <p>
-                We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.
-              </p>
-              <p>
-                When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.
-              </p>
-              <p>
-                The TRUST training methodology was originally forged in elite military environments and has now been adapted specifically for Grand Slam tennis. Combined with our proprietary AI scoring system, we isolate and train the 30 specific cognitive skills that define the Clutch Quotient. This system is built for juniors, club players, and competitive athletes who want real, measurable progress under immense pressure.
-              </p>
-            </div>
-            <div className="statement-photos">
-              <div className="ph"><em>Match Point</em></div>
-              <div className="ph"><em>Coaching Session</em></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== PROGRAMS ===== */}
-      <section className="programs" id="programs">
-        <div className="wrap">
-          <div className="section-eyebrow">OUR PROGRAMS</div>
-          <h2>Training For Every<br />Competitive Level</h2>
-          <div className="prog-img-grid">
-            <div className="prog-img-card" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
-              <div className="prog-img-overlay"></div>
-              <div className="prog-img-content">
-                <h3>CLUTCH Singles Academy</h3>
-                <p>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints, high-intensity repetition drills, and pressure conditioning from a coach behind tour-level players.</p>
-                <a href={CTA.url}>{CTA.labelArrow}</a>
-              </div>
-            </div>
-            <div className="prog-img-card" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}>
-              <div className="prog-img-overlay"></div>
-              <div className="prog-img-content">
-                <h3>CLUTCH Doubles Academy</h3>
-                <p>Doubles mastery with Dan Kiernan, the coach who took Dabrowski and Routliffe to World No.1 and two US Open titles. Court positioning, communication, and exploiting opponent weaknesses.</p>
-                <a href={CTA.url}>{CTA.labelArrow}</a>
-              </div>
-            </div>
-            <div className="prog-img-card" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')" }}>
-              <div className="prog-img-overlay"></div>
-              <div className="prog-img-content">
-                <h3>AI Pressure Scoring</h3>
-                <p>Upload your match footage and get scored against the 30 variables of the Clutch Quotient. Receive a 3D Memory Surface report detailing exactly where your cognitive execution breaks down.</p>
-                <a href={CTA.url}>{CTA.labelArrow}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== MOMENTS ===== */}
-      <section className="moments" id="moments">
-        <div className="wrap">
-          <div className="section-eyebrow">ON THE COURT</div>
-          <h2>Moments From The Court</h2>
-          <p className="moments-sub">A glimpse into the training, the matches, and the pressure moments that drive Clutch Command forward.</p>
-        </div>
-        <div className="wrap" style={{ overflow: 'visible' }}>
-          <div className="carousel">
-            <div className="ph"><em>Academy</em></div>
-            <div className="ph"><em>Training</em></div>
-            <div className="ph"><em>Match Play</em></div>
-            <div className="ph"><em>The Breaker</em></div>
-            <div className="ph"><em>Coaching</em></div>
-            <div className="ph"><em>Progress</em></div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== ABOUT FOUNDER ===== */}
-      <section className="about-founder">
-        <div className="wrap about-founder-grid">
-          <div className="founder-photo" style={{ backgroundImage: "url('/mark_jeffery.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-          <div className="founder-text">
-            <div className="section-eyebrow">WHO BUILT THIS</div>
-            <h2>Built to answer a question no one could answer him.</h2>
-            <h3>Mark Jeffery, Founder</h3>
-            <p>
-              Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay. Mark Jeffery took that same thinking and turned it into a way to diagnose tennis. Not life or death, but with the same instant, no-take-backs pressure.
+      {/* ===== STATEMENT (Light Section) ===== */}
+      <section className="statement light-section" id="product">
+        <div className="wrap bento-split">
+          <div className="bento-text-left">
+            <div className="section-eyebrow dark-text">The Problem</div>
+            <h2 className="dark-text">You don't lose matches because of technique. You lose them in two points.</h2>
+            <p className="dark-text">
+              We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.
             </p>
-            <p>
+            <p className="dark-text">
+              When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.
+            </p>
+            <a href={CTA.url} className="btn-dark mt-6">{CTA.labelArrow}</a>
+          </div>
+          <div className="bento-images-right">
+             <div className="bento-img-card" style={{ backgroundImage: "url('/media__1783528039061.png')" }}>
+                <div className="bento-card-label">Match Point</div>
+             </div>
+             <div className="bento-img-card" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
+                <div className="bento-card-label">Coaching Session</div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PROGRAMS (Bento Grid) ===== */}
+      <section className="programs light-section" id="programs">
+        <div className="wrap">
+          <div className="programs-header flex-between">
+            <h2 className="dark-text">Training For Every Competitive Level</h2>
+            <a href={CTA.url} className="btn-dark">{CTA.labelArrow}</a>
+          </div>
+          <div className="bento-3-col">
+            <div className="bento-card-tall" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
+               <div className="bento-card-content">
+                  <h3>CLUTCH<br/>Singles Academy</h3>
+                  <p>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints, high-intensity repetition drills, and pressure conditioning from a coach behind tour-level players.</p>
+               </div>
+            </div>
+            <div className="bento-card-tall" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}>
+               <div className="bento-card-content">
+                  <h3>CLUTCH<br/>Doubles Academy</h3>
+                  <p>Doubles mastery with Dan Kiernan, the coach who took Dabrowski and Routliffe to World No.1 and two US Open titles. Court positioning, communication, and exploiting opponent weaknesses.</p>
+               </div>
+            </div>
+            <div className="bento-card-tall" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')" }}>
+               <div className="bento-card-content">
+                  <h3>AI Pressure<br/>Scoring</h3>
+                  <p>Upload your match footage and get scored against the 30 variables of the Clutch Quotient. Receive a 3D Memory Surface report detailing exactly where your cognitive execution breaks down.</p>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== BLACK & WHITE CARDS (Like the Padel Reference) ===== */}
+      <section className="about-founder light-section" id="co-founders">
+        <div className="wrap bento-split-reverse">
+          <div className="bento-black-card">
+            <h2>Built to answer a question no one could answer him.</h2>
+            <p>Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay. Mark Jeffery took that same thinking and turned it into a way to diagnose tennis.</p>
+            <div className="bento-black-footer">
+              <div className="founder-name">Mark Jeffery</div>
+              <div className="founder-title">Founder</div>
+            </div>
+          </div>
+          <div className="bento-white-text">
+            <div className="section-eyebrow dark-text">Who Built This</div>
+            <h2 className="dark-text">Experience the best in pressure training</h2>
+            <div className="bento-img-card-small" style={{ backgroundImage: "url('/mark_jeffery.png')" }}></div>
+            <p className="dark-text mt-4">
               He didn't build it from a theory. He built it from a memory. Two match points up against the RAF's number one, on the grass at Wimbledon, and still finding a way to give it away. Pressure hijacked his brain and body, and the next thing he knew, it was game, set, and match to his opponent. He had no way, then, to know why. That's the gap Clutch Quotient closes.
             </p>
           </div>
@@ -306,74 +280,41 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="trusted" id="coaches">
+      <section className="testimonials light-section" id="promises">
         <div className="wrap">
-          <div className="section-eyebrow">TESTIMONIALS</div>
-          <h2>Trusted By Players &amp; Coaches</h2>
-          <div className="testi-featured">
-            <div className="testi-photo"></div>
+          <div className="section-eyebrow dark-text btn-outline-pill">Testimonials</div>
+          <h2 className="dark-text mt-4">What Our Members Say</h2>
+          
+          <div className="testi-bento mt-8">
+            <div className="testi-image" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}></div>
             <div className="testi-content">
-              <div className="testi-quote-mark">&ldquo;</div>
-              <div className="testi-quote">[Testimonial slot - an academy student on what changed once their pressure game was scored objectively, not self-assessed.]</div>
-              <div className="testi-person">
-                <div className="avatar"></div>
-                <div>
-                  <div className="testi-name">Player Name</div>
-                  <div className="testi-role">Academy Student</div>
-                </div>
+              <div className="testi-quote-mark">“</div>
+              <p className="testi-quote-text dark-text">
+                [Testimonial slot - an academy student on what changed once their pressure game was scored objectively, not self-assessed.]
+              </p>
+              <p className="testi-author dark-text mt-6">
+                Player Name, <em>Academy Student</em>
+              </p>
+              
+              <div className="testi-controls">
+                <button className="testi-arrow-btn">&larr;</button>
+                <button className="testi-arrow-btn">&rarr;</button>
               </div>
-              <div className="testi-nav">
-                <button className="testi-arrow">&larr;</button>
-                <span>1 / 3</span>
-                <button className="testi-arrow">&rarr;</button>
-              </div>
-            </div>
-          </div>
-          <div className="stats">
-            <div className="stat"><div className="stat-num">30</div><div className="stat-lab">Clutch Quotient Skills Scored</div></div>
-            <div className="stat"><div className="stat-num">3</div><div className="stat-lab">Grand Slam-Credentialed Coaches</div></div>
-            <div className="stat"><div className="stat-num">2+2=5</div><div className="stat-lab">AI + Coaches, The Complete Package</div></div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== TIPS ===== */}
-      <section className="tips" id="tips">
-        <div className="wrap tips-grid">
-          <div className="tips-left">
-            <div className="section-eyebrow">INSIGHTS</div>
-            <h2>Pressure Tips &amp;<br />Training Insights</h2>
-            <p>Gain access to expert advice, tactical drills, and mental strategies from Grand Slam coaches. We break down the exact mechanics required to help you win the points that matter - both on and off the court. Learn how to shift your identity when facing championship point.</p>
-            <a href={CTA.url} className="pill">{CTA.label}</a>
-          </div>
-          <div>
-            <div className="article">
-              <div className="ph"></div>
-              <div className="article-meta">Tactics <i></i> 4 Min</div>
-              <h3>Two More Points At 5-5: How To Win The Tiebreak</h3>
-            </div>
-            <div className="article">
-              <div className="ph"></div>
-              <div className="article-meta">Identity <i></i> 3 Min</div>
-              <h3>The Identity Shift That Survives Championship Point</h3>
             </div>
           </div>
         </div>
       </section>
 
       {/* ===== DIAGNOSTIC CTA ===== */}
-      <section className="diagnostic-hero">
+      <section className="diagnostic-footer">
+        <div className="diagnostic-bg" style={{ backgroundImage: "url('/hero_tennis_court_1783528122643.jpg')" }}></div>
         <div className="diagnostic-overlay"></div>
         <div className="wrap diagnostic-content">
-          <div className="section-eyebrow" style={{ color: '#C7532B' }}>FOR COMPETITIVE PLAYERS WHO CAN'T CLOSE</div>
-          <h2>You don't lose matches by much. You lose them by two points. The same two, every time.</h2>
-          <p>
-            You've drilled the technique. You've done the fitness. And still, in the match or the tiebreak, when you have chances to close out, something else takes over. That's not a skill you're missing. It's something that's never actually been measured, until now.
-          </p>
-          <a href={CTA.url} className="btn-orange">{CTA.label}</a>
-          <div className="diagnostic-meta">FREE &bull; 15 QUESTIONS &bull; UNDER 3 MINUTES</div>
+           <h2 className="light-text">Ready to train<br/>with us ?</h2>
+           <p className="light-text">Experience pressure training like never before – tactical drills, AI scoring, and a community that builds resilience.</p>
+           <a href={CTA.url} className="btn-dark mt-6">{CTA.labelArrow}</a>
         </div>
       </section>
-    </>
+    </div>
   );
 }
