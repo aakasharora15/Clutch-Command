@@ -268,6 +268,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== THE JOURNEY (Dark Section with 4 Cards) ===== */}
+      <section className="journey-section" id="journey">
+        <div className="journey-bg"></div>
+        <div className="wrap">
+          <div className="journey-header flex-between">
+            <div className="journey-text">
+              <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>The Process</div>
+              <h2>Fuel Your Game with Our Full Service Experience</h2>
+              <p>We don't just assess your game - we rebuild your mental framework under pressure. Our comprehensive 4-step pipeline ensures you stop losing the points that decide matches.</p>
+            </div>
+            <a href={CTA.url} className="btn-dark" style={{ background: 'var(--lime)', color: '#111' }}>{CTA.labelArrow}</a>
+          </div>
+          <div className="journey-cards">
+            <div className="journey-card">
+              <div className="icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="M16 5l3-3 3 3"/><path d="M19 2v10"/><circle cx="9" cy="10" r="2"/><path d="M13 14c-1.5-1-3.5-1-5 0s-3.5 3-5 5v1h14v-1c-1.5-2-3.5-4-5-5z"/></svg>
+              </div>
+              <h3>1. Match Upload</h3>
+              <p>Upload footage of your most competitive matches. Our AI isolates every critical pressure moment.</p>
+            </div>
+            <div className="journey-card">
+              <div className="icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+              </div>
+              <h3>2. AI Scoring</h3>
+              <p>Your game is scored against the 30 variables of the Clutch Quotient to diagnose exact cognitive breakdowns.</p>
+            </div>
+            <div className="journey-card">
+              <div className="icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <h3>3. Custom Blueprint</h3>
+              <p>Grand Slam coaches create a bespoke tactical plan and high-intensity drill routine to fix your habits.</p>
+            </div>
+            <div className="journey-card">
+              <div className="icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <h3>4. Pressure Testing</h3>
+              <p>Return to the court and test your new mental framework in live match play scenarios.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== BLACK & WHITE CARDS (Like the Padel Reference) ===== */}
       <section className="about-founder light-section" id="co-founders">
         <div className="wrap bento-split-reverse">
