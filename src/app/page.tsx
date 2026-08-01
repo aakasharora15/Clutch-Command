@@ -176,11 +176,22 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
 }
 
 export default function Home() {
-  const [introDone, setIntroDone] = useState(false);
+  const [introDone, setIntroDone] = useState(true);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem('clutch_intro_done')) {
+      setIntroDone(false);
+    }
+  }, []);
+
+  function handleIntroDone() {
+    sessionStorage.setItem('clutch_intro_done', 'true');
+    setIntroDone(true);
+  }
 
   return (
     <div className="page-wrapper">
-      {!introDone && <PressureIntro onDone={() => setIntroDone(true)} />}
+      {!introDone && <PressureIntro onDone={handleIntroDone} />}
 
       {/* ===== HERO ===== */}
       <header className="hero">
