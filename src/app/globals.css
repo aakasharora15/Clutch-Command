@@ -50,10 +50,10 @@ p{font-size:15px;line-height:1.6;color:var(--text-muted);font-weight:400;}
 .bento-split{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;}
 .bento-text-left h2{font-size:clamp(28px,3.5vw,42px);margin-bottom:24px;line-height:1.2;}
 .bento-text-left p{margin-bottom:16px;font-size:16px;}
-.bento-images-right{display:flex;align-items:center;gap:20px;}
+.bento-images-right{display:flex;align-items:center;gap:20px;width:100%;}
 .bento-img-card{border-radius:24px;background-size:cover;background-position:center;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.05);}
-.bento-img-card.large{flex:1.4;aspect-ratio:0.9;}
-.bento-img-card.small{flex:1;aspect-ratio:1.2;align-self:flex-start;margin-top:40px;}
+.bento-img-card.large{flex:1.4;aspect-ratio:0.9;width:100%;}
+.bento-img-card.small{flex:1;aspect-ratio:1.2;align-self:flex-start;margin-top:40px;width:100%;}
 .bento-card-label{position:absolute;top:16px;left:16px;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;}
 
 /* ===== PROGRAMS (3-Col Bento) ===== */
@@ -70,7 +70,7 @@ p{font-size:15px;line-height:1.6;color:var(--text-muted);font-weight:400;}
 /* ===== BLACK & WHITE CARDS (About Founder) ===== */
 .bento-split-reverse{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;}
 .bento-black-card{background:#111111;color:#fff;border-radius:24px;padding:48px;height:100%;display:flex;flex-direction:column;}
-.bento-black-card-split{background:#111;border-radius:24px;display:flex;overflow:hidden;min-height:420px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+.bento-black-card-split{background:#111;border-radius:24px;display:flex;overflow:hidden;min-height:360px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
 .bento-black-card-split .img-side{flex:1;background-size:cover;background-position:center;}
 .bento-black-card-split .text-side{flex:1.1;padding:40px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center;}
 .bento-black-card-split h3{font-size:24px;margin-bottom:16px;line-height:1.2;}
@@ -80,7 +80,7 @@ p{font-size:15px;line-height:1.6;color:var(--text-muted);font-weight:400;}
 .founder-title{font-size:13px;color:rgba(255,255,255,0.5);}
 .bento-white-text h2{font-size:clamp(28px,3.5vw,42px);margin-bottom:16px;line-height:1.15;}
 .bento-white-text-split{display:flex;align-items:center;gap:24px;margin-top:32px;}
-.bento-img-card-small{width:140px;height:140px;border-radius:16px;background-size:cover;background-position:top center;flex-shrink:0;box-shadow:0 10px 30px rgba(0,0,0,0.05);}
+.bento-img-card-small{width:180px;height:180px;border-radius:20px;background-size:cover;background-position:top center;flex-shrink:0;box-shadow:0 10px 30px rgba(0,0,0,0.05);}
 .bento-white-text-split p{font-size:13px;line-height:1.5;margin:0;}
 
 /* ===== TESTIMONIALS ===== */
@@ -134,21 +134,26 @@ p{font-size:15px;line-height:1.6;color:var(--text-muted);font-weight:400;}
   line-height: 1.2;
 }
 .carousel-3d-container {
+  position: relative;
+  height: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   perspective: 1200px;
   margin-bottom: 60px;
 }
 .carousel-3d-card {
+  position: absolute;
   width: 260px;
   height: 380px;
   border-radius: 20px;
   background-size: cover;
   background-position: center;
   transition: transform 0.5s ease, opacity 0.5s ease;
-  flex-shrink: 0;
+}
+.carousel-3d-card.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 .carousel-3d-card.left-outer {
   transform: rotateY(35deg) translateZ(-150px) translateX(60px);

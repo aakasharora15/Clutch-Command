@@ -1,11 +1,17 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { CTA } from '../config/cta';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isDark = pathname !== '/';
+
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${isDark ? styles.darkNavbar : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <Image src="/logo-heartbeat.png" alt="Clutch Command" width={110} height={60} style={{ objectFit: 'contain' }} priority />

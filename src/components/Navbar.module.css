@@ -9,6 +9,24 @@
   z-index: 100;
 }
 
+.darkNavbar {
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.darkNavbar .link {
+  color: #111111;
+  font-weight: 500;
+}
+
+.darkNavbar .link:hover {
+  color: #555555;
+}
+
+.darkNavbar .logo img {
+  filter: invert(1);
+}
+
 .container {
   max-width: 1300px;
   margin: 0 auto;

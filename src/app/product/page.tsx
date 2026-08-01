@@ -1,6 +1,8 @@
 import React from 'react';
 import { CTA } from '../../config/cta';
 
+import Carousel3D from '../../components/Carousel3D';
+
 export default function ProductPage() {
   return (
     <div className="page-wrapper" style={{ paddingTop: '100px' }}>
@@ -10,19 +12,7 @@ export default function ProductPage() {
           <div className="carousel-3d-header">
             <h2>Moments From The Court: The Training, Matches, And Pressure</h2>
           </div>
-          
-          <div className="carousel-3d-container">
-            <div className="carousel-3d-card left-outer" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')" }}></div>
-            <div className="carousel-3d-card left" style={{ backgroundImage: "url('/media__1783528047317.jpg')" }}></div>
-            <div className="carousel-3d-card center" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}></div>
-            <div className="carousel-3d-card right" style={{ backgroundImage: "url('/media__1783528039061.png')" }}></div>
-            <div className="carousel-3d-card right-outer" style={{ backgroundImage: "url('/hero_tennis_court_1783528122643.jpg')" }}></div>
-          </div>
-
-          <div className="carousel-nav">
-            <button className="carousel-nav-btn">&larr;</button>
-            <button className="carousel-nav-btn active">&rarr;</button>
-          </div>
+          <Carousel3D />
         </div>
       </section>
 
