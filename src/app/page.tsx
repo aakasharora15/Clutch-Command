@@ -168,8 +168,10 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
         30&#8202;&#8211;&#8202;30
         <small>The point that decides it</small>
       </div>
-      <button className="enter-btn" onClick={run}>Enter The Arena</button>
-      <button className="intro-skip" onClick={close}>Skip Intro</button>
+      <div style={{ display: 'flex', gap: '16px', marginTop: '38px' }}>
+        <button className="enter-btn" style={{ marginTop: 0 }} onClick={run}>Enter The Arena</button>
+        <button className="intro-skip" style={{ marginTop: 0, padding: '15px 34px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '4px', color: '#fff', fontSize: '11px', letterSpacing: '0.2em' }} onClick={close}>Skip Animation</button>
+      </div>
       <audio ref={audioRef} src="/audio/heartbeat.mp3" preload="auto" />
     </div>
   );
