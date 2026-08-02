@@ -14,7 +14,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${isDark ? styles.darkNavbar : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <Image src="/logo-heartbeat.png" alt="Clutch Command" width={110} height={60} style={{ objectFit: 'contain' }} priority />
+          <Image src={isDark ? "/logo-clutch.png" : "/logo-heartbeat.png"} alt="Clutch Command" width={110} height={60} style={{ objectFit: 'contain' }} priority />
         </Link>
         <div className={styles.links}>
           <Link href="/product" className={styles.link}>Product</Link>
