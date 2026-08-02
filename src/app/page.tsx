@@ -319,7 +319,7 @@ export default function Home() {
       <section className="about-founder light-section" id="co-founders">
         <div className="wrap bento-split-reverse">
           <div className="bento-black-card-split">
-            <div className="img-side" style={{ backgroundImage: "url('/media__1783528039061.png')" }}></div>
+            <div className="img-side" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}></div>
             <div className="text-side">
               <h3>Built to answer a question no one could answer him.</h3>
               <p>Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay.</p>
