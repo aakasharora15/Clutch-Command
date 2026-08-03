@@ -241,6 +241,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== SCIENCE OF CQ ===== */}
+      <section className="science-section" id="science">
+        <div className="wrap">
+          <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>The Science</div>
+          <h2 style={{ color: '#fff', fontSize: 'clamp(36px, 4.5vw, 52px)', marginTop: '16px' }}>We Don't Guess.<br/>We Measure Pressure.</h2>
+          <div className="science-grid mt-8">
+            <div className="science-card large-card">
+              <h3>The Clutch Quotient (CQ)</h3>
+              <p>Pressure isn't a feeling—it's a biological response that ruins technique. The Clutch Quotient (CQ) is the first AI-driven framework to measure cognitive breakdown on the court.<br/><br/>We analyze 30 specific variables, including shot selection under score-pressure, court positioning during breakpoints, and recovery time between high-stress points.</p>
+            </div>
+            <div className="science-card small-card">
+              <div className="icon-box" style={{ color: 'var(--lime)' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <h4>Biometric Syncing</h4>
+              <p>Connect your Apple Watch or Whoop to overlay heart rate data onto your match footage.</p>
+            </div>
+            <div className="science-card small-card">
+              <div className="icon-box" style={{ color: 'var(--lime)' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <h4>Cognitive Mapping</h4>
+              <p>See exactly when your decision-making shifts from offensive to defensive.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== PROGRAMS (Bento Grid) ===== */}
       <section className="programs light-section" id="programs">
         <div className="wrap">
@@ -266,6 +294,31 @@ export default function Home() {
                   <h3>AI Pressure<br/>Scoring</h3>
                   <p>Upload your match footage and get scored against the 30 variables of the Clutch Quotient. Receive a 3D Memory Surface report detailing exactly where your cognitive execution breaks down.</p>
                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== DELIVERABLES ===== */}
+      <section className="deliverables light-section" id="deliverables">
+        <div className="wrap">
+          <div className="section-eyebrow dark-text btn-outline-pill">What You Get</div>
+          <h2 className="dark-text mt-4">The Complete Pressure Toolkit</h2>
+          <div className="deliverables-grid mt-8">
+            <div className="deliv-card">
+               <div className="deliv-number">01</div>
+               <h4 className="dark-text">3D Memory Surface Report</h4>
+               <p>A comprehensive digital dashboard breaking down your match footage. See your exact CQ score and where your pressure threshold broke.</p>
+            </div>
+            <div className="deliv-card">
+               <div className="deliv-number">02</div>
+               <h4 className="dark-text">Weekly Tactical Blueprints</h4>
+               <p>Custom high-intensity drill routines designed by Grand Slam coaches (Vlado Platenik & Dan Kiernan) to rewire your specific pressure weaknesses.</p>
+            </div>
+            <div className="deliv-card">
+               <div className="deliv-number">03</div>
+               <h4 className="dark-text">1-on-1 Coach Reviews</h4>
+               <p>Bi-weekly video calls with your designated elite coach to review your latest match footage and adjust your training cognitive load.</p>
             </div>
           </div>
         </div>
@@ -364,6 +417,18 @@ export default function Home() {
                 <button className="testi-arrow-btn">&rarr;</button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHO IS THIS FOR ===== */}
+      <section className="qualification-section light-section">
+        <div className="wrap flex-between" style={{ alignItems: 'center' }}>
+          <div style={{ flex: 1, paddingRight: '60px' }}>
+             <h2 className="dark-text" style={{ fontSize: 'clamp(32px,4vw,48px)', lineHeight: 1.1 }}>Built For Competitors.<br/>Not Beginners.</h2>
+          </div>
+          <div style={{ flex: 1 }}>
+             <p className="dark-text" style={{ fontSize: '18px', lineHeight: 1.6 }}>Clutch Command isn't for learning how to hit a forehand. It is an elite finishing school for players who already have the technique, but need the mental framework to close out matches. Built for tournament juniors, high-level club competitors, and aspiring professionals.</p>
           </div>
         </div>
       </section>
