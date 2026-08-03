@@ -33,11 +33,12 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
     }
   }, []);
 
-  function close() {
-    setPhase('gone');
+  function handleSkip() {
     const audio = audioRef.current;
-    if (audio) { audio.pause(); audio.currentTime = 0; }
-    setTimeout(() => { onDone && onDone(); }, 1000);
+    if (audio) { 
+      try { audio.pause(); audio.currentTime = 0; } catch (e) {} 
+    }
+    if (onDone) onDone();
   }
 
   function run() {
@@ -168,9 +169,9 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
         30&#8202;&#8211;&#8202;30
         <small>The point that decides it</small>
       </div>
-      <div style={{ display: 'flex', gap: '16px', marginTop: '38px' }}>
+      <div style={{ display: 'flex', gap: '16px', marginTop: '38px', position: 'relative', zIndex: 10 }}>
         <button className="enter-btn" style={{ marginTop: 0 }} onClick={run}>Enter The Arena</button>
-        <button className="intro-skip" style={{ marginTop: 0, padding: '15px 34px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '4px', color: '#fff', fontSize: '11px', letterSpacing: '0.2em' }} onClick={close}>Skip Animation</button>
+        <button className="intro-skip" style={{ marginTop: 0, padding: '15px 34px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '4px', color: '#fff', fontSize: '11px', letterSpacing: '0.2em', cursor: 'pointer' }} onClick={handleSkip}>Skip Animation</button>
       </div>
       <audio ref={audioRef} src="/audio/heartbeat.mp3" preload="auto" />
     </div>
