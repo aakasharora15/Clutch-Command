@@ -198,27 +198,54 @@ export default function Home() {
       {!introDone && <PressureIntro onDone={handleIntroDone} />}
 
       {/* ===== HERO ===== */}
-      <header className="hero">
-        <div className="hero-overlay"></div>
-        <div className="hero-inner wrap">
-          <div>
-            <div style={{ 
-              display: 'inline-flex', alignItems: 'center', gap: '16px', 
-              background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)',
-              padding: '6px 20px 6px 8px', borderRadius: '40px', marginBottom: '24px' 
-            }}>
-              <div style={{ display: 'flex' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'url(/mark_jeffery.png) center/cover', border: '2px solid #111' }}></div>
-                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#ddd', border: '2px solid #111', marginLeft: '-12px' }}></div>
-                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#bbb', border: '2px solid #111', marginLeft: '-12px' }}></div>
-              </div>
-              <p style={{ margin: 0, fontSize: '13px', color: '#fff', fontWeight: 500 }}>AI scoring and training for competitive players.</p>
-            </div>
-            
-            <h1>Win The Points<br/>That Decide Matches.</h1>
+      {/* ===== HERO SECTION ===== */}
+      <section className="hero" id="home" style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: '60px', overflow: 'hidden', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/hero_colosseum.png')", backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
+        {/* Light overlay just for text readability on the bottom left if needed, but keeping it mostly transparent */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 40%)', zIndex: 1 }}></div>
+        
+        {/* NAV (Padel Sport Style) */}
+        <nav style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 100, padding: '32px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ flex: 1, display: 'flex', gap: '32px' }}>
+            <a href="/product" style={{ color: '#fff', fontSize: '15px', textDecoration: 'none', fontWeight: 300 }}>Product</a>
+            <a href="/promises" style={{ color: '#fff', fontSize: '15px', textDecoration: 'none', fontWeight: 300 }}>Promises</a>
+            <a href="/co-founders" style={{ color: '#fff', fontSize: '15px', textDecoration: 'none', fontWeight: 300 }}>Co-Founders</a>
           </div>
+          <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+            <img src="/logo.png" alt="Clutch Command" style={{ height: '24px' }} />
+          </div>
+          <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', gap: '16px', alignItems: 'center' }}>
+            <div style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', padding: '6px 6px 6px 20px', borderRadius: '100px', display: 'flex', alignItems: 'center', color: '#fff', fontSize: '13px', backdropFilter: 'blur(10px)', gap: '12px', fontWeight: 300 }}>
+              Search here... 
+              <span style={{ background: '#fff', color: '#111', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px' }}>🔍</span>
+            </div>
+            <button style={{ background: '#000', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', padding: '12px 28px', borderRadius: '100px', fontSize: '14px', fontWeight: 300, cursor: 'pointer' }}>Start Diagnostic ↗</button>
+          </div>
+        </nav>
+
+        {/* HERO CONTENT */}
+        <div style={{ position: 'relative', zIndex: 2, padding: '0 40px', width: '100%' }}>
+          
+          <div style={{ marginBottom: '80px', maxWidth: '300px' }}>
+            <div style={{ display: 'inline-flex', padding: '6px', background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.2)', marginBottom: '16px' }}>
+              <div className="avatar-stack" style={{ display: 'flex' }}>
+                 <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundImage: "url('/mark_jeffery.png')", backgroundSize: 'cover', border: '2px solid rgba(255,255,255,0.2)' }}></div>
+                 <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#999', border: '2px solid rgba(255,255,255,0.2)', marginLeft: '-12px' }}></div>
+                 <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#666', border: '2px solid rgba(255,255,255,0.2)', marginLeft: '-12px' }}></div>
+              </div>
+            </div>
+            <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '15px', fontWeight: 300, lineHeight: 1.4 }}>AI scoring and training for competitive players. Build resilience.</p>
+          </div>
+
+          <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(10px)', padding: '6px 20px', borderRadius: '100px', color: '#fff', fontSize: '13px', fontWeight: 300, marginBottom: '24px' }}>
+            Clutch Quotient
+          </div>
+          
+          <h1 style={{ color: '#fff', fontSize: 'clamp(48px, 6vw, 84px)', fontWeight: 300, maxWidth: '1000px', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+            Win The Points That<br/>Decide Matches.
+          </h1>
         </div>
-      </header>
+      </section>
 
       {/* ===== THE PROBLEM (Asymmetrical) ===== */}
       <section className="airy-section" id="product">
