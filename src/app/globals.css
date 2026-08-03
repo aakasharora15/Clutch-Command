@@ -305,3 +305,100 @@ p {
 .enter-btn:hover{transform:translateY(-2px);}
 #intro.pulsing .enter-btn,#intro.pulsing .intro-readout{opacity:0;pointer-events:none;transition:opacity .4s ease;}
 .intro-skip{margin-top:22px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);background:none;border:none;cursor:pointer;}
+
+/* ===== 3D CAROUSEL ===== */
+.carousel-3d-section {
+  background: #111;
+  padding: 140px 0;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+.carousel-3d-header h2 {
+  font-size: clamp(40px, 5vw, 64px);
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.2;
+}
+.carousel-3d-container {
+  position: relative;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  margin-bottom: 60px;
+}
+.carousel-3d-card {
+  position: absolute;
+  width: 260px;
+  height: 380px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.carousel-3d-card.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.carousel-3d-card.left-outer {
+  transform: translateX(-380px) translateZ(-200px) rotateY(35deg);
+  opacity: 0.3;
+  z-index: 1;
+}
+.carousel-3d-card.left {
+  transform: translateX(-220px) translateZ(-100px) rotateY(25deg);
+  opacity: 0.7;
+  z-index: 5;
+}
+.carousel-3d-card.center {
+  transform: translateX(0px) translateZ(50px) rotateY(0deg);
+  opacity: 1;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  z-index: 10;
+  width: 290px;
+  height: 420px;
+}
+.carousel-3d-card.right {
+  transform: translateX(220px) translateZ(-100px) rotateY(-25deg);
+  opacity: 0.7;
+  z-index: 5;
+}
+.carousel-3d-card.right-outer {
+  transform: translateX(380px) translateZ(-200px) rotateY(-35deg);
+  opacity: 0.3;
+  z-index: 1;
+}
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.carousel-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.carousel-nav-btn:hover, .carousel-nav-btn.active {
+  background: var(--lime);
+  color: #111;
+  border-color: var(--lime);
+}
+
+@media (max-width:960px){
+  .carousel-3d-card.left-outer, .carousel-3d-card.right-outer { display: none; }
+}
+@media (max-width:600px){
+  .carousel-3d-card.left, .carousel-3d-card.right { display: none; }
+}
