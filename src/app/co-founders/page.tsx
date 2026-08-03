@@ -37,10 +37,10 @@ export default function CoFoundersPage() {
             <div className="testi-image" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}></div>
             <div className="testi-content">
               <div className="testi-quote-mark">“</div>
-              <p className="testi-quote-text dark-text">
+              <p className="testi-quote-text">
                 [Testimonial slot - an academy student on what changed once their pressure game was scored objectively, not self-assessed.]
               </p>
-              <p className="testi-author dark-text mt-6">
+              <p className="testi-author mt-6">
                 Player Name, <em>Academy Student</em>
               </p>
               

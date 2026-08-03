@@ -86,15 +86,21 @@ p{font-size:15px;line-height:1.6;color:var(--text-muted);font-weight:400;}
 
 /* ===== TESTIMONIALS ===== */
 .testimonials h2{font-size:clamp(32px,4vw,48px);}
-.testi-bento{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;}
-.testi-image{border-radius:24px;aspect-ratio:0.8;background-size:cover;background-position:center;}
-.testi-content{display:flex;flex-direction:column;justify-content:center;}
-.testi-quote-mark{font-family:'Outfit',sans-serif;font-size:80px;line-height:1;color:var(--text-dark);margin-bottom:16px;font-weight:700;}
-.testi-quote-text{font-size:clamp(20px,2.5vw,28px);font-weight:500;line-height:1.4;color:var(--text-dark);}
-.testi-author{font-size:14px;color:var(--text-muted);}
+.testi-bento{display:flex;align-items:center;position:relative;}
+.testi-image{width:45%;aspect-ratio:0.85;border-radius:24px;background-size:cover;background-position:center;box-shadow:0 20px 50px rgba(0,0,0,0.15);z-index:1;}
+.testi-content{width:60%;margin-left:-5%;background:#111;color:#fff;padding:64px;border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,0.25);z-index:2;display:flex;flex-direction:column;justify-content:center;}
+.testi-quote-mark{font-family:'Outfit',sans-serif;font-size:100px;line-height:0.8;color:var(--lime);margin-bottom:16px;font-weight:700;}
+.testi-quote-text{font-size:clamp(20px,2.5vw,32px);font-weight:500;line-height:1.4;color:#fff;}
+.testi-author{font-size:15px;color:rgba(255,255,255,0.6);}
 .testi-controls{display:flex;gap:12px;margin-top:48px;}
-.testi-arrow-btn{width:44px;height:44px;border-radius:50%;border:1px solid #ddd;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;}
-.testi-arrow-btn:hover{background:#111;color:#fff;}
+.testi-arrow-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;color:#fff;}
+.testi-arrow-btn:hover{background:var(--lime);color:#111;border-color:var(--lime);}
+
+@media (max-width:860px){
+  .testi-bento{flex-direction:column;align-items:stretch;}
+  .testi-image{width:100%;aspect-ratio:1.2;border-radius:24px 24px 0 0;}
+  .testi-content{width:100%;margin-left:0;margin-top:-30px;padding:40px 24px;border-radius:24px;}
+}
 
 /* ===== JOURNEY SECTION (Dark with White Cards) ===== */
 .journey-section{position:relative;padding:120px 0;color:#fff;}
