@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { CTA } from '../config/cta';
+import Link from 'next/link';
 
 const ECG_PATH =
   "M0,75 L14,75 Q16,52 18,60 L22,75 L34,75 L38,83 L42,75 L46,40 L50,130 L54,70 L58,92 L62,68 L66,75 L150,75 " +
@@ -51,7 +52,7 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
     const audio = audioRef.current;
     const len = trace ? trace.getTotalLength() : 2000;
 
-    if (!audio) { setPhase('reveal'); setTimeout(close, 1000); return; }
+    if (!audio) { setPhase('reveal'); setTimeout(() => { if (onDone) onDone(); }, 1000); return; }
 
     let actx: AudioContext | undefined, analyser: AnalyserNode | null = null, dataArr: Uint8Array | undefined, gainNode: GainNode | undefined;
     try {
@@ -107,7 +108,7 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
         rafId = requestAnimationFrame(frame);
       } else {
         setPhase('reveal');
-        setTimeout(close, 1000);
+        setTimeout(() => { if (onDone) onDone(); }, 1000);
       }
     }
 
@@ -200,221 +201,167 @@ export default function Home() {
       <header className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-inner wrap">
-          <div className="hero-social-proof">
-             <div className="avatar-stack">
-                <div className="avatar-sm"></div>
-                <div className="avatar-sm"></div>
-                <div className="avatar-sm"></div>
-             </div>
-             <p>AI scoring and training for competitive players.<br/>Build pressure resilience.</p>
-          </div>
-          
-          <div className="hero-text-bottom">
-            <div className="hero-eyebrow">Clutch Command</div>
+          <div>
+            <div style={{ 
+              display: 'inline-flex', alignItems: 'center', gap: '16px', 
+              background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)',
+              padding: '6px 20px 6px 8px', borderRadius: '40px', marginBottom: '24px' 
+            }}>
+              <div style={{ display: 'flex' }}>
+                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'url(/mark_jeffery.png) center/cover', border: '2px solid #111' }}></div>
+                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#ddd', border: '2px solid #111', marginLeft: '-12px' }}></div>
+                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#bbb', border: '2px solid #111', marginLeft: '-12px' }}></div>
+              </div>
+              <p style={{ margin: 0, fontSize: '13px', color: '#fff', fontWeight: 500 }}>AI scoring and training for competitive players.</p>
+            </div>
+            
             <h1>Win The Points<br/>That Decide Matches.</h1>
           </div>
         </div>
       </header>
 
-      {/* ===== STATEMENT (Light Section) ===== */}
-      <section className="statement light-section" id="product">
-        <div className="wrap bento-split">
-          <div className="bento-text-left">
-            <div className="section-eyebrow dark-text">The Problem</div>
-            <h2 className="dark-text">You don't lose matches because of technique. You lose them in two points.</h2>
-            <p className="dark-text">
-              We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.
-            </p>
-            <p className="dark-text">
-              When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.
-            </p>
-            <a href={CTA.url} className="btn-dark mt-6">{CTA.labelArrow}</a>
-          </div>
-          <div className="bento-images-right">
-             <div className="bento-img-card large" style={{ backgroundImage: "url('/media__1783528039061.png')" }}>
-                <div className="bento-card-label">Match Point</div>
-             </div>
-             <div className="bento-img-card small" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
-                <div className="bento-card-label">Coaching</div>
-             </div>
+      {/* ===== THE PROBLEM (Asymmetrical) ===== */}
+      <section className="airy-section" id="product">
+        <div className="wrap">
+          <div className="section-eyebrow">The Problem</div>
+          <h2 className="section-header">You don't lose matches because of technique. You lose them in two points.</h2>
+          <div className="grid-asym-3">
+            <div className="text-col">
+              <p>We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.</p>
+              <br/>
+              <p>When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.</p>
+              <a href={CTA.url} className="btn-dark" style={{ marginTop: '32px' }}>{CTA.labelArrow}</a>
+            </div>
+            <div className="img-col" style={{ backgroundImage: "url('/media__1783528039061.png')" }}></div>
+            <div className="img-col" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}></div>
           </div>
         </div>
       </section>
 
-      {/* ===== SCIENCE OF CQ ===== */}
-      <section className="science-section" id="science">
+      {/* ===== THE SCIENCE (Asymmetrical) ===== */}
+      <section className="airy-section dark" id="science">
         <div className="wrap">
           <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>The Science</div>
-          <h2 style={{ color: '#fff', fontSize: 'clamp(36px, 4.5vw, 52px)', marginTop: '16px' }}>We Don't Guess.<br/>We Measure Pressure.</h2>
-          <div className="science-grid mt-8">
-            <div className="science-card large-card">
-              <h3>The Clutch Quotient (CQ)</h3>
-              <p>Pressure isn't a feeling—it's a biological response that ruins technique. The Clutch Quotient (CQ) is the first AI-driven framework to measure cognitive breakdown on the court.<br/><br/>We analyze 30 specific variables, including shot selection under score-pressure, court positioning during breakpoints, and recovery time between high-stress points.</p>
+          <h2 className="section-header">We Don't Guess. We Measure Pressure.</h2>
+          <div className="grid-asym-3">
+            <div className="text-col">
+              <h3 style={{ fontSize: '28px', marginBottom: '16px' }}>The Clutch Quotient (CQ)</h3>
+              <p>Pressure isn't a feeling—it's a biological response that ruins technique. The Clutch Quotient (CQ) is the first AI-driven framework to measure cognitive breakdown on the court.</p>
+              <br/>
+              <p>We analyze 30 specific variables, including shot selection under score-pressure, court positioning during breakpoints, and recovery time between high-stress points.</p>
             </div>
-            <div className="science-card small-card">
-              <div className="icon-box" style={{ color: 'var(--lime)' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-              </div>
-              <h4>Biometric Syncing</h4>
-              <p>Connect your Apple Watch or Whoop to overlay heart rate data onto your match footage.</p>
-            </div>
-            <div className="science-card small-card">
-              <div className="icon-box" style={{ color: 'var(--lime)' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-              </div>
-              <h4>Cognitive Mapping</h4>
-              <p>See exactly when your decision-making shifts from offensive to defensive.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== PROGRAMS (Bento Grid) ===== */}
-      <section className="programs light-section" id="programs">
-        <div className="wrap">
-          <div className="programs-header flex-between">
-            <h2 className="dark-text">Training For Every Competitive Level</h2>
-            <a href={CTA.url} className="btn-dark">{CTA.labelArrow}</a>
-          </div>
-          <div className="bento-3-col">
-            <div className="bento-card-tall" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
-               <div className="bento-card-content">
-                  <h3>CLUTCH<br/>Singles Academy</h3>
-                  <p>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints, high-intensity repetition drills, and pressure conditioning from a coach behind tour-level players.</p>
+            <div className="img-col" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')", position: 'relative' }}>
+               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                 <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Biometric Syncing</h4>
+                 <p style={{ margin: 0, fontSize: '13px' }}>Overlay heart rate data onto your match footage.</p>
                </div>
             </div>
-            <div className="bento-card-tall" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}>
-               <div className="bento-card-content">
-                  <h3>CLUTCH<br/>Doubles Academy</h3>
-                  <p>Doubles mastery with Dan Kiernan, the coach who took Dabrowski and Routliffe to World No.1 and two US Open titles. Court positioning, communication, and exploiting opponent weaknesses.</p>
-               </div>
-            </div>
-            <div className="bento-card-tall" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')" }}>
-               <div className="bento-card-content">
-                  <h3>AI Pressure<br/>Scoring</h3>
-                  <p>Upload your match footage and get scored against the 30 variables of the Clutch Quotient. Receive a 3D Memory Surface report detailing exactly where your cognitive execution breaks down.</p>
+            <div className="img-col" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')", position: 'relative' }}>
+               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                 <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Cognitive Mapping</h4>
+                 <p style={{ margin: 0, fontSize: '13px' }}>See exactly when decision-making shifts.</p>
                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== DELIVERABLES ===== */}
-      <section className="deliverables light-section" id="deliverables">
+      {/* ===== PROGRAMS (Pill Cards) ===== */}
+      <section className="airy-section" id="programs">
         <div className="wrap">
-          <div className="section-eyebrow dark-text btn-outline-pill">What You Get</div>
-          <h2 className="dark-text mt-4">The Complete Pressure Toolkit</h2>
-          <div className="deliverables-grid mt-8">
-            <div className="deliv-card">
-               <div className="deliv-number">01</div>
-               <h4 className="dark-text">3D Memory Surface Report</h4>
-               <p>A comprehensive digital dashboard breaking down your match footage. See your exact CQ score and where your pressure threshold broke.</p>
+          <div className="section-eyebrow">Programs</div>
+          <h2 className="section-header">Training For Every Competitive Level</h2>
+          <div className="grid-cards-3">
+            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
+               <div className="pill-card-content">
+                  <h3>CLUTCH Singles</h3>
+                  <p>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints and high-intensity repetition drills.</p>
+               </div>
             </div>
-            <div className="deliv-card">
-               <div className="deliv-number">02</div>
-               <h4 className="dark-text">Weekly Tactical Blueprints</h4>
-               <p>Custom high-intensity drill routines designed by Grand Slam coaches (Vlado Platenik & Dan Kiernan) to rewire your specific pressure weaknesses.</p>
+            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}>
+               <div className="pill-card-content">
+                  <h3>CLUTCH Doubles</h3>
+                  <p>Doubles mastery with Dan Kiernan. Court positioning, communication, and exploiting opponent weaknesses.</p>
+               </div>
             </div>
-            <div className="deliv-card">
-               <div className="deliv-number">03</div>
-               <h4 className="dark-text">1-on-1 Coach Reviews</h4>
-               <p>Bi-weekly video calls with your designated elite coach to review your latest match footage and adjust your training cognitive load.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== THE JOURNEY (Dark Section with 4 Cards) ===== */}
-      <section className="journey-section" id="journey">
-        <div className="journey-bg"></div>
-        <div className="wrap">
-          <div className="journey-header flex-between">
-            <div className="journey-text">
-              <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>The Process</div>
-              <h2>Fuel Your Game with Our Full Service Experience</h2>
-              <p>We don't just assess your game - we rebuild your mental framework under pressure. Our comprehensive 4-step pipeline ensures you stop losing the points that decide matches.</p>
-            </div>
-            <a href={CTA.url} className="btn-dark" style={{ background: 'var(--lime)', color: '#111' }}>{CTA.labelArrow}</a>
-          </div>
-          <div className="journey-cards">
-            <div className="journey-card">
-              <div className="icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="M16 5l3-3 3 3"/><path d="M19 2v10"/><circle cx="9" cy="10" r="2"/><path d="M13 14c-1.5-1-3.5-1-5 0s-3.5 3-5 5v1h14v-1c-1.5-2-3.5-4-5-5z"/></svg>
-              </div>
-              <h3>1. Match Upload</h3>
-              <p>Upload footage of your most competitive matches. Our AI isolates every critical pressure moment.</p>
-            </div>
-            <div className="journey-card">
-              <div className="icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
-              </div>
-              <h3>2. AI Scoring</h3>
-              <p>Your game is scored against the 30 variables of the Clutch Quotient to diagnose exact cognitive breakdowns.</p>
-            </div>
-            <div className="journey-card">
-              <div className="icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              </div>
-              <h3>3. Custom Blueprint</h3>
-              <p>Grand Slam coaches create a bespoke tactical plan and high-intensity drill routine to fix your habits.</p>
-            </div>
-            <div className="journey-card">
-              <div className="icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-              </div>
-              <h3>4. Pressure Testing</h3>
-              <p>Return to the court and test your new mental framework in live match play scenarios.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== BLACK & WHITE CARDS (Like the Padel Reference) ===== */}
-      <section className="about-founder light-section" id="co-founders">
-        <div className="wrap bento-split-reverse">
-          <div className="bento-black-card-split">
-            <div className="img-side" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}></div>
-            <div className="text-side">
-              <h3>Built to answer a question no one could answer him.</h3>
-              <p>Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay.</p>
-              <a href={CTA.url} className="btn-outline-pill mt-6" style={{ alignSelf: 'flex-start', color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>Read Story &rarr;</a>
-            </div>
-          </div>
-          <div className="bento-white-text">
-            <h2 className="dark-text">Experience the best in pressure training</h2>
-            <div className="bento-white-text-split">
-               <div className="bento-img-card-small" style={{ backgroundImage: "url('/mark_jeffery.png')" }}></div>
-               <div style={{ flex: 1 }}>
-                 <p className="dark-text">
-                   He didn't build it from a theory. He built it from a memory. Two match points up against the RAF's number one, on the grass at Wimbledon, and still finding a way to give it away. Pressure hijacked his brain and body, and the next thing he knew, it was game, set, and match to his opponent.
-                 </p>
-                 <div className="founder-name mt-4" style={{ fontSize: '14px', color: '#111' }}>Mark Jeffery, <span style={{ fontWeight: '400', color: '#666' }}>Founder</span></div>
+            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')" }}>
+               <div className="pill-card-content">
+                  <h3>AI Pressure Scoring</h3>
+                  <p>Upload your match footage and get scored against the 30 variables of the Clutch Quotient.</p>
                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <section className="testimonials light-section" id="promises">
+      {/* ===== DELIVERABLES (Pill Cards) ===== */}
+      <section className="airy-section dark" id="deliverables">
         <div className="wrap">
-          <div className="section-eyebrow dark-text btn-outline-pill">Testimonials</div>
-          <h2 className="dark-text mt-4">What Our Members Say</h2>
+          <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>What You Get</div>
+          <h2 className="section-header">The Complete Pressure Toolkit</h2>
+          <div className="grid-cards-3">
+            <div className="pill-card" style={{ background: '#1B2214', border: '1px solid rgba(255,255,255,0.05)' }}>
+               <div className="pill-card-content">
+                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.05)', lineHeight: 0.8, marginBottom: '24px' }}>01</div>
+                  <h3>3D Memory Surface Report</h3>
+                  <p>A comprehensive digital dashboard breaking down your match footage. See your exact CQ score and where your pressure threshold broke.</p>
+               </div>
+            </div>
+            <div className="pill-card" style={{ background: '#1B2214', border: '1px solid rgba(255,255,255,0.05)' }}>
+               <div className="pill-card-content">
+                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.05)', lineHeight: 0.8, marginBottom: '24px' }}>02</div>
+                  <h3>Weekly Tactical Blueprints</h3>
+                  <p>Custom high-intensity drill routines designed by Grand Slam coaches to rewire your specific pressure weaknesses.</p>
+               </div>
+            </div>
+            <div className="pill-card" style={{ background: '#1B2214', border: '1px solid rgba(255,255,255,0.05)' }}>
+               <div className="pill-card-content">
+                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.05)', lineHeight: 0.8, marginBottom: '24px' }}>03</div>
+                  <h3>1-on-1 Coach Reviews</h3>
+                  <p>Bi-weekly video calls with your designated elite coach to review your latest match footage and adjust your training cognitive load.</p>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== ABOUT FOUNDER ===== */}
+      <section className="airy-section" id="co-founders">
+        <div className="wrap">
+          <div style={{ display: 'flex', gap: '80px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <div className="founder-dark-card">
+              <div className="founder-dark-img" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}></div>
+              <div className="founder-dark-text">
+                <h3>Built to answer a question no one could answer him.</h3>
+                <p>Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay.</p>
+                <Link href="/co-founders" className="btn-dark" style={{ alignSelf: 'flex-start', marginTop: '32px', background: 'rgba(255,255,255,0.1)' }}>Read Story &rarr;</Link>
+              </div>
+            </div>
+            <div style={{ flex: 1, minWidth: '300px' }}>
+              <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundImage: "url('/mark_jeffery.png')", backgroundSize: 'cover', marginBottom: '24px' }}></div>
+              <h3 style={{ fontSize: '32px', marginBottom: '16px' }}>Experience the best in pressure training</h3>
+              <p>He didn't build it from a theory. He built it from a memory. Two match points up against the RAF's number one, on the grass at Wimbledon, and still finding a way to give it away. Pressure hijacked his brain and body, and the next thing he knew, it was game, set, and match to his opponent.</p>
+              <div style={{ marginTop: '24px', fontWeight: 600, color: 'var(--text-dark)' }}>Mark Jeffery, <span style={{ fontWeight: 400, color: 'var(--text-muted)' }}>Founder</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TESTIMONIALS (Airy Layout) ===== */}
+      <section className="airy-section" id="promises">
+        <div className="wrap">
+          <div className="section-eyebrow">Testimonials</div>
+          <h2 className="section-header">What Our Members Say</h2>
           
-          <div className="testi-bento mt-8">
-            <div className="testi-image" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}></div>
-            <div className="testi-content">
-              <div className="testi-quote-mark">“</div>
-              <p className="testi-quote-text">
+          <div className="testi-airy">
+            <div className="testi-airy-img" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}></div>
+            <div className="testi-airy-content">
+              <span className="testi-quote-mark">“</span>
+              <div className="testi-quote-text">
                 [Testimonial slot - an academy student on what changed once their pressure game was scored objectively, not self-assessed.]
-              </p>
-              <p className="testi-author mt-6">
+              </div>
+              <div className="testi-author">
                 Player Name, <em>Academy Student</em>
-              </p>
-              
-              <div className="testi-controls">
-                <button className="testi-arrow-btn">&larr;</button>
-                <button className="testi-arrow-btn">&rarr;</button>
               </div>
             </div>
           </div>
@@ -422,27 +369,29 @@ export default function Home() {
       </section>
 
       {/* ===== WHO IS THIS FOR ===== */}
-      <section className="qualification-section light-section">
-        <div className="wrap flex-between" style={{ alignItems: 'center' }}>
-          <div style={{ flex: 1, paddingRight: '60px' }}>
-             <h2 className="dark-text" style={{ fontSize: 'clamp(32px,4vw,48px)', lineHeight: 1.1 }}>Built For Competitors.<br/>Not Beginners.</h2>
+      <section className="airy-section dark">
+        <div className="wrap">
+          <div className="grid-asym-3" style={{ gridTemplateColumns: '1.2fr 1fr' }}>
+            <div className="text-col">
+              <h2 className="section-header" style={{ marginBottom: '32px' }}>Built For Competitors.<br/>Not Beginners.</h2>
+            </div>
+            <div className="text-col">
+              <p style={{ fontSize: '18px' }}>Clutch Command isn't for learning how to hit a forehand. It is an elite finishing school for players who already have the technique, but need the mental framework to close out matches. Built for tournament juniors, high-level club competitors, and aspiring professionals.</p>
+            </div>
           </div>
-          <div style={{ flex: 1 }}>
-             <p className="dark-text" style={{ fontSize: '18px', lineHeight: 1.6 }}>Clutch Command isn't for learning how to hit a forehand. It is an elite finishing school for players who already have the technique, but need the mental framework to close out matches. Built for tournament juniors, high-level club competitors, and aspiring professionals.</p>
-          </div>
+        </div>
+      </section>
+      {/* ===== DIAGNOSTIC CTA ===== */}
+      <section className="airy-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '500px', display: 'flex', alignItems: 'center' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/hero_tennis_court_1783528122643.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(10,20,10,0.95) 0%, rgba(10,20,10,0.4) 100%)', zIndex: 1 }}></div>
+        <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
+           <h2 className="section-header" style={{ color: '#fff', marginBottom: '24px', fontSize: 'clamp(40px, 6vw, 72px)' }}>Ready to train<br/>with us ?</h2>
+           <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '500px', fontSize: '18px' }}>Experience pressure training like never before – tactical drills, AI scoring, and a community that builds resilience.</p>
+           <a href={CTA.url} className="btn-dark" style={{ marginTop: '32px', background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>{CTA.labelArrow}</a>
         </div>
       </section>
 
-      {/* ===== DIAGNOSTIC CTA ===== */}
-      <section className="diagnostic-footer">
-        <div className="diagnostic-bg" style={{ backgroundImage: "url('/hero_tennis_court_1783528122643.jpg')" }}></div>
-        <div className="diagnostic-overlay"></div>
-        <div className="wrap diagnostic-content">
-           <h2 className="light-text">Ready to train<br/>with us ?</h2>
-           <p className="light-text">Experience pressure training like never before – tactical drills, AI scoring, and a community that builds resilience.</p>
-           <a href={CTA.url} className="btn-dark mt-6">{CTA.labelArrow}</a>
-        </div>
-      </section>
     </div>
   );
 }
