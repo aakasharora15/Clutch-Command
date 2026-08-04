@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  padding: 18px 0;
+  padding: 24px 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -23,31 +23,38 @@
   color: #555555;
 }
 
+.darkNavbar .searchPill {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #111;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.darkNavbar .searchIcon {
+  background: #111;
+  color: #fff;
+}
+
 .container {
-  max-width: 1300px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-}
-
-.logo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.links {
+/* Left Links */
+.linksLeft {
   display: flex;
   align-items: center;
   gap: 32px;
-  justify-content: center;
+  flex: 1;
 }
 
 .link {
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(237, 233, 218, 0.85);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
   transition: color 0.2s ease;
   text-decoration: none;
 }
@@ -56,31 +63,67 @@
   color: #fff;
 }
 
-.ctaPill {
-  justify-self: end;
-  display: inline-flex;
+/* Center Logo */
+.logoCenter {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Right Actions */
+.actionsRight {
+  display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: flex-end;
+  gap: 16px;
+  flex: 1;
+}
+
+.searchPill {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 6px 6px 20px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  color: #fff;
   font-size: 13px;
-  font-weight: 600;
-  background: #D9F87F;
-  color: #12160D;
-  padding: 10px 24px;
-  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  gap: 12px;
+  font-weight: 300;
+}
+
+.searchIcon {
+  background: #fff;
+  color: #111;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaButton {
+  background: #000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 400;
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
 }
 
-.ctaPill:hover {
-  background: #e7ffd5;
-  transform: translateY(-1px);
+.ctaButton:hover {
+  background: #111;
+  opacity: 0.9;
 }
 
-@media (max-width: 860px) {
-  .links {
+@media (max-width: 1024px) {
+  .linksLeft, .searchPill {
     display: none;
-  }
-  .container {
-    grid-template-columns: 1fr 1fr;
   }
 }
