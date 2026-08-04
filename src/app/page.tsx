@@ -139,7 +139,6 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
       ref={introRef}
       className={phase === 'pulsing' ? 'pulsing' : phase === 'reveal' ? 'pulsing reveal' : ''}
     >
-      <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/colosseum.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25, zIndex: -1 }}></div>
       <div className="grid-bg"></div>
       <div className="vignette"></div>
       <div className="intro-readout">
