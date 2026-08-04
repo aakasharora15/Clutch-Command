@@ -29,12 +29,6 @@ export default function Navbar() {
         
         {/* Right CTA / Search */}
         <div className={styles.actionsRight}>
-          <div className={styles.searchPill}>
-            <span>Search here...</span>
-            <div className={styles.searchIcon}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </div>
-          </div>
           <a href={CTA.url} className={styles.ctaButton}>{CTA.labelArrow}</a>
         </div>
       </div>
