@@ -330,23 +330,23 @@ export default function Home() {
           <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>What You Get</div>
           <h2 className="section-header">The Complete Pressure Toolkit</h2>
           <div className="grid-cards-3">
-            <div className="pill-card" style={{ background: '#1B2214', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
                <div className="pill-card-content">
-                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.05)', lineHeight: 0.8, marginBottom: '24px' }}>01</div>
+                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>01</div>
                   <h3>3D Memory Surface Report</h3>
                   <p>A comprehensive digital dashboard breaking down your match footage. See your exact CQ score and where your pressure threshold broke.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ background: '#1B2214', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
                <div className="pill-card-content">
-                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.05)', lineHeight: 0.8, marginBottom: '24px' }}>02</div>
+                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>02</div>
                   <h3>Weekly Tactical Blueprints</h3>
                   <p>Custom high-intensity drill routines designed by Grand Slam coaches to rewire your specific pressure weaknesses.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ background: '#1B2214', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
                <div className="pill-card-content">
-                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.05)', lineHeight: 0.8, marginBottom: '24px' }}>03</div>
+                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>03</div>
                   <h3>1-on-1 Coach Reviews</h3>
                   <p>Bi-weekly video calls with your designated elite coach to review your latest match footage and adjust your training cognitive load.</p>
                </div>
