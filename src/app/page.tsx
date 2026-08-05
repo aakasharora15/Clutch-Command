@@ -232,7 +232,7 @@ export default function Home() {
               <p>When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.</p>
               <a href={CTA.url} className="btn-dark" style={{ marginTop: '32px' }}>{CTA.labelArrow}</a>
             </div>
-            <div className="img-col" style={{ backgroundImage: "url('/media__1783528039061.png')" }}></div>
+            <div className="img-col" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}></div>
             <div className="img-col" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}></div>
           </div>
         </div>
