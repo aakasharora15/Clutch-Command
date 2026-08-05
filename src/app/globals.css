@@ -1,16 +1,16 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg: #232B1E;
-  --panel: #2A331F;
-  --card: #1B2214;
-  --card-2: #303A23;
-  --cream: #EDE9DA;
-  --muted: #ADB098;
-  --faint: #82856D;
-  --lime: #D9F87F;
-  --bg-light: #ffffff;
-  --text-dark: #121212;
-  --text-muted: #555555;
+  --bg: #142718;
+  --panel: #2E5B41;
+  --card: #142718;
+  --card-2: #2E5B41;
+  --cream: #E7EFE4;
+  --muted: #98CBB0;
+  --faint: #5D7A6B; /* A darker version of the sage green for faint text */
+  --lime: #98CBB0;
+  --bg-light: #E7EFE4;
+  --text-dark: #142718;
+  --text-muted: #2E5B41;
 }
 
 html, body {
@@ -278,7 +278,7 @@ p {
 }
 
 /* ===== SIGNAL INTRO OVERLAY (Preserved) ===== */
-#intro{position:fixed;inset:0;z-index:200;background:#2E3B20;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1s ease;overflow:hidden;}
+#intro{position:fixed;inset:0;z-index:200;background:#001F0E;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1s ease;overflow:hidden;}
 #intro.gone{opacity:0;pointer-events:none;}
 #intro .grid-bg{position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(217,248,127,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(217,248,127,.045) 1px,transparent 1px);background-size:44px 44px;}
 #intro .vignette{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0vw 0vw rgba(0,0,0,.9);transition:box-shadow 1.6s ease;}
