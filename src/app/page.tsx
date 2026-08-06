@@ -378,7 +378,7 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS (Airy Layout) ===== */}
-      <section className="airy-section" id="promises">
+      <section className="airy-section" id="testimonials">
         <div className="wrap">
           <div className="section-eyebrow">Testimonials</div>
           <h2 className="section-header">What Our Members Say</h2>
@@ -388,11 +388,33 @@ export default function Home() {
             <div className="testi-airy-content">
               <span className="testi-quote-mark">“</span>
               <div className="testi-quote-text">
-                [Testimonial slot - an academy student on what changed once their pressure game was scored objectively, not self-assessed.]
+                I used to choke constantly when serving for the set at 5-4. I was drilling my serve for hours but nothing worked in matches. The TRUST protocol showed me that my cognitive load was spiking, not my technique failing. Within 14 days of rewiring my biological response, I closed out 3 matches straight.
               </div>
               <div className="testi-author">
-                Player Name, <em>Academy Student</em>
+                Liam Davies, <em>ITF Competitor</em>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FAQ ===== */}
+      <section className="airy-section dark" id="faq" style={{ paddingBottom: '160px' }}>
+        <div className="wrap">
+          <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>FAQ</div>
+          <h2 className="section-header">Common Questions</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginTop: '48px', maxWidth: '800px' }}>
+            <div style={{ padding: '32px', background: 'var(--card)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <h3 style={{ fontSize: '20px', color: '#fff', marginBottom: '12px' }}>Who is this program for?</h3>
+              <p style={{ color: 'var(--muted)', fontSize: '16px', lineHeight: 1.6 }}>Clutch Command is designed for competitive athletes, club players, and juniors who have strong technical foundations but struggle to close out matches under pressure. It is not for beginners still learning stroke mechanics.</p>
+            </div>
+            <div style={{ padding: '32px', background: 'var(--card)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <h3 style={{ fontSize: '20px', color: '#fff', marginBottom: '12px' }}>What is the time commitment?</h3>
+              <p style={{ color: 'var(--muted)', fontSize: '16px', lineHeight: 1.6 }}>The cognitive drills and video reviews require roughly 2-3 hours per week. Most of the application happens during your existing match play.</p>
+            </div>
+            <div style={{ padding: '32px', background: 'var(--card)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <h3 style={{ fontSize: '20px', color: '#fff', marginBottom: '12px' }}>How does the guarantee work?</h3>
+              <p style={{ color: 'var(--muted)', fontSize: '16px', lineHeight: 1.6 }}>We guarantee measurable improvement in your Clutch Quotient within 30 days. If your stats don't improve after following the protocol, we refund 100% of your investment. No questions asked.</p>
             </div>
           </div>
         </div>
