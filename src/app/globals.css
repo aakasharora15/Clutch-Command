@@ -402,3 +402,54 @@ p {
 @media (max-width:600px){
   .carousel-3d-card.left, .carousel-3d-card.right { display: none; }
 }
+
+/* ===== FAQ ACCORDION ===== */
+.faq-item {
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-summary {
+  padding: 24px 32px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  list-style: none; /* Hide default marker */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 500;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none; /* Hide for webkit */
+}
+
+.faq-summary::after {
+  content: '+';
+  color: var(--lime);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item[open] {
+  border-color: rgba(255,255,255,0.15);
+}
+
+.faq-content {
+  padding: 0 32px 32px 32px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
