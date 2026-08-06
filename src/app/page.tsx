@@ -280,13 +280,13 @@ export default function Home() {
               <br/>
               <p>We analyze 30 specific variables, including shot selection under score-pressure, court positioning during breakpoints, and recovery time between high-stress points.</p>
             </div>
-            <div className="img-col" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')", position: 'relative' }}>
+            <div className="img-col" style={{ backgroundImage: "url('/tennis_coach_talk.jpg')", position: 'relative' }}>
                <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
                  <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Biometric Syncing</h4>
                  <p style={{ margin: 0, fontSize: '13px' }}>Overlay heart rate data onto your match footage.</p>
                </div>
             </div>
-            <div className="img-col" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')", position: 'relative' }}>
+            <div className="img-col" style={{ backgroundImage: "url('/tennis_shoe_clay.jpg')", position: 'relative' }}>
                <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
                  <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Cognitive Mapping</h4>
                  <p style={{ margin: 0, fontSize: '13px' }}>See exactly when decision-making shifts.</p>
