@@ -330,7 +330,7 @@ export default function Home() {
           <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>What You Get</div>
           <h2 className="section-header">The Complete Pressure Toolkit</h2>
           <div className="grid-cards-3">
-            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
+            <div className="pill-card" style={{ backgroundImage: "url('/tennis_court_night.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
                <div className="pill-card-content">
                   <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>01</div>
                   <h3>3D Memory Surface Report</h3>
@@ -344,7 +344,7 @@ export default function Home() {
                   <p>Custom high-intensity drill routines designed by Grand Slam coaches to rewire your specific pressure weaknesses.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
+            <div className="pill-card" style={{ backgroundImage: "url('/tennis_racquet_hit.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
                <div className="pill-card-content">
                   <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>03</div>
                   <h3>1-on-1 Coach Reviews</h3>
@@ -384,7 +384,7 @@ export default function Home() {
           <h2 className="section-header">What Our Members Say</h2>
           
           <div className="testi-airy">
-            <div className="testi-airy-img" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}></div>
+            <div className="testi-airy-img" style={{ backgroundImage: "url('/tennis_portrait.jpg')" }}></div>
             <div className="testi-airy-content">
               <span className="testi-quote-mark">“</span>
               <div className="testi-quote-text">
