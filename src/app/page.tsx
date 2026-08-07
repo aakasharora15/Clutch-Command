@@ -234,8 +234,12 @@ export default function Home() {
               <p>When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.</p>
               <a href={CTA.url} className="btn-dark" style={{ marginTop: '32px' }}>{CTA.labelArrow}</a>
             </div>
-            <div className="img-col" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}></div>
-            <div className="img-col" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}></div>
+            <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
+               <Image src="/tennis_player_exhausted.jpg" alt="Exhausted Player" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
+               <Image src="/bento_player_serve_1783528130916.jpg" alt="Player Serve" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
           </div>
         </div>
       </section>
@@ -304,7 +308,7 @@ export default function Home() {
           <SectionHeader eyebrow="Programs" title="Training For Every Competitive Level" />
           <div className="grid-cards-3">
             <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
-               <Image src="/bento_player_serve_1783528130916.jpg" alt="CLUTCH Singles" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <Image src="/tennis_serve_shadow.jpg" alt="CLUTCH Singles" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
                <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
                   <h3>CLUTCH Singles</h3>
                   <p>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints and high-intensity repetition drills.</p>
@@ -333,22 +337,25 @@ export default function Home() {
         <div className="wrap">
           <SectionHeader eyebrow="What You Get" title="The Complete Pressure Toolkit" />
           <div className="grid-cards-3">
-            <div className="pill-card" style={{ backgroundImage: "url('/tennis_court_night.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
-               <div className="pill-card-content">
+            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+               <Image src="/tennis_court_night.jpg" alt="3D Memory Surface" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
                   <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>01</div>
                   <h3>3D Memory Surface Report</h3>
                   <p>A comprehensive digital dashboard breaking down your match footage. See your exact CQ score and where your pressure threshold broke.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
-               <div className="pill-card-content">
+            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+               <Image src="/tennis_blueprint.jpg" alt="Tactical Blueprints" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
                   <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>02</div>
                   <h3>Weekly Tactical Blueprints</h3>
                   <p>Custom high-intensity drill routines designed by Grand Slam coaches to rewire your specific pressure weaknesses.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ backgroundImage: "url('/tennis_racquet_hit.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
-               <div className="pill-card-content">
+            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+               <Image src="/tennis_racquet_hit.jpg" alt="Coach Reviews" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
                   <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>03</div>
                   <h3>1-on-1 Coach Reviews</h3>
                   <p>Bi-weekly video calls with your designated elite coach to review your latest match footage and adjust your training cognitive load.</p>
@@ -403,8 +410,17 @@ export default function Home() {
       {/* ===== FAQ ===== */}
       <section className="airy-section dark" id="faq" style={{ paddingBottom: '160px' }}>
         <div className="wrap">
-          <SectionHeader eyebrow="FAQ" title="Common Questions" />
-          <FAQAccordion />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '64px', alignItems: 'start' }}>
+            <div>
+              <SectionHeader eyebrow="FAQ" title="Common Questions" />
+              <p style={{ marginTop: '24px', fontSize: '18px', color: 'var(--muted)', lineHeight: 1.6, maxWidth: '90%' }}>
+                Everything you need to know about the TRUST protocol, our 100% guarantee, and how we engineer elite cognitive resilience on the court.
+              </p>
+            </div>
+            <div style={{ marginTop: 0 }}>
+              <FAQAccordion />
+            </div>
+          </div>
         </div>
       </section>
 
