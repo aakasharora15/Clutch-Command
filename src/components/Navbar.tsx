@@ -15,9 +15,11 @@ export default function Navbar() {
       <div className={styles.container}>
         {/* Left Links */}
         <div className={styles.linksLeft}>
-          <Link href="/product" className={styles.link}>Product</Link>
-          <Link href="/promises" className={styles.link}>Promises</Link>
-          <Link href="/co-founders" className={styles.link}>Co-Founders</Link>
+          <div className={styles.linksPill}>
+            <Link href="/product" className={styles.link}>Product</Link>
+            <Link href="/promises" className={styles.link}>Promises</Link>
+            <Link href="/co-founders" className={styles.link}>Co-Founders</Link>
+          </div>
         </div>
         
         {/* Center Logo */}

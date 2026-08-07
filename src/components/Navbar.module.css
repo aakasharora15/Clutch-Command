@@ -15,12 +15,13 @@
 }
 
 .darkNavbar .link {
-  color: #111111;
+  color: rgba(0, 0, 0, 0.6);
   font-weight: 500;
 }
 
 .darkNavbar .link:hover {
-  color: #555555;
+  color: #000;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .darkNavbar .searchPill {
@@ -47,20 +48,38 @@
 .linksLeft {
   display: flex;
   align-items: center;
-  gap: 32px;
   flex: 1;
+}
+
+.linksPill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 100px;
+  padding: 4px;
+}
+
+.darkNavbar .linksPill {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .link {
   font-size: 14px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.9);
-  transition: color 0.2s ease;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
   text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 100px;
 }
 
 .link:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Center Logo */
