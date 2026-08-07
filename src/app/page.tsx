@@ -2,6 +2,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { CTA } from '../config/cta';
 import Link from 'next/link';
+import Image from 'next/image';
+import SectionHeader from '../components/SectionHeader';
+import FAQAccordion from '../components/FAQAccordion';
 
 const ECG_PATH =
   "M0,75 L14,75 Q16,52 18,60 L22,75 L34,75 L38,83 L42,75 L46,40 L50,130 L54,70 L58,92 L62,68 L66,75 L150,75 " +
@@ -223,8 +226,7 @@ export default function Home() {
       {/* ===== THE PROBLEM (Asymmetrical) ===== */}
       <section className="airy-section" id="product">
         <div className="wrap">
-          <div className="section-eyebrow">The Problem</div>
-          <h2 className="section-header">You don't lose matches because of technique. You lose them in two points.</h2>
+          <SectionHeader eyebrow="The Problem" title="You don't lose matches because of technique. You lose them in two points." />
           <div className="grid-asym-3">
             <div className="text-col">
               <p>We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.</p>
@@ -241,8 +243,7 @@ export default function Home() {
       {/* ===== HOW IT WORKS (The Process) ===== */}
       <section className="airy-section" id="how-it-works" style={{ background: '#fff', color: '#111', paddingTop: '40px' }}>
         <div className="wrap">
-          <div className="section-eyebrow">The Process</div>
-          <h2 className="section-header">How We Engineer Resilience</h2>
+          <SectionHeader eyebrow="The Process" title="How We Engineer Resilience" />
           <div className="grid-cards-4" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '40px' }}>
             <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px #111', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>01</div>
@@ -271,8 +272,7 @@ export default function Home() {
       {/* ===== THE SCIENCE (Asymmetrical) ===== */}
       <section className="airy-section dark" id="science">
         <div className="wrap">
-          <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>The Science</div>
-          <h2 className="section-header">We Don't Guess. We Measure Pressure.</h2>
+          <SectionHeader eyebrow="The Science" title="We Don't Guess. We Measure Pressure." />
           <div className="grid-asym-3">
             <div className="text-col">
               <h3 style={{ fontSize: '28px', marginBottom: '16px' }}>The Clutch Quotient (CQ)</h3>
@@ -280,14 +280,16 @@ export default function Home() {
               <br/>
               <p>We analyze 30 specific variables, including shot selection under score-pressure, court positioning during breakpoints, and recovery time between high-stress points.</p>
             </div>
-            <div className="img-col" style={{ backgroundImage: "url('/tennis_coach_talk.jpg')", position: 'relative' }}>
-               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
+               <Image src="/tennis_coach_talk.jpg" alt="Biometric Syncing" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
+               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
                  <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Biometric Syncing</h4>
                  <p style={{ margin: 0, fontSize: '13px' }}>Overlay heart rate data onto your match footage.</p>
                </div>
             </div>
-            <div className="img-col" style={{ backgroundImage: "url('/tennis_shoe_clay.jpg')", position: 'relative' }}>
-               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
+               <Image src="/tennis_shoe_clay.jpg" alt="Cognitive Mapping" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
+               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
                  <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Cognitive Mapping</h4>
                  <p style={{ margin: 0, fontSize: '13px' }}>See exactly when decision-making shifts.</p>
                </div>
@@ -299,23 +301,25 @@ export default function Home() {
       {/* ===== PROGRAMS (Pill Cards) ===== */}
       <section className="airy-section" id="programs">
         <div className="wrap">
-          <div className="section-eyebrow">Programs</div>
-          <h2 className="section-header">Training For Every Competitive Level</h2>
+          <SectionHeader eyebrow="Programs" title="Training For Every Competitive Level" />
           <div className="grid-cards-3">
-            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}>
-               <div className="pill-card-content">
+            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
+               <Image src="/bento_player_serve_1783528130916.jpg" alt="CLUTCH Singles" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
                   <h3>CLUTCH Singles</h3>
                   <p>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints and high-intensity repetition drills.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_celebrate_1783528150116.jpg')" }}>
-               <div className="pill-card-content">
+            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
+               <Image src="/bento_player_celebrate_1783528150116.jpg" alt="CLUTCH Doubles" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
                   <h3>CLUTCH Doubles</h3>
                   <p>Doubles mastery with Dan Kiernan. Court positioning, communication, and exploiting opponent weaknesses.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ backgroundImage: "url('/bento_player_backhand_1783528140582.jpg')" }}>
-               <div className="pill-card-content">
+            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
+               <Image src="/bento_player_backhand_1783528140582.jpg" alt="AI Pressure Scoring" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
                   <h3>AI Pressure Scoring</h3>
                   <p>Upload your match footage and get scored against the 30 variables of the Clutch Quotient.</p>
                </div>
@@ -327,8 +331,7 @@ export default function Home() {
       {/* ===== DELIVERABLES (Pill Cards) ===== */}
       <section className="airy-section dark" id="deliverables">
         <div className="wrap">
-          <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>What You Get</div>
-          <h2 className="section-header">The Complete Pressure Toolkit</h2>
+          <SectionHeader eyebrow="What You Get" title="The Complete Pressure Toolkit" />
           <div className="grid-cards-3">
             <div className="pill-card" style={{ backgroundImage: "url('/tennis_court_night.jpg')", border: '1px solid rgba(255,255,255,0.05)' }}>
                <div className="pill-card-content">
@@ -380,8 +383,7 @@ export default function Home() {
       {/* ===== TESTIMONIALS (Airy Layout) ===== */}
       <section className="airy-section" id="testimonials">
         <div className="wrap">
-          <div className="section-eyebrow">Testimonials</div>
-          <h2 className="section-header">What Our Members Say</h2>
+          <SectionHeader eyebrow="Testimonials" title="What Our Members Say" />
           
           <div className="testi-airy">
             <div className="testi-airy-img" style={{ backgroundImage: "url('/tennis_portrait.jpg')" }}></div>
@@ -401,67 +403,8 @@ export default function Home() {
       {/* ===== FAQ ===== */}
       <section className="airy-section dark" id="faq" style={{ paddingBottom: '160px' }}>
         <div className="wrap">
-          <div className="section-eyebrow" style={{ color: 'var(--lime)' }}>FAQ</div>
-          <h2 className="section-header">Common Questions</h2>
-          <div style={{ marginTop: '48px', maxWidth: '800px', width: '100%' }}>
-            
-            <details className="faq-item">
-              <summary className="faq-summary">Who is this program for?</summary>
-              <div className="faq-content">
-                Clutch Command is designed for competitive athletes, club players, and juniors who have strong technical foundations but struggle to close out matches under pressure. It is not for beginners still learning stroke mechanics.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-summary">What is the time commitment?</summary>
-              <div className="faq-content">
-                The cognitive drills and video reviews require roughly 2-3 hours per week. Most of the application happens seamlessly during your existing match play.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-summary">How does the 100% guarantee work?</summary>
-              <div className="faq-content">
-                We guarantee measurable improvement in your Clutch Quotient within 30 days. If your stats don't improve after following the protocol, we refund 100% of your investment. No questions asked.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-summary">Is this a substitute for my technical coach?</summary>
-              <div className="faq-content">
-                No. The TRUST protocol works alongside your current technical coaching. While your coach fixes your forehand biomechanics, we fix your cognitive response when you are forced to hit that forehand at Break Point down.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-summary">Do I need special equipment to measure my CQ?</summary>
-              <div className="faq-content">
-                You only need a smartphone or camera to record your matches, and a standard fitness tracker (like an Apple Watch or Whoop) to sync your biometric data to our dashboard.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-summary">When do the 1-on-1 coach reviews happen?</summary>
-              <div className="faq-content">
-                Calls are scheduled bi-weekly at a time that suits your training schedule. You will be matched with one of our elite coaches based on your timezone and specific pressure-point weaknesses.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-summary">What happens if I get injured or miss a week?</summary>
-              <div className="faq-content">
-                You have lifetime access to the digital dashboard and blueprints. If you need to pause your 1-on-1 coaching sessions due to injury, you can easily freeze your account for up to 60 days.
-              </div>
-            </details>
-
-            <details className="faq-item">
-              <summary className="faq-summary">How quickly will I see results?</summary>
-              <div className="faq-content">
-                Players usually notice a shift in their cognitive load within the first 14 days. Measurable improvements in win-rate during high-pressure points typically materialize by week 4 of the protocol.
-              </div>
-            </details>
-
-          </div>
+          <SectionHeader eyebrow="FAQ" title="Common Questions" />
+          <FAQAccordion />
         </div>
       </section>
 

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /playbook-diagnostic
+Disallow: /ai-engine
+
+Sitemap: https://clutchcommand.com/sitemap.xml

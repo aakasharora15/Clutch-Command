@@ -453,3 +453,9 @@ p {
   font-size: 16px;
   line-height: 1.6;
 }
+
+/* ===== ACCESSIBILITY ===== */
+*:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+}

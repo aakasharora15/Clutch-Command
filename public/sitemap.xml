@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://clutchcommand.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://clutchcommand.com/product</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://clutchcommand.com/promises</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://clutchcommand.com/co-founders</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://clutchcommand.com/offer</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://clutchcommand.com/privacy</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://clutchcommand.com/terms</loc>
+    <priority>0.3</priority>
+  </url>
+</urlset>
