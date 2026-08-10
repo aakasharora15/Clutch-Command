@@ -530,7 +530,7 @@ export default function Home() {
               pointerEvents: 'none'
             }}>
               <Image 
-                src="https://placehold.co/400x600/transparent/rgba(255,255,255,0.2)?text=Your+Transparent+Cutout" 
+                src="/federer_cutout.png" 
                 alt="Newsletter Highlight" 
                 fill 
                 style={{ objectFit: 'contain', objectPosition: 'bottom center' }} 
