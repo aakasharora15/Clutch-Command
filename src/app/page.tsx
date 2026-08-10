@@ -516,12 +516,12 @@ export default function Home() {
               Newsletter Subscription
             </h2>
             <div style={{ flex: '1', minWidth: '280px', maxWidth: '400px' }}>
-              <form style={{ display: 'flex', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '100px', padding: '6px' }}>
-                <input type="email" placeholder="clutchcommand@gmail.com" style={{ background: 'transparent', border: 'none', color: '#fff', padding: '12px 20px', flex: 1, outline: 'none', fontSize: '15px' }} />
-                <button type="button" style={{ background: 'rgba(255,255,255,0.3)', border: 'none', borderRadius: '100px', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'background 0.2s ease', color: '#fff' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
-              </form>
+              <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '15px' }}>
+                Join the official Clutch Command newsletter for weekly tactical breakdowns and psychological insights.
+              </p>
+              <a href="https://kit.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', padding: '16px 32px', borderRadius: '100px', textDecoration: 'none', fontWeight: 500, transition: 'background 0.2s ease' }}>
+                Subscribe Now &rarr;
+              </a>
             </div>
           </div>
 
