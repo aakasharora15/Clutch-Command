@@ -477,52 +477,66 @@ export default function Home() {
       </section>
 
       {/* ===== NEWSLETTER BREAKOUT ===== */}
-      <section className="airy-section" style={{ background: '#ffffff', paddingTop: '40px', paddingBottom: '120px' }}>
-        <div className="wrap" style={{ position: 'relative' }}>
+      <section className="airy-section" style={{ background: '#ffffff', paddingTop: '100px', paddingBottom: '120px' }}>
+        <div className="wrap">
           
-          {/* Overlapping Circle Image */}
           <div style={{ 
-            position: 'absolute', 
-            top: '-100px', 
-            left: '50%', 
-            transform: 'translateX(-50%)', 
-            width: '200px', 
-            height: '200px', 
-            zIndex: 10,
-            borderRadius: '50%',
-            border: '8px solid #ffffff',
-            boxShadow: '0 16px 32px rgba(0,0,0,0.15)',
-            overflow: 'hidden',
-            background: '#ffffff'
-          }}>
-            <Image src="/tennis_player_cutout.jpg" alt="Newsletter Highlight" fill style={{ objectFit: 'cover', objectPosition: 'center 20%' }} />
-          </div>
-
-          <div style={{ 
-            background: 'linear-gradient(135deg, #222 0%, #111 100%)', 
+            background: 'linear-gradient(135deg, #222 0%, #151515 100%)', 
             borderRadius: '24px', 
-            padding: '80px 48px 64px 48px', 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '40px',
+            padding: '64px', 
             position: 'relative',
-            zIndex: 1,
             boxShadow: '0 32px 64px rgba(0,0,0,0.1)',
-            marginTop: '100px'
+            display: 'flex',
+            minHeight: '350px'
           }}>
-            <h2 style={{ color: '#fff', fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: 1.1, margin: 0, maxWidth: '400px' }}>
-              Newsletter Subscription
-            </h2>
-            <div style={{ flex: '1', minWidth: '280px', maxWidth: '400px' }}>
-              <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '15px' }}>
-                Join the official Clutch Command newsletter for weekly tactical breakdowns and psychological insights.
-              </p>
-              <a href="https://kit.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', padding: '16px 32px', borderRadius: '100px', textDecoration: 'none', fontWeight: 500, transition: 'background 0.2s ease' }}>
-                Subscribe Now &rarr;
+            
+            {/* Left Content Column */}
+            <div style={{ position: 'relative', zIndex: 20, display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: '400px' }}>
+              <h2 style={{ color: '#fff', fontSize: 'clamp(40px, 5vw, 56px)', lineHeight: 1.1, margin: '0 0 40px 0', fontWeight: 400, letterSpacing: '-0.02em' }}>
+                Newsletter<br/>Subscription
+              </h2>
+              
+              {/* Styled like the input field from the reference, but functioning as an external link for compliance */}
+              <a href="https://kit.com" target="_blank" rel="noopener noreferrer" style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'space-between',
+                background: '#333333', 
+                border: '1px solid rgba(255,255,255,0.1)', 
+                borderRadius: '100px', 
+                padding: '8px 8px 8px 24px', 
+                color: 'rgba(255,255,255,0.6)', 
+                textDecoration: 'none',
+                width: '100%',
+                maxWidth: '360px',
+                transition: 'border-color 0.2s ease'
+              }}>
+                <span style={{ fontSize: '15px' }}>Subscribe via Kit</span>
+                <div style={{ background: '#999999', borderRadius: '100px', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#111' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
               </a>
             </div>
+
+            {/* Breakout Player Image */}
+            <div style={{ 
+              position: 'absolute', 
+              bottom: '0', 
+              left: '50%', 
+              transform: 'translateX(-20%)', 
+              width: '450px', 
+              height: '500px', 
+              zIndex: 10,
+              pointerEvents: 'none'
+            }}>
+              <Image 
+                src="/transparent_player.png" 
+                alt="Newsletter Highlight" 
+                fill 
+                style={{ objectFit: 'contain', objectPosition: 'bottom center' }} 
+              />
+            </div>
+
           </div>
 
         </div>
