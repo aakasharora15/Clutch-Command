@@ -424,19 +424,108 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== WHO IS THIS FOR ===== */}
-      <section className="airy-section dark">
+      {/* ===== LATEST ARTICLES ===== */}
+      <section className="airy-section" style={{ background: '#ffffff', color: '#111' }}>
         <div className="wrap">
-          <div className="grid-asym-3" style={{ gridTemplateColumns: '1.2fr 1fr' }}>
-            <div className="text-col">
-              <h2 className="section-header" style={{ marginBottom: '32px' }}>Built For Competitors.<br/>Not Beginners.</h2>
+          <SectionHeader eyebrow="Blog" title="Read Latest Articles" />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', marginTop: '48px' }}>
+            
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'relative', width: '100%', height: '220px', borderRadius: '12px', overflow: 'hidden', marginBottom: '16px' }}>
+                <Image src="/tennis_shoe_clay.jpg" alt="Article 1" fill style={{ objectFit: 'cover' }} />
+                <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.8)', color: '#fff', fontSize: '11px', padding: '4px 12px', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.2)' }}>Tactics</div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'url(/mark_jeffery.png) center/cover' }}></div>
+                <span style={{ fontSize: '13px', fontWeight: 600 }}>Mark Jeffery</span>
+                <span style={{ fontSize: '13px', color: '#888', marginLeft: 'auto' }}>10 Aug 2026</span>
+              </div>
+              <h3 style={{ fontSize: '20px', lineHeight: 1.3, marginBottom: '12px' }}>The Evolution of Baseline Tactics: From Set Plays to Analytical.</h3>
+              <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.6 }}>Delve into the transformation of basketball strategies, tracing the journey from traditional set plays to the era of analytical tactics...</p>
             </div>
-            <div className="text-col">
-              <p style={{ fontSize: '18px' }}>Clutch Command isn't for learning how to hit a forehand. It is an elite finishing school for players who already have the technique, but need the mental framework to close out matches. Built for tournament juniors, high-level club competitors, and aspiring professionals.</p>
+
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'relative', width: '100%', height: '220px', borderRadius: '12px', overflow: 'hidden', marginBottom: '16px' }}>
+                <Image src="/tennis_court_night.jpg" alt="Article 2" fill style={{ objectFit: 'cover' }} />
+                <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.8)', color: '#fff', fontSize: '11px', padding: '4px 12px', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.2)' }}>Psychology</div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'url(/bento_player_serve_1783528130916.jpg) center/cover' }}></div>
+                <span style={{ fontSize: '13px', fontWeight: 600 }}>Vlado Platenik</span>
+                <span style={{ fontSize: '13px', color: '#888', marginLeft: 'auto' }}>05 Aug 2026</span>
+              </div>
+              <h3 style={{ fontSize: '20px', lineHeight: 1.3, marginBottom: '12px' }}>Cognitive Load on Breakpoints: How the Mind Sabotages the Body.</h3>
+              <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.6 }}>Explore the profound influence of cognitive stress on match point execution. We examine how the nervous system reacts to high stakes...</p>
             </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'relative', width: '100%', height: '220px', borderRadius: '12px', overflow: 'hidden', marginBottom: '16px' }}>
+                <Image src="/bento_player_serve_1783528130916.jpg" alt="Article 3" fill style={{ objectFit: 'cover' }} />
+                <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.8)', color: '#fff', fontSize: '11px', padding: '4px 12px', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.2)' }}>Doubles</div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'url(/bento_player_celebrate_1783528150116.jpg) center/cover' }}></div>
+                <span style={{ fontSize: '13px', fontWeight: 600 }}>Dan Kiernan</span>
+                <span style={{ fontSize: '13px', color: '#888', marginLeft: 'auto' }}>01 Aug 2026</span>
+              </div>
+              <h3 style={{ fontSize: '20px', lineHeight: 1.3, marginBottom: '12px' }}>A Slam Dunk, Icy Battles, and Shuttlecock Symphony.</h3>
+              <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.6 }}>Embark on a thrilling journey through the exhilarating worlds of doubles positioning in our latest articles. From the thunderous applause...</p>
+            </div>
+
           </div>
         </div>
       </section>
+
+      {/* ===== NEWSLETTER BREAKOUT ===== */}
+      <section className="airy-section" style={{ background: '#ffffff', paddingTop: '40px', paddingBottom: '120px' }}>
+        <div className="wrap" style={{ position: 'relative' }}>
+          
+          {/* Breakout Image */}
+          <div style={{ 
+            position: 'absolute', 
+            top: '-120px', 
+            left: '50%', 
+            transform: 'translateX(-50%)', 
+            width: '350px', 
+            height: '350px', 
+            zIndex: 10,
+            pointerEvents: 'none'
+          }}>
+            {/* Using CSS mix-blend-mode multiply to knock out the white background if placed over a light area. Over the dark box it will show the white square unless we mask it. We'll use a CSS mask image with a gradient to fade the bottom so the white square doesn't ruin the dark box. */}
+            <div style={{ position: 'relative', width: '100%', height: '100%', WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 95%)', maskImage: 'linear-gradient(to bottom, black 60%, transparent 95%)', mixBlendMode: 'multiply' }}>
+              <Image src="/tennis_player_cutout.jpg" alt="Breakout Player" fill style={{ objectFit: 'contain' }} />
+            </div>
+          </div>
+
+          <div style={{ 
+            background: 'linear-gradient(135deg, #222 0%, #111 100%)', 
+            borderRadius: '24px', 
+            padding: '64px 48px', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '40px',
+            position: 'relative',
+            zIndex: 1,
+            boxShadow: '0 32px 64px rgba(0,0,0,0.1)'
+          }}>
+            <h2 style={{ color: '#fff', fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: 1.1, margin: 0, maxWidth: '400px' }}>
+              Newsletter Subscription
+            </h2>
+            <div style={{ flex: '1', minWidth: '280px', maxWidth: '400px' }}>
+              <form style={{ display: 'flex', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '100px', padding: '6px' }}>
+                <input type="email" placeholder="clutchcommand@gmail.com" style={{ background: 'transparent', border: 'none', color: '#fff', padding: '12px 20px', flex: 1, outline: 'none', fontSize: '15px' }} />
+                <button type="button" style={{ background: 'rgba(255,255,255,0.3)', border: 'none', borderRadius: '100px', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'background 0.2s ease', color: '#fff' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      
       {/* ===== DIAGNOSTIC CTA ===== */}
       <section className="airy-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '500px', display: 'flex', alignItems: 'center' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/hero_tennis_court_1783528122643.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>

@@ -1,9 +1,9 @@
 .footer {
   width: 100%;
-  padding: 60px 0 30px;
-  background: #0a0b0b;
-  border-top: 1px solid var(--border-color);
+  padding: 80px 0 60px;
+  background: #ffffff;
   margin-top: auto;
+  border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 .container {
@@ -16,52 +16,50 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 60px;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.brand {
-  max-width: 300px;
+.brandCol {
+  flex: 1;
+  min-width: 200px;
 }
 
 .logo {
   font-family: var(--font-heading);
-  color: #ffffff;
+  color: #d12020; /* Red from the reference */
   margin-bottom: 8px;
   font-size: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
 .tagline {
-  color: #ffffff;
+  color: #666;
   font-size: 0.95rem;
+  display: none;
 }
 
-.links {
+.navCol {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  min-width: 140px;
+}
+
+.colTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 8px;
 }
 
 .link {
-  color: rgba(244, 245, 240, 0.7);
-  font-size: 0.95rem;
+  color: #555;
+  font-size: 14px;
   transition: color 0.2s ease;
+  text-decoration: none;
 }
 
 .link:hover {
-  color: var(--accent-khaki);
-}
-
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(195, 176, 145, 0.05);
-  font-size: 0.85rem;
-  color: rgba(244, 245, 240, 0.5);
-}
-
-.legal {
-  display: flex;
-  gap: 20px;
+  color: #d12020;
 }
