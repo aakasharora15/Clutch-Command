@@ -215,7 +215,7 @@ export default function Home() {
                 <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#ddd', border: '2px solid #111', marginLeft: '-12px' }}></div>
                 <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#bbb', border: '2px solid #111', marginLeft: '-12px' }}></div>
               </div>
-              <p style={{ margin: 0, fontSize: '13px', color: '#fff', fontWeight: 500 }}>AI scoring and training for competitive players.</p>
+              <p style={{ margin: 0, fontSize: '13px', color: '#fff', fontWeight: 500 }}>The Official Online Academy for Competitive Players.</p>
             </div>
             
             <h1>Win The Points<br/>That Decide Matches.</h1>
@@ -247,7 +247,7 @@ export default function Home() {
       {/* ===== HOW IT WORKS (The Process) ===== */}
       <section className="airy-section" id="how-it-works" style={{ background: '#fff', color: '#111', paddingTop: '40px' }}>
         <div className="wrap">
-          <SectionHeader eyebrow="The Process" title="How We Engineer Resilience" />
+          <SectionHeader eyebrow="The Academy" title="How We Engineer Resilience" />
           <div className="grid-cards-4" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '40px' }}>
             <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px #111', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>01</div>
@@ -305,27 +305,27 @@ export default function Home() {
       {/* ===== PROGRAMS (Pill Cards) ===== */}
       <section className="airy-section" id="programs">
         <div className="wrap">
-          <SectionHeader eyebrow="Programs" title="Training For Every Competitive Level" />
+          <SectionHeader eyebrow="The Academy Membership" title="Everything You Need to Win Deciding Points" />
           <div className="grid-cards-3">
             <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
-               <Image src="/tennis_serve_shadow.jpg" alt="CLUTCH Singles" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <Image src="/tennis_serve_shadow.jpg" alt="Singles Blueprint" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
                <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
-                  <h3>CLUTCH Singles</h3>
+                  <h3>Singles Masterclass</h3>
                   <p>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints and high-intensity repetition drills.</p>
                </div>
             </div>
             <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
-               <Image src="/bento_player_celebrate_1783528150116.jpg" alt="CLUTCH Doubles" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <Image src="/bento_player_celebrate_1783528150116.jpg" alt="Doubles Blueprint" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
                <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
-                  <h3>CLUTCH Doubles</h3>
-                  <p>Doubles mastery with Dan Kiernan. Court positioning, communication, and exploiting opponent weaknesses.</p>
+                  <h3>Doubles Mastery</h3>
+                  <p>Elite doubles strategies with Dan Kiernan. Court positioning, communication, and exploiting opponent weaknesses.</p>
                </div>
             </div>
             <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
                <Image src="/bento_player_backhand_1783528140582.jpg" alt="AI Pressure Scoring" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
                <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
-                  <h3>AI Pressure Scoring</h3>
-                  <p>Upload your match footage and get scored against the 30 variables of the Clutch Quotient.</p>
+                  <h3>Proprietary AI Scoring</h3>
+                  <p>Our exclusive backend engine scores your match footage against 30 variables to expose your pressure leaks.</p>
                </div>
             </div>
           </div>
