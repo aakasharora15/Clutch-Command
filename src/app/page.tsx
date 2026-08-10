@@ -480,27 +480,28 @@ export default function Home() {
       <section className="airy-section" style={{ background: '#ffffff', paddingTop: '40px', paddingBottom: '120px' }}>
         <div className="wrap" style={{ position: 'relative' }}>
           
-          {/* Breakout Image */}
+          {/* Overlapping Circle Image */}
           <div style={{ 
             position: 'absolute', 
-            top: '-120px', 
+            top: '-100px', 
             left: '50%', 
             transform: 'translateX(-50%)', 
-            width: '350px', 
-            height: '350px', 
+            width: '200px', 
+            height: '200px', 
             zIndex: 10,
-            pointerEvents: 'none'
+            borderRadius: '50%',
+            border: '8px solid #ffffff',
+            boxShadow: '0 16px 32px rgba(0,0,0,0.15)',
+            overflow: 'hidden',
+            background: '#ffffff'
           }}>
-            {/* Using CSS mix-blend-mode multiply to knock out the white background if placed over a light area. Over the dark box it will show the white square unless we mask it. We'll use a CSS mask image with a gradient to fade the bottom so the white square doesn't ruin the dark box. */}
-            <div style={{ position: 'relative', width: '100%', height: '100%', WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 95%)', maskImage: 'linear-gradient(to bottom, black 60%, transparent 95%)', mixBlendMode: 'multiply' }}>
-              <Image src="/tennis_player_cutout.jpg" alt="Breakout Player" fill style={{ objectFit: 'contain' }} />
-            </div>
+            <Image src="/tennis_player_cutout.jpg" alt="Newsletter Highlight" fill style={{ objectFit: 'cover', objectPosition: 'center 20%' }} />
           </div>
 
           <div style={{ 
             background: 'linear-gradient(135deg, #222 0%, #111 100%)', 
             borderRadius: '24px', 
-            padding: '64px 48px', 
+            padding: '80px 48px 64px 48px', 
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'space-between',
@@ -508,7 +509,8 @@ export default function Home() {
             gap: '40px',
             position: 'relative',
             zIndex: 1,
-            boxShadow: '0 32px 64px rgba(0,0,0,0.1)'
+            boxShadow: '0 32px 64px rgba(0,0,0,0.1)',
+            marginTop: '100px'
           }}>
             <h2 style={{ color: '#fff', fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: 1.1, margin: 0, maxWidth: '400px' }}>
               Newsletter Subscription
