@@ -491,8 +491,8 @@ export default function Home() {
           }}>
             
             {/* Left Content Column */}
-            <div style={{ position: 'relative', zIndex: 20, display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: '400px' }}>
-              <h2 style={{ color: '#fff', fontSize: 'clamp(40px, 5vw, 56px)', lineHeight: 1.1, margin: '0 0 40px 0', fontWeight: 400, letterSpacing: '-0.02em' }}>
+            <div style={{ position: 'relative', zIndex: 20, display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: '500px' }}>
+              <h2 style={{ color: '#fff', fontSize: 'clamp(48px, 6vw, 72px)', lineHeight: 1.05, margin: '0 0 64px 0', fontWeight: 300, letterSpacing: '-0.03em' }}>
                 Newsletter<br/>Subscription
               </h2>
               
@@ -501,33 +501,34 @@ export default function Home() {
                 display: 'flex', 
                 alignItems: 'center', 
                 justifyContent: 'space-between',
-                background: '#333333', 
-                border: '1px solid rgba(255,255,255,0.1)', 
+                background: 'rgba(255,255,255,0.08)', 
+                border: '1px solid rgba(255,255,255,0.15)', 
                 borderRadius: '100px', 
                 padding: '8px 8px 8px 24px', 
-                color: 'rgba(255,255,255,0.6)', 
+                color: 'rgba(255,255,255,0.5)', 
                 textDecoration: 'none',
                 width: '100%',
-                maxWidth: '360px',
-                transition: 'border-color 0.2s ease'
+                maxWidth: '400px',
+                transition: 'border-color 0.2s ease, background 0.2s ease'
               }}>
-                <span style={{ fontSize: '15px' }}>Subscribe via Kit</span>
-                <div style={{ background: '#999999', borderRadius: '100px', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#111' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                <span style={{ fontSize: '16px' }}>clutchcommand@gmail.com</span>
+                <div style={{ background: 'rgba(255,255,255,0.2)', borderRadius: '100px', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                 </div>
               </a>
             </div>
 
-            {/* Breakout Player Image */}
+            {/* Breakout Player Image with Gradient Fade */}
             <div style={{ 
               position: 'absolute', 
               bottom: '0', 
-              left: '50%', 
-              transform: 'translateX(-20%)', 
-              width: '400px', 
-              height: '500px', 
+              right: '10%', 
+              width: '500px', 
+              height: '600px', 
               zIndex: 10,
-              pointerEvents: 'none'
+              pointerEvents: 'none',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 95%)',
+              maskImage: 'linear-gradient(to bottom, black 50%, transparent 95%)'
             }}>
               <Image 
                 src="/federer_cutout.png" 
