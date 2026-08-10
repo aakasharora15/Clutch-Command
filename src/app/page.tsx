@@ -524,13 +524,13 @@ export default function Home() {
               bottom: '0', 
               left: '50%', 
               transform: 'translateX(-20%)', 
-              width: '450px', 
+              width: '400px', 
               height: '500px', 
               zIndex: 10,
               pointerEvents: 'none'
             }}>
               <Image 
-                src="/transparent_player.png" 
+                src="https://placehold.co/400x600/transparent/rgba(255,255,255,0.2)?text=Your+Transparent+Cutout" 
                 alt="Newsletter Highlight" 
                 fill 
                 style={{ objectFit: 'contain', objectPosition: 'bottom center' }} 
