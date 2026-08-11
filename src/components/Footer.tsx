@@ -12,17 +12,18 @@ export default function Footer() {
           </div>
           
           <div className={styles.navCol}>
-            <h4 className={styles.colTitle}>About</h4>
-            <Link href="/" className={styles.link}>Company</Link>
-            <Link href="/terms" className={styles.link}>Terms</Link>
-            <Link href="/privacy" className={styles.link}>Policy</Link>
+            <h4 className={styles.colTitle}>Platform</h4>
+            <Link href="/" className={styles.link}>Home</Link>
+            <Link href="/product" className={styles.link}>Academy</Link>
+            <Link href="/promises" className={styles.link}>Our Promises</Link>
+            <Link href="/playbook" className={styles.link}>The £9 Playbook</Link>
           </div>
 
           <div className={styles.navCol}>
-            <h4 className={styles.colTitle}>Services</h4>
-            <Link href="/product" className={styles.link}>Academy</Link>
-            <Link href="/playbook" className={styles.link}>Playbook</Link>
-            <Link href="/promises" className={styles.link}>Promises</Link>
+            <h4 className={styles.colTitle}>About</h4>
+            <Link href="/co-founders" className={styles.link}>Co-Founders</Link>
+            <Link href="/privacy" className={styles.link}>Privacy Policy</Link>
+            <Link href="/terms" className={styles.link}>Terms of Service</Link>
           </div>
 
           <div className={styles.navCol}>
@@ -30,13 +31,6 @@ export default function Footer() {
             <a href="#" className={styles.link}>X (Twitter)</a>
             <a href="#" className={styles.link}>Facebook</a>
             <a href="#" className={styles.link}>LinkedIn</a>
-          </div>
-
-          <div className={styles.navCol}>
-            <h4 className={styles.colTitle}>Contact</h4>
-            <a href="#" className={styles.link}>Get a free quotation</a>
-            <a href="#" className={styles.link}>Book a call</a>
-            <a href="mailto:dsports@gmail.com" className={styles.link}>clutch@gmail.com</a>
           </div>
         </div>
       </div>
