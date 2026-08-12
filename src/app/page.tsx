@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SectionHeader from '../components/SectionHeader';
 import FAQAccordion from '../components/FAQAccordion';
+import ScrollReveal from '../components/ScrollReveal';
 
 const ECG_PATH =
   "M0,75 L14,75 Q16,52 18,60 L22,75 L34,75 L38,83 L42,75 L46,40 L50,130 L54,70 L58,92 L62,68 L66,75 L150,75 " +
@@ -225,7 +226,7 @@ export default function Home() {
 
       {/* ===== THE PROBLEM (Asymmetrical) ===== */}
       <section className="airy-section" id="product">
-        <div className="wrap">
+        <ScrollReveal className="wrap">
           <SectionHeader eyebrow="The Problem" title="You don't lose matches because of technique. You lose them in two points." />
           <div className="grid-asym-3">
             <div className="text-col">
@@ -241,12 +242,12 @@ export default function Home() {
                <Image src="/bento_player_serve_1783528130916.jpg" alt="Player Serve" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ===== HOW IT WORKS (The Process) ===== */}
       <section className="airy-section" id="how-it-works" style={{ background: '#fff', color: '#111', paddingTop: '40px' }}>
-        <div className="wrap">
+        <ScrollReveal className="wrap">
           <SectionHeader eyebrow="The Academy" title="How We Engineer Resilience" />
           <div className="grid-cards-4" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '40px' }}>
             <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}>
@@ -270,7 +271,7 @@ export default function Home() {
               <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Execute the blueprint. Every two weeks, you review new match footage with your designated coach to measure your Clutch Quotient progress and recalibrate.</p>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ===== THE SCIENCE (Asymmetrical) ===== */}
@@ -426,7 +427,7 @@ export default function Home() {
 
       {/* ===== LATEST ARTICLES ===== */}
       <section className="airy-section" style={{ background: '#ffffff', color: '#111' }}>
-        <div className="wrap">
+        <ScrollReveal className="wrap">
           <SectionHeader eyebrow="Blog" title="Read Latest Articles" />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', marginTop: '48px' }}>
             
@@ -473,21 +474,19 @@ export default function Home() {
             </div>
 
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ===== NEWSLETTER BREAKOUT ===== */}
       <section className="airy-section" style={{ background: '#ffffff', paddingTop: '100px', paddingBottom: '120px' }}>
-        <div className="wrap">
+        <ScrollReveal className="wrap">
           
-          <div style={{ 
+          <div className="newsletter-container" style={{ 
             background: 'linear-gradient(135deg, #222 0%, #151515 100%)', 
             borderRadius: '24px', 
-            padding: '64px', 
             position: 'relative',
             boxShadow: '0 32px 64px rgba(0,0,0,0.1)',
             display: 'flex',
-            minHeight: '350px'
           }}>
             
             {/* Left Content Column */}
@@ -519,17 +518,7 @@ export default function Home() {
             </div>
 
             {/* Breakout Player Image with Gradient Fade */}
-            <div style={{ 
-              position: 'absolute', 
-              bottom: '0', 
-              right: '10%', 
-              width: '500px', 
-              height: '600px', 
-              zIndex: 10,
-              pointerEvents: 'none',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 95%)',
-              maskImage: 'linear-gradient(to bottom, black 50%, transparent 95%)'
-            }}>
+            <div className="newsletter-player">
               <Image 
                 src="/federer_cutout.png" 
                 alt="Newsletter Highlight" 
@@ -540,7 +529,7 @@ export default function Home() {
 
           </div>
 
-        </div>
+        </ScrollReveal>
       </section>
       
       {/* ===== DIAGNOSTIC CTA ===== */}

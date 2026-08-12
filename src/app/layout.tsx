@@ -17,6 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://clutchcommand.com"),
   title: "Clutch Command | Win Two More Points",
   description: "An AI-powered tennis pressure-performance platform. The narrow loss, solved.",
   openGraph: {
@@ -26,13 +27,20 @@ export const metadata: Metadata = {
     siteName: "Clutch Command",
     images: [
       {
-        url: "https://clutchcommand.com/og.jpg",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
+        alt: "Clutch Command Preview",
       },
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clutch Command | Win Two More Points",
+    description: "An AI-powered tennis pressure-performance platform.",
+    images: ["/og.jpg"],
   },
 };
 
