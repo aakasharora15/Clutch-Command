@@ -5,7 +5,7 @@ const images = [
   "/bento_player_backhand_1783528140582.jpg",
   "/media__1783528047317.jpg",
   "/bento_player_celebrate_1783528150116.jpg",
-  "/media__1783528039061.png",
+  "/tennis_serve_shadow.jpg",
   "/hero_tennis_court_1783528122643.jpg"
 ];
 
@@ -32,7 +32,8 @@ export default function Carousel3D() {
           <div 
             key={i} 
             className={`carousel-3d-card ${getPositionClass(i)}`} 
-            style={{ backgroundImage: `url('${src}')` }}
+            style={{ backgroundImage: `url('${src}')`, cursor: 'pointer' }}
+            onClick={() => setCurrentIndex(i)}
           ></div>
         ))}
       </div>
