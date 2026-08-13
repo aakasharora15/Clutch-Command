@@ -140,7 +140,7 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
 
   if (phase === 'gone') return null;
 
-  return (
+  const content = (
     <div
       id="intro"
       ref={introRef}
@@ -184,6 +184,12 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
       <audio ref={audioRef} src="/audio/heartbeat.mp3" preload="auto" />
     </div>
   );
+
+  if (typeof window === 'undefined') return content;
+  
+  // Need react-dom/client portal, but React.createPortal is available directly from react-dom
+  const ReactDOM = require('react-dom');
+  return ReactDOM.createPortal(content, document.body);
 }
 
 export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>[] }) {
