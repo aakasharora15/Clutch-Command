@@ -32,10 +32,12 @@ a { color: inherit; text-decoration: none; }
 
 /* 2. Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  text-align: left; /* ALL section headers must be left-aligned */
+  font-family: var(--font-heading);
+  font-weight: 400; /* Bebas Neue comes in 400 weight */
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
 }
 
 /* Massive headers, light tracking, massive negative space */
@@ -54,8 +56,41 @@ p {
 }
 
 /* Buttons */
-.btn-dark{display:inline-flex;align-items:center;background:#111;color:#fff;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:500;transition:transform 0.2s ease;}
-.btn-dark:hover{transform:translateY(-2px);color:#fff;}
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text-dark);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, background 0.2s ease;
+  transform: skewX(-5deg);
+  border: none;
+  cursor: pointer;
+}
+.btn-dark:hover {
+  background: #ccc;
+  transform: skewX(-5deg) translateY(-2px);
+  color:#fff;
+}
+
+/* NOISE OVERLAY */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
 .section-eyebrow{font-size:12px;font-weight:500;margin-bottom:16px;display:inline-block;}
 
 /* 3. Hero */
@@ -142,16 +177,15 @@ p {
 }
 
 .pill-card {
-  border-radius: 24px;
-  aspect-ratio: 0.65;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
+  background: #1A1A1A;
+  border-radius: 2px;
+  padding: 32px;
+  color: #fff;
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  min-height: 380px;
 }
 .pill-card::before {
   content: '';
@@ -219,16 +253,19 @@ p {
 
 /* 7. Founder section: .founder-dark-card */
 .founder-dark-card {
-  width: 60%;
   background: #111;
-  border-radius: 24px;
+  border-radius: 2px;
+  padding: 40px;
   display: flex;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-  min-height: 480px;
+  gap: 40px;
+  flex: 2;
+  min-width: 300px;
+  align-items: center;
 }
 .founder-dark-img {
   flex: 1;
+  min-height: 300px;
+  border-radius: 2px;
   background-size: cover;
   background-position: center;
 }
@@ -482,6 +519,31 @@ p {
 .page-transition.entered {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== MARQUEE ===== */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--lime);
+  color: #111;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  text-transform: uppercase;
+  padding-left: 20px;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ===== NEWSLETTER RESPONSIVENESS ===== */

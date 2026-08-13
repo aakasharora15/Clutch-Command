@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Bebas_Neue } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from "next/script";
 import "./globals.css";
@@ -11,7 +11,8 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
+const bebas = Bebas_Neue({
+  weight: "400",
   variable: "--font-heading",
   subsets: ["latin"],
 });
@@ -50,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+    <html lang="en">
       <head>
         {/* Placeholder for Meta Pixel ID */}
         <Script id="meta-pixel" strategy="afterInteractive">
@@ -68,7 +69,8 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
+      <body className={`${inter.variable} ${bebas.variable}`}>
+        <div className="noise-overlay"></div>
         <Navbar />
         <main style={{ flex: 1 }}>{children}</main>
         <Footer />
