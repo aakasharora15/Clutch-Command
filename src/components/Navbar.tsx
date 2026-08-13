@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -8,7 +9,19 @@ import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const pathname = usePathname();
-  const isDark = pathname !== '/';
+  const [isScrolled, setIsScrolled] = useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on mount
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Use dark mode if it's NOT the homepage, OR if the user has scrolled down
+  const isDark = pathname !== '/' || isScrolled;
 
   return (
     <nav className={`${styles.navbar} ${isDark ? styles.darkNavbar : ''}`}>
