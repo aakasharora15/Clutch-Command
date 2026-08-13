@@ -207,6 +207,24 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
     setIntroDone(true);
   }
 
+  // Stagger animation observer
+  useEffect(() => {
+    const staggerEls = document.querySelectorAll('.stagger-children');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+    staggerEls.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="page-wrapper">
       {!introDone && <PressureIntro onDone={handleIntroDone} />}
@@ -241,6 +259,10 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             </div>
             
             <h1>Win The Points<br/>That Decide Matches.</h1>
+            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '18px', maxWidth: '520px', lineHeight: 1.7, marginTop: '16px', marginBottom: '32px' }}>AI-powered pressure training for competitive tennis players. Diagnose your cognitive breakdown, train under simulated match stress, and close out the points that matter.</p>
+            <MagneticElement strength={25}>
+              <a href={CTA.url} className="btn-dark" style={{ background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>{CTA.labelArrow}</a>
+            </MagneticElement>
           </div>
         </div>
       </header>
@@ -248,7 +270,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       <Marquee text="WIN THE POINTS THAT DECIDE MATCHES • THE NARROW LOSS SOLVED •" />
 
       {/* ===== THE PROBLEM (Asymmetrical) ===== */}
-      <section className="airy-section" id="product">
+      <section className="airy-section section-fade-out section-fade-to-white" id="product">
         <ScrollReveal className="wrap">
           <SectionHeader eyebrow="The Problem" title="You don't lose matches because of technique. You lose them in two points." />
           <div className="grid-asym-3">
@@ -271,10 +293,10 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       </section>
 
       {/* ===== HOW IT WORKS (The Process) ===== */}
-      <section className="airy-section" id="how-it-works" style={{ background: '#fff', color: '#111', paddingTop: '40px' }}>
+      <section className="airy-section section-fade-out section-fade-to-dark" id="how-it-works" style={{ background: '#fff', color: '#111', paddingTop: '40px' }}>
         <ScrollReveal className="wrap">
           <SectionHeader eyebrow="The Academy" title="How We Engineer Resilience" />
-          <div className="grid-cards-4" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '40px' }}>
+          <div className="grid-cards-4 stagger-children" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '40px' }}>
             <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px #111', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>01</div>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Diagnostic Testing</h3>
@@ -329,7 +351,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       </section>
 
       {/* ===== PROGRAMS (Pill Cards) ===== */}
-      <section className="airy-section" id="programs">
+      <section className="airy-section section-fade-out section-fade-to-dark" id="programs">
         <div className="wrap">
           <SectionHeader eyebrow="The Academy Membership" title="Everything You Need to Win Deciding Points" />
           <div className="grid-cards-3">
@@ -392,7 +414,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       </section>
 
       {/* ===== ABOUT FOUNDER ===== */}
-      <section className="airy-section" id="co-founders">
+      <section className="airy-section section-fade-out section-fade-to-light" id="co-founders">
         <div className="wrap">
           <div style={{ display: 'flex', gap: '80px', alignItems: 'center', flexWrap: 'wrap' }}>
             <div className="founder-dark-card">
@@ -416,7 +438,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       </section>
 
       {/* ===== TESTIMONIALS (Airy Layout) ===== */}
-      <section className="airy-section" id="testimonials">
+      <section className="airy-section section-fade-out section-fade-to-dark" id="testimonials">
         <div className="wrap">
           <SectionHeader eyebrow="Testimonials" title="What Our Members Say" />
           

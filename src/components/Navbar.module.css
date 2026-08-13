@@ -63,7 +63,7 @@
   box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-radius: 2px;
+  border-radius: 100px;
   padding: 6px;
   gap: 4px;
 }
@@ -81,7 +81,7 @@
   transition: all 0.2s ease;
   text-decoration: none;
   padding: 8px 24px;
-  border-radius: 2px;
+  border-radius: 100px;
 }
 
 .link:hover {
@@ -108,7 +108,7 @@
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 6px 6px 6px 20px;
-  border-radius: 2px;
+  border-radius: 100px;
   display: flex;
   align-items: center;
   color: #fff;
@@ -134,7 +134,7 @@
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 12px 28px;
-  border-radius: 2px;
+  border-radius: 100px;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -142,13 +142,11 @@
   text-decoration: none;
   cursor: pointer;
   transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-  transform: skewX(-5deg);
 }
 
 .ctaButton:hover {
-  background: #111;
-  opacity: 0.9;
-  transform: skewX(-5deg) translateY(-2px);
+  background: #222;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1024px) {
