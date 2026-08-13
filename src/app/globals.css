@@ -549,6 +549,27 @@ p {
 .stagger-children.is-visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 240ms; }
 .stagger-children.is-visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 360ms; }
 
+/* Clip-path image reveal */
+.clip-reveal {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.clip-reveal.is-revealed {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Responsive stats grid */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Section transition bleed */
 .airy-section {
   position: relative;

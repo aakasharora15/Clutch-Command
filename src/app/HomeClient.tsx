@@ -9,6 +9,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import MagneticElement from '../components/MagneticElement';
 import TiltCard from '../components/TiltCard';
 import Marquee from '../components/Marquee';
+import AnimatedCounter from '../components/AnimatedCounter';
 import { BlogPost } from '@/lib/markdown';
 
 const ECG_PATH =
@@ -209,6 +210,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
 
   // Stagger animation observer
   useEffect(() => {
+    // Stagger children
     const staggerEls = document.querySelectorAll('.stagger-children');
     const observer = new IntersectionObserver(
       (entries) => {
@@ -222,7 +224,37 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
     );
     staggerEls.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+
+    // Clip-path image reveals
+    const clipEls = document.querySelectorAll('.clip-reveal');
+    const clipObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            clipObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    clipEls.forEach((el) => clipObserver.observe(el));
+
+    // Parallax hero
+    const heroVideo = document.querySelector('.hero video') as HTMLElement;
+    const handleScroll = () => {
+      if (heroVideo) {
+        const scrollY = window.scrollY;
+        heroVideo.style.transform = `translateY(${scrollY * 0.3}px) scale(1.1)`;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      clipObserver.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -269,6 +301,38 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
 
       <Marquee text="WIN THE POINTS THAT DECIDE MATCHES • THE NARROW LOSS SOLVED •" />
 
+      {/* ===== STATS COUNTER ===== */}
+      <section style={{ background: '#111', padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="wrap">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', textAlign: 'center' }}>
+            <div>
+              <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
+                <AnimatedCounter end={30} />
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Variables Analyzed</p>
+            </div>
+            <div>
+              <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: 'var(--lime)', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
+                <AnimatedCounter end={87.4} suffix="%" decimals={1} />
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Avg CQ Improvement</p>
+            </div>
+            <div>
+              <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
+                <AnimatedCounter end={14} />
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Days to First Results</p>
+            </div>
+            <div>
+              <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
+                <AnimatedCounter end={2} />
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Points That Decide It</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== THE PROBLEM (Asymmetrical) ===== */}
       <section className="airy-section section-fade-out section-fade-to-white" id="product">
         <ScrollReveal className="wrap">
@@ -282,10 +346,10 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                 <a href={CTA.url} className="btn-dark" style={{ marginTop: '32px' }}>{CTA.labelArrow}</a>
               </MagneticElement>
             </div>
-            <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
+            <div className="img-col clip-reveal" style={{ position: 'relative', overflow: 'hidden' }}>
                <Image src="/tennis_player_exhausted.jpg" alt="Exhausted Player" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
-            <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
+            <div className="img-col clip-reveal" style={{ position: 'relative', overflow: 'hidden' }}>
                <Image src="/bento_player_serve_1783528130916.jpg" alt="Player Serve" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
           </div>
