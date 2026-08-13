@@ -19,6 +19,18 @@ html, body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  cursor: none;
+}
+/* Hide default cursor on interactive elements since custom cursor handles them */
+a, button, input, select, textarea, [role="button"] {
+  cursor: none !important;
+}
+
+/* Fallback for touch devices where custom cursor won't show */
+@media (hover: none) and (pointer: coarse) {
+  body, a, button, input, select, textarea, [role="button"] {
+    cursor: auto !important;
+  }
 }
 
 a { color: inherit; text-decoration: none; }

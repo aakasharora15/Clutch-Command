@@ -17,6 +17,9 @@ const bebas = Bebas_Neue({
   subsets: ["latin"],
 });
 
+import SmoothScrolling from "@/components/SmoothScrolling";
+import CustomCursor from "@/components/CustomCursor";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://clutchcommand.com"),
   title: "Clutch Command | Win Two More Points",
@@ -70,10 +73,13 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${inter.variable} ${bebas.variable}`}>
-        <div className="noise-overlay"></div>
-        <Navbar />
-        <main style={{ flex: 1 }}>{children}</main>
-        <Footer />
+        <SmoothScrolling>
+          <CustomCursor />
+          <div className="noise-overlay"></div>
+          <Navbar />
+          <main style={{ flex: 1 }}>{children}</main>
+          <Footer />
+        </SmoothScrolling>
       </body>
       <GoogleAnalytics gaId="G-XXXXXXXXXX" />
     </html>
