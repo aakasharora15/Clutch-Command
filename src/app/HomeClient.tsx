@@ -312,14 +312,14 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             </div>
             <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
                <Image src="/tennis_coach_talk.jpg" alt="Biometric Syncing" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
+               <div style={{ position: 'absolute', bottom: 24, left: 24, right: 24, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
                  <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Biometric Syncing</h4>
                  <p style={{ margin: 0, fontSize: '13px' }}>Overlay heart rate data onto your match footage.</p>
                </div>
             </div>
             <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
                <Image src="/tennis_shoe_clay.jpg" alt="Cognitive Mapping" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
+               <div style={{ position: 'absolute', bottom: 24, left: 24, right: 24, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
                  <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Cognitive Mapping</h4>
                  <p style={{ margin: 0, fontSize: '13px' }}>See exactly when decision-making shifts.</p>
                </div>
