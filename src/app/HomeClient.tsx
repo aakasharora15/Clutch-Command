@@ -275,22 +275,22 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         <ScrollReveal className="wrap">
           <SectionHeader eyebrow="The Academy" title="How We Engineer Resilience" />
           <div className="grid-cards-4" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '40px' }}>
-            <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '2px', border: '1px solid rgba(0,0,0,0.05)' }}>
+            <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px #111', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>01</div>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Diagnostic Testing</h3>
               <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Take our cognitive diagnostic. We establish your baseline pressure threshold and identify exactly which of the 30 variables causes you to revert to defensive habits during match points.</p>
             </div>
-            <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '2px', border: '1px solid rgba(0,0,0,0.05)' }}>
+            <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px #111', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>02</div>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Match Film Analysis</h3>
               <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Submit footage of your most difficult matches. Our proprietary AI and Grand Slam coaches analyze your movement, decision-making, and stroke degradation under pressure.</p>
             </div>
-            <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '2px', border: '1px solid rgba(0,0,0,0.05)' }}>
+            <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px #111', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>03</div>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Tactical Blueprint</h3>
               <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Receive a custom training plan. We provide specific drills engineered to artificially inflate cognitive load and simulate championship points on the practice court.</p>
             </div>
-            <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '2px', border: '1px solid rgba(0,0,0,0.05)' }}>
+            <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px #111', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>04</div>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Execution & Review</h3>
               <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Execute the blueprint. Every two weeks, you review new match footage with your designated coach to measure your Clutch Quotient progress and recalibrate.</p>
@@ -312,14 +312,14 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             </div>
             <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
                <Image src="/tennis_coach_talk.jpg" alt="Biometric Syncing" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '2px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
+               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
                  <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Biometric Syncing</h4>
                  <p style={{ margin: 0, fontSize: '13px' }}>Overlay heart rate data onto your match footage.</p>
                </div>
             </div>
             <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
                <Image src="/tennis_shoe_clay.jpg" alt="Cognitive Mapping" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '2px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
+               <div style={{ position: 'absolute', bottom: 24, left: 24, background: '#111', padding: '16px 24px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
                  <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Cognitive Mapping</h4>
                  <p style={{ margin: 0, fontSize: '13px' }}>See exactly when decision-making shifts.</p>
                </div>
@@ -463,7 +463,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             {posts && posts.map((post) => (
               <TiltCard key={post.slug} style={{ display: 'flex', flexDirection: 'column' }}>
                 <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-                  <div style={{ position: 'relative', width: '100%', height: '220px', borderRadius: '2px', overflow: 'hidden', marginBottom: '16px' }}>
+                  <div style={{ position: 'relative', width: '100%', height: '220px', borderRadius: '16px', overflow: 'hidden', marginBottom: '16px' }}>
                     <Image src={post.thumbnail} alt={post.title} fill style={{ objectFit: 'cover' }} />
                     <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.8)', color: '#fff', fontSize: '11px', padding: '4px 12px', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.2)' }}>
                       {post.category}
@@ -490,7 +490,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
           
           <div className="newsletter-container" style={{ 
             background: 'linear-gradient(135deg, #222 0%, #151515 100%)', 
-            borderRadius: '2px', 
+            borderRadius: '24px', 
             position: 'relative',
             boxShadow: '0 32px 64px rgba(0,0,0,0.1)',
             display: 'flex',

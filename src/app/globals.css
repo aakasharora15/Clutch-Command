@@ -77,18 +77,17 @@ p {
   font-family: var(--font-sans);
   font-weight: 600;
   padding: 12px 24px;
-  border-radius: 2px;
+  border-radius: 100px;
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 0.02em;
   transition: transform 0.2s ease, background 0.2s ease;
-  transform: skewX(-5deg);
   border: none;
   cursor: pointer;
 }
 .btn-dark:hover {
   background: #ccc;
-  transform: skewX(-5deg) translateY(-2px);
+  transform: translateY(-2px);
   color:#fff;
 }
 
@@ -190,7 +189,7 @@ p {
 
 .pill-card {
   background: #1A1A1A;
-  border-radius: 2px;
+  border-radius: 24px;
   padding: 32px;
   color: #fff;
   transition: transform 0.3s ease;
@@ -266,7 +265,7 @@ p {
 /* 7. Founder section: .founder-dark-card */
 .founder-dark-card {
   background: #111;
-  border-radius: 2px;
+  border-radius: 24px;
   padding: 40px;
   display: flex;
   gap: 40px;
@@ -277,7 +276,7 @@ p {
 .founder-dark-img {
   flex: 1;
   min-height: 300px;
-  border-radius: 2px;
+  border-radius: 16px;
   background-size: cover;
   background-position: center;
 }
