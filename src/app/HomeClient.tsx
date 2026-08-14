@@ -208,39 +208,8 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
     setIntroDone(true);
   }
 
-  // Stagger animation observer
+  // Parallax hero observer
   useEffect(() => {
-    // Stagger children
-    const staggerEls = document.querySelectorAll('.stagger-children');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
-    );
-    staggerEls.forEach((el) => observer.observe(el));
-
-    // Clip-path image reveals
-    const clipEls = document.querySelectorAll('.clip-reveal');
-    const clipObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-revealed');
-            clipObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    clipEls.forEach((el) => clipObserver.observe(el));
-
-    // Parallax hero
     const heroVideo = document.querySelector('.hero video') as HTMLElement;
     const handleScroll = () => {
       if (heroVideo) {
@@ -251,8 +220,6 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
-      observer.disconnect();
-      clipObserver.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
