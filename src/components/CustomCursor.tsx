@@ -13,24 +13,20 @@ export default function CustomCursor() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
     
+    // Only enable custom cursor on devices with a mouse
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      return;
+    }
+
     const onMouseMove = (e: MouseEvent) => {
-      mouse.current = { x: e.clientX, y: e.clientY };
-    };
-
-    window.addEventListener('mousemove', onMouseMove);
-
-    const updateCursor = () => {
-      const speed = 0.2; 
-      cursor.current.x += (mouse.current.x - cursor.current.x) * speed;
-      cursor.current.y += (mouse.current.y - cursor.current.y) * speed;
+      cursor.current = { x: e.clientX, y: e.clientY };
       
       if (cursorRef.current) {
         cursorRef.current.style.transform = `translate3d(${cursor.current.x}px, ${cursor.current.y}px, 0) translate(-50%, -50%)`;
       }
-      
-      requestRef.current = requestAnimationFrame(updateCursor);
     };
-    requestRef.current = requestAnimationFrame(updateCursor);
+
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -58,7 +54,6 @@ export default function CustomCursor() {
       window.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseover', handleMouseOver);
       document.removeEventListener('mouseout', handleMouseOut);
-      if (requestRef.current) cancelAnimationFrame(requestRef.current);
     };
   }, []);
 
@@ -73,7 +68,7 @@ export default function CustomCursor() {
         width: isHovering ? '64px' : '16px',
         height: isHovering ? '64px' : '16px',
         borderRadius: '50%',
-        backgroundColor: 'var(--lime)',
+        backgroundColor: '#fff',
         mixBlendMode: 'difference',
         pointerEvents: 'none',
         zIndex: 99999,
