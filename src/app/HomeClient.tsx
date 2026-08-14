@@ -8,6 +8,8 @@ import FAQAccordion from '../components/FAQAccordion';
 import ScrollReveal from '../components/ScrollReveal';
 import MagneticElement from '../components/MagneticElement';
 import TiltCard from '../components/TiltCard';
+import ClipReveal from '../components/ClipReveal';
+import StaggerReveal from '../components/StaggerReveal';
 import Marquee from '../components/Marquee';
 import AnimatedCounter from '../components/AnimatedCounter';
 import { BlogPost } from '@/lib/markdown';
@@ -313,12 +315,12 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                 <a href={CTA.url} className="btn-dark" style={{ marginTop: '32px' }}>{CTA.labelArrow}</a>
               </MagneticElement>
             </div>
-            <div className="img-col clip-reveal" style={{ position: 'relative', overflow: 'hidden' }}>
+            <ClipReveal className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
                <Image src="/tennis_player_exhausted.jpg" alt="Exhausted Player" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-            </div>
-            <div className="img-col clip-reveal" style={{ position: 'relative', overflow: 'hidden' }}>
+            </ClipReveal>
+            <ClipReveal className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
                <Image src="/bento_player_serve_1783528130916.jpg" alt="Player Serve" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-            </div>
+            </ClipReveal>
           </div>
         </ScrollReveal>
       </section>
@@ -327,7 +329,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       <section className="airy-section section-fade-out section-fade-to-dark" id="how-it-works" style={{ background: '#fff', color: '#111', paddingTop: '40px' }}>
         <ScrollReveal className="wrap">
           <SectionHeader eyebrow="The Academy" title="How We Engineer Resilience" />
-          <div className="grid-cards-4 stagger-children" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '40px' }}>
+          <StaggerReveal className="grid-cards-4" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '40px' }}>
             <div className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px #111', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>01</div>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Diagnostic Testing</h3>
@@ -348,7 +350,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Execution & Review</h3>
               <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Execute the blueprint. Every two weeks, you review new match footage with your designated coach to measure your Clutch Quotient progress and recalibrate.</p>
             </div>
-          </div>
+          </StaggerReveal>
         </ScrollReveal>
       </section>
 
@@ -449,7 +451,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         <div className="wrap">
           <SectionHeader eyebrow="The Founder" title="Forged in the Military. Perfected on the Court." />
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center', marginTop: '64px' }}>
-            <div className="img-col clip-reveal" style={{ position: 'relative', overflow: 'hidden', borderRadius: '24px', aspectRatio: '0.8', boxShadow: '0 24px 64px rgba(0,0,0,0.4)' }}>
+            <ClipReveal className="img-col" style={{ position: 'relative', overflow: 'hidden', borderRadius: '24px', aspectRatio: '0.8', boxShadow: '0 24px 64px rgba(0,0,0,0.4)' }}>
                <Image src="/bento_player_serve_1783528130916.jpg" alt="Mark Jeffery Serving" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,20,10,0.9), transparent)' }}></div>
                <div style={{ position: 'absolute', bottom: '32px', left: '32px', right: '32px' }}>
@@ -457,7 +459,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                   <h3 style={{ color: '#fff', fontSize: '28px', marginBottom: '8px' }}>Mark Jeffery</h3>
                   <p style={{ color: 'var(--lime)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px' }}>Founder & Head of Human Performance</p>
                </div>
-            </div>
+            </ClipReveal>
             <div>
               <h3 style={{ fontSize: 'clamp(32px, 4vw, 48px)', marginBottom: '24px', lineHeight: 1.1, color: '#fff' }}>Built to answer a question no one could answer him.</h3>
               <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, marginBottom: '24px' }}>

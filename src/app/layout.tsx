@@ -20,7 +20,6 @@ const bebas = Bebas_Neue({
 import SmoothScrolling from "@/components/SmoothScrolling";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
-import ScrollAnimations from "@/components/ScrollAnimations";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://clutchcommand.com"),
@@ -78,7 +77,6 @@ export default function RootLayout({
         <SmoothScrolling>
           <CustomCursor />
           <ScrollProgress />
-          <ScrollAnimations />
           <div className="noise-overlay"></div>
           <Navbar />
           <main style={{ flex: 1 }}>{children}</main>

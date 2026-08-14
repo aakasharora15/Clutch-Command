@@ -2,6 +2,7 @@ import React from 'react';
 import { CTA } from '../../config/cta';
 import SectionHeader from '../../components/SectionHeader';
 import AnimatedCounter from '../../components/AnimatedCounter';
+import StaggerReveal from '../../components/StaggerReveal';
 import Image from 'next/image';
 
 export default function PromisesPage() {
@@ -11,9 +12,17 @@ export default function PromisesPage() {
       {/* ===== HERO & CARDS ===== */}
       <section className="airy-section" id="promises">
         <div className="wrap">
-          <SectionHeader eyebrow="Our Promises" title="Measurable Results. Quantifiable Improvements." />
+          <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+            <div className="section-eyebrow" style={{ color: 'var(--lime)', marginBottom: '16px' }}>Our Guarantee</div>
+            <h2 style={{ fontSize: 'clamp(48px, 6vw, 80px)', lineHeight: 1.1, fontWeight: 800, letterSpacing: '-0.03em', color: '#111', marginBottom: '24px' }}>
+              The specific science of <span style={{ background: 'linear-gradient(90deg, #111, #555)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>never choking again.</span>
+            </h2>
+            <p style={{ fontSize: '20px', color: '#666', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
+              We don't do vague psychological coaching. We deal in hard data, proven biometrics, and guaranteed performance shifts. Here is our promise to you.
+            </p>
+          </div>
           
-          <div className="grid-cards-4 stagger-children" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
+          <StaggerReveal className="grid-cards-4" style={{ marginTop: '64px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
             
             <div className="step-card" style={{ padding: '48px 32px', background: '#fff', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.04)', boxShadow: '0 12px 32px rgba(0,0,0,0.03)', textAlign: 'center', transition: 'transform 0.3s ease' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1.5px #111', fontWeight: 800, fontSize: '80px', marginBottom: '16px', lineHeight: 1 }}>
@@ -41,7 +50,7 @@ export default function PromisesPage() {
               <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6 }}>If your Clutch Quotient doesn't improve after completing the program, we refund your investment entirely.</p>
             </div>
 
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
