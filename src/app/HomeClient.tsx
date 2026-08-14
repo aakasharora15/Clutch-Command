@@ -419,25 +419,25 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         <div className="wrap">
           <SectionHeader eyebrow="The Academy Membership" title="Everything You Need to Win Deciding Points" />
           <div className="grid-cards-3">
-            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
+            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', padding: '16px' }}>
                <Image src="/tennis_serve_shadow.jpg" alt="Singles Blueprint" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
-                  <h3>Singles Masterclass</h3>
-                  <p>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints and high-intensity repetition drills.</p>
+               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Singles Masterclass</h3>
+                  <p style={{ margin: 0, fontSize: '14px' }}>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints and high-intensity repetition drills.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
+            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', padding: '16px' }}>
                <Image src="/bento_player_celebrate_1783528150116.jpg" alt="Doubles Blueprint" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
-                  <h3>Doubles Mastery</h3>
-                  <p>Elite doubles strategies with Dan Kiernan. Court positioning, communication, and exploiting opponent weaknesses.</p>
+               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Doubles Mastery</h3>
+                  <p style={{ margin: 0, fontSize: '14px' }}>Elite doubles strategies with Dan Kiernan. Court positioning, communication, and exploiting opponent weaknesses.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden' }}>
+            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', padding: '16px' }}>
                <Image src="/bento_player_backhand_1783528140582.jpg" alt="AI Pressure Scoring" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
-                  <h3>Proprietary AI Scoring</h3>
-                  <p>Our exclusive backend engine scores your match footage against 30 variables to expose your pressure leaks.</p>
+               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Proprietary AI Scoring</h3>
+                  <p style={{ margin: 0, fontSize: '14px' }}>Our exclusive backend engine scores your match footage against 30 variables to expose your pressure leaks.</p>
                </div>
             </div>
           </div>
@@ -478,24 +478,30 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       </section>
 
       {/* ===== ABOUT FOUNDER ===== */}
-      <section className="airy-section section-fade-out section-fade-to-light" id="co-founders">
+      <section className="airy-section section-fade-out section-fade-to-light dark" id="co-founders">
         <div className="wrap">
-          <div style={{ display: 'flex', gap: '80px', alignItems: 'center', flexWrap: 'wrap' }}>
-            <div className="founder-dark-card">
-              <div className="founder-dark-img" style={{ backgroundImage: "url('/bento_player_serve_1783528130916.jpg')" }}></div>
-              <div className="founder-dark-text">
-                <h3>Built to answer a question no one could answer him.</h3>
-                <p>Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay.</p>
-                <MagneticElement strength={15}>
-                  <Link href="/co-founders" className="btn-dark" style={{ alignSelf: 'flex-start', marginTop: '32px', background: 'rgba(255,255,255,0.1)' }}>Read Story &rarr;</Link>
-                </MagneticElement>
-              </div>
+          <SectionHeader eyebrow="The Founder" title="Forged in the Military. Perfected on the Court." />
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center', marginTop: '64px' }}>
+            <div className="img-col clip-reveal" style={{ position: 'relative', overflow: 'hidden', borderRadius: '24px', aspectRatio: '0.8', boxShadow: '0 24px 64px rgba(0,0,0,0.4)' }}>
+               <Image src="/bento_player_serve_1783528130916.jpg" alt="Mark Jeffery Serving" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
+               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,20,10,0.9), transparent)' }}></div>
+               <div style={{ position: 'absolute', bottom: '32px', left: '32px', right: '32px' }}>
+                  <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'url(/mark_jeffery.png) center/cover', border: '2px solid var(--lime)', marginBottom: '16px' }}></div>
+                  <h3 style={{ color: '#fff', fontSize: '28px', marginBottom: '8px' }}>Mark Jeffery</h3>
+                  <p style={{ color: 'var(--lime)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px' }}>Founder & Head of Human Performance</p>
+               </div>
             </div>
-            <div style={{ flex: 1, minWidth: '300px' }}>
-              <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundImage: "url('/mark_jeffery.png')", backgroundSize: 'cover', marginBottom: '24px' }}></div>
-              <h3 style={{ fontSize: '32px', marginBottom: '16px' }}>Experience the best in pressure training</h3>
-              <p>He didn't build it from a theory. He built it from a memory. Two match points up against the RAF's number one, on the grass at Wimbledon, and still finding a way to give it away. Pressure hijacked his brain and body, and the next thing he knew, it was game, set, and match to his opponent.</p>
-              <div style={{ marginTop: '24px', fontWeight: 600, color: 'var(--text-dark)' }}>Mark Jeffery, <span style={{ fontWeight: 400, color: 'var(--text-muted)' }}>Founder</span></div>
+            <div>
+              <h3 style={{ fontSize: 'clamp(32px, 4vw, 48px)', marginBottom: '24px', lineHeight: 1.1, color: '#fff' }}>Built to answer a question no one could answer him.</h3>
+              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, marginBottom: '24px' }}>
+                He didn't build it from a theory. He built it from a memory. Two match points up against the RAF's number one, on the grass at Wimbledon, and still finding a way to give it away. 
+              </p>
+              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, marginBottom: '40px' }}>
+                Pressure hijacked his brain and body, and the next thing he knew, it was game, set, and match to his opponent. Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay. Now, it's the ultimate weapon for competitive tennis players.
+              </p>
+              <MagneticElement strength={20}>
+                <Link href="/co-founders" className="btn-dark" style={{ background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>Read The Full Story &rarr;</Link>
+              </MagneticElement>
             </div>
           </div>
         </div>
