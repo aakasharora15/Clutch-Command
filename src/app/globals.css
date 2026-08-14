@@ -552,10 +552,12 @@ p {
 
 /* Clip-path image reveal */
 .clip-reveal {
+  -webkit-clip-path: inset(100% 0 0 0);
   clip-path: inset(100% 0 0 0);
-  transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1), -webkit-clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .clip-reveal.is-revealed {
+  -webkit-clip-path: inset(0 0 0 0);
   clip-path: inset(0 0 0 0);
 }
 

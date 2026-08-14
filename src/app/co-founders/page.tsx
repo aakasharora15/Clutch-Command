@@ -24,7 +24,7 @@ export default function CoFoundersPage() {
       {/* ===== THE ORIGIN ===== */}
       <section className="airy-section" style={{ background: 'var(--bg-light)' }}>
         <div className="wrap">
-          <div className="grid-asym-3">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
             <div className="text-col">
               <div className="section-eyebrow">The Origin</div>
               <h2 className="section-header" style={{ marginBottom: '24px' }}>Military Precision Meets The Court</h2>
@@ -35,7 +35,7 @@ export default function CoFoundersPage() {
                 Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay. By measuring how cortisol and adrenaline degrade cognitive function, Mark developed protocols to artificially inoculate soldiers against stress. Now, it's the ultimate weapon for competitive tennis players.
               </p>
             </div>
-            <div className="img-col" style={{ position: 'relative', overflow: 'hidden', gridColumn: 'span 2' }}>
+            <div className="img-col" style={{ position: 'relative', overflow: 'hidden', borderRadius: '24px', aspectRatio: '0.8', boxShadow: '0 24px 64px rgba(0,0,0,0.1)' }}>
                <Image src="/mark_jeffery.png" alt="Mark Jeffery Portrait" fill style={{ objectFit: 'cover' }} />
             </div>
           </div>
