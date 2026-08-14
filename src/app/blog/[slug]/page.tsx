@@ -24,7 +24,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </Link>
 
         <div style={{ marginBottom: '24px' }}>
-          <span style={{ background: '#111', color: '#fff', fontSize: '11px', padding: '4px 12px', borderRadius: '100px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <span style={{ background: 'var(--bg-dark)', color: '#fff', fontSize: '11px', padding: '4px 12px', borderRadius: '100px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             {postData.category}
           </span>
         </div>

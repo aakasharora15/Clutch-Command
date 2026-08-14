@@ -8,6 +8,7 @@
   --muted: #98CBB0;
   --faint: #5D7A6B; /* A darker version of the sage green for faint text */
   --lime: #98CBB0;
+  --bg-dark: #0A140A;
   --bg-light: #E7EFE4;
   --text-dark: #142718;
   --text-muted: #2E5B41;
@@ -154,7 +155,7 @@ p {
   background: var(--bg-light);
 }
 .airy-section.dark {
-  background: #111;
+  background: var(--bg-dark);
   color: #fff;
 }
 .airy-section.dark .section-header {
@@ -282,7 +283,7 @@ p {
 
 /* 7. Founder section: .founder-dark-card */
 .founder-dark-card {
-  background: #111;
+  background: var(--bg-dark);
   border-radius: 24px;
   padding: 40px;
   display: flex;
@@ -374,7 +375,7 @@ p {
 
 /* ===== 3D CAROUSEL ===== */
 .carousel-3d-section {
-  background: #111;
+  background: var(--bg-dark);
   padding: 140px 0;
   color: #fff;
   text-align: center;
@@ -570,29 +571,7 @@ p {
   }
 }
 
-/* Section transition bleed */
-.airy-section {
-  position: relative;
-}
-.section-fade-out::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  pointer-events: none;
-}
-.section-fade-to-dark::after {
-  background: linear-gradient(to bottom, transparent, #111);
-}
-.section-fade-to-light::after {
-  background: linear-gradient(to bottom, transparent, var(--bg-light));
-}
-.section-fade-to-white::after {
-  background: linear-gradient(to bottom, transparent, #ffffff);
-}
-
+/* Section transition bleed removed for cleaner look */
 /* ===== PAGE TRANSITIONS ===== */
 .page-transition {
   opacity: 0;

@@ -271,7 +271,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       <Marquee text="WIN THE POINTS THAT DECIDE MATCHES • THE NARROW LOSS SOLVED •" />
 
       {/* ===== STATS COUNTER ===== */}
-      <section style={{ background: '#111', padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+      <section style={{ background: 'var(--bg-dark)', padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="wrap">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', textAlign: 'center' }}>
             <div>

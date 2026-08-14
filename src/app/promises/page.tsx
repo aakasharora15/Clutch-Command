@@ -41,7 +41,7 @@ export default function PromisesPage() {
               <p style={{ color: 'var(--text-muted)', fontSize: '15px', lineHeight: 1.6 }}>The average expected increase in break points saved and decisive tiebreak points won during match play.</p>
             </div>
 
-            <div className="step-card" style={{ padding: '48px 32px', background: '#111', color: '#fff', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.1)', textAlign: 'center', transition: 'transform 0.3s ease' }}>
+            <div className="step-card" style={{ padding: '48px 32px', background: 'var(--bg-dark)', color: '#fff', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.1)', textAlign: 'center', transition: 'transform 0.3s ease' }}>
               <div style={{ color: 'var(--lime)', fontWeight: 800, fontSize: '80px', marginBottom: '16px', lineHeight: 1 }}>
                 <AnimatedCounter end={100} />
                 <span style={{ fontSize: '48px' }}>%</span>

@@ -50,7 +50,7 @@ export default function ProductPage() {
                 <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>It's not your swing path. It's your eye tracking and footwork micro-adjustments.</p>
               </div>
 
-              <div style={{ padding: '40px', background: '#111', color: '#fff', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div style={{ padding: '40px', background: 'var(--bg-dark)', color: '#fff', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <h3 style={{ fontSize: '24px', marginBottom: '16px' }}>Unlock The Vault</h3>
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: 1.6, marginBottom: '24px' }}>Gain access to expert advice, tactical drills, and mental strategies from Grand Slam coaches.</p>
                 <a href={CTA.url} className="btn-dark" style={{ alignSelf: 'flex-start', background: 'var(--lime)', color: '#111' }}>{CTA.labelArrow}</a>
