@@ -15,7 +15,7 @@ export default function CoFoundersPage() {
           </div>
 
           <div style={{ position: 'relative', width: '100%', height: '60vh', minHeight: '400px', borderRadius: '24px', overflow: 'hidden', marginTop: '64px' }}>
-             <Image src="/bento_player_serve_1783528130916.jpg" alt="Mark Jeffery Serving" fill style={{ objectFit: 'cover' }} />
+             <Image src="/bento_player_serve_1783528130916.jpg" alt="Mark Jeffery Serving" fill style={{ objectFit: 'cover' }} priority />
              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)' }}></div>
           </div>
         </div>
