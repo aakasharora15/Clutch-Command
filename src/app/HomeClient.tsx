@@ -13,6 +13,10 @@ import StaggerReveal from '../components/StaggerReveal';
 import SpotlightCard from '../components/SpotlightCard';
 import Marquee from '../components/Marquee';
 import AnimatedCounter from '../components/AnimatedCounter';
+import PlatformSneakPeek from '../components/PlatformSneakPeek';
+import PricingTiers from '../components/PricingTiers';
+import TestimonialWall from '../components/TestimonialWall';
+import VideoModal from '../components/VideoModal';
 import { BlogPost } from '@/lib/markdown';
 
 const ECG_PATH =
@@ -199,6 +203,7 @@ function PressureIntro({ onDone }: { onDone?: () => void }) {
 
 export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>[] }) {
   const [introDone, setIntroDone] = useState(true);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   useEffect(() => {
     if (!sessionStorage.getItem('clutch_intro_done')) {
@@ -262,9 +267,24 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             
             <h1>Win The Points<br/>That Decide Matches.</h1>
             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '18px', maxWidth: '520px', lineHeight: 1.7, marginTop: '16px', marginBottom: '32px' }}>AI-powered pressure training for competitive tennis players. Diagnose your cognitive breakdown, train under simulated match stress, and close out the points that matter.</p>
-            <MagneticElement strength={25}>
-              <a href={CTA.url} className="btn-dark" style={{ background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>{CTA.labelArrow}</a>
-            </MagneticElement>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+              <MagneticElement strength={25}>
+                <a href={CTA.url} className="btn-dark" style={{ background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>{CTA.labelArrow}</a>
+              </MagneticElement>
+              <button 
+                onClick={() => setIsVideoOpen(true)}
+                style={{ 
+                  background: 'none', border: 'none', color: '#fff', fontSize: '15px', fontWeight: 600, 
+                  display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer',
+                  padding: '16px 0'
+                }}
+              >
+                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                Watch Trailer
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -354,6 +374,8 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
           </StaggerReveal>
         </ScrollReveal>
       </section>
+
+      <PlatformSneakPeek />
 
       {/* ===== THE SCIENCE (Asymmetrical) ===== */}
       <section className="airy-section dark" id="science">
@@ -447,6 +469,8 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </div>
       </section>
 
+      <PricingTiers />
+
       {/* ===== ABOUT FOUNDER ===== */}
       <section className="airy-section section-fade-out section-fade-to-light dark" id="co-founders">
         <div className="wrap">
@@ -477,25 +501,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS (Airy Layout) ===== */}
-      <section className="airy-section section-fade-out section-fade-to-dark" id="testimonials">
-        <div className="wrap">
-          <SectionHeader eyebrow="Testimonials" title="What Our Members Say" />
-          
-          <div className="testi-airy">
-            <div className="testi-airy-img" style={{ backgroundImage: "url('/tennis_portrait.jpg')" }}></div>
-            <div className="testi-airy-content">
-              <span className="testi-quote-mark">“</span>
-              <div className="testi-quote-text">
-                I used to choke constantly when serving for the set at 5-4. I was drilling my serve for hours but nothing worked in matches. The TRUST protocol showed me that my cognitive load was spiking, not my technique failing. Within 14 days of rewiring my biological response, I closed out 3 matches straight.
-              </div>
-              <div className="testi-author">
-                Liam Davies, <em>ITF Competitor</em>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialWall />
 
       {/* ===== FAQ ===== */}
       <section className="airy-section dark" id="faq" style={{ paddingBottom: '160px' }}>
@@ -600,6 +606,8 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
 
         </ScrollReveal>
       </section>
+
+      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
       
       {/* ===== DIAGNOSTIC CTA ===== */}
       <section className="airy-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '500px', display: 'flex', alignItems: 'center' }}>

@@ -1,65 +1,93 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
+
+const faqs = [
+  {
+    question: "Do I need to be a professional player to benefit from this?",
+    answer: "No. While our system was forged with ATP/WTA pros and NCAA D1 athletes, cognitive breakdown under pressure happens at every level. If you play competitive matches and find yourself losing tight sets, this is for you."
+  },
+  {
+    question: "How is this different from a sports psychologist?",
+    answer: "Traditional sports psychology relies on subjective conversations and visualization. Clutch Command is biometric and data-driven. We use stress-inoculation protocols derived from military training to physically rewire your brain's response to cortisol spikes on the court."
+  },
+  {
+    question: "What exactly is in the £9 Playbook?",
+    answer: "The Playbook is the foundational theory. It breaks down the exact biological mechanisms of a 'choke', how cortisol destroys your spatial tracking, and the 3 immediate on-court physical triggers you can use to reset your nervous system mid-match."
+  },
+  {
+    question: "Is there a money-back guarantee?",
+    answer: "Yes. If you apply the protocols in the Playbook and do not see a measurable difference in your ability to close out tight matches within 30 days, we will refund you entirely."
+  }
+];
 
 export default function FAQAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   return (
-    <div style={{ marginTop: '48px', maxWidth: '800px', width: '100%' }}>
-      <details className="faq-item">
-        <summary className="faq-summary">Who is this program for?</summary>
-        <div className="faq-content">
-          Clutch Command is designed for competitive athletes, club players, and juniors who have strong technical foundations but struggle to close out matches under pressure. It is not for beginners still learning stroke mechanics.
+    <section className="airy-section" style={{ background: 'var(--bg-dark)' }}>
+      <div className="wrap" style={{ maxWidth: '800px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <h2 className="section-header" style={{ color: '#fff' }}>Frequently Asked Questions</h2>
         </div>
-      </details>
 
-      <details className="faq-item">
-        <summary className="faq-summary">What is the time commitment?</summary>
-        <div className="faq-content">
-          The cognitive drills and video reviews require roughly 2-3 hours per week. Most of the application happens seamlessly during your existing match play.
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {faqs.map((faq, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <div 
+                key={idx} 
+                style={{ 
+                  background: isOpen ? 'rgba(255,255,255,0.05)' : 'transparent',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  transition: 'background 0.3s ease'
+                }}
+              >
+                <button 
+                  onClick={() => setOpenIndex(isOpen ? null : idx)}
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '24px',
+                    background: 'none',
+                    border: 'none',
+                    color: '#fff',
+                    fontSize: '18px',
+                    fontWeight: 500,
+                    cursor: 'pointer',
+                    textAlign: 'left'
+                  }}
+                >
+                  {faq.question}
+                  <span style={{ 
+                    transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)', 
+                    transition: 'transform 0.3s ease',
+                    color: isOpen ? 'var(--lime)' : 'rgba(255,255,255,0.5)',
+                    fontSize: '24px',
+                    lineHeight: 1
+                  }}>+</span>
+                </button>
+                <div 
+                  style={{
+                    maxHeight: isOpen ? '500px' : '0',
+                    opacity: isOpen ? 1 : 0,
+                    overflow: 'hidden',
+                    transition: 'max-height 0.5s ease, opacity 0.5s ease'
+                  }}
+                >
+                  <p style={{ padding: '0 24px 24px 24px', margin: 0, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, fontSize: '16px' }}>
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
-      </details>
-
-      <details className="faq-item">
-        <summary className="faq-summary">How does the 100% guarantee work?</summary>
-        <div className="faq-content">
-          We guarantee measurable improvement in your Clutch Quotient within 30 days. If your stats don't improve after following the protocol, we refund 100% of your investment. No questions asked.
-        </div>
-      </details>
-
-      <details className="faq-item">
-        <summary className="faq-summary">Is this a substitute for my technical coach?</summary>
-        <div className="faq-content">
-          No. The TRUST protocol works alongside your current technical coaching. While your coach fixes your forehand biomechanics, we fix your cognitive response when you are forced to hit that forehand at Break Point down.
-        </div>
-      </details>
-
-      <details className="faq-item">
-        <summary className="faq-summary">Do I need special equipment to measure my CQ?</summary>
-        <div className="faq-content">
-          You only need a smartphone or camera to record your matches, and a standard fitness tracker (like an Apple Watch or Whoop) to sync your biometric data to our dashboard.
-        </div>
-      </details>
-
-      <details className="faq-item">
-        <summary className="faq-summary">When do the 1-on-1 coach reviews happen?</summary>
-        <div className="faq-content">
-          Calls are scheduled bi-weekly at a time that suits your training schedule. You will be matched with one of our elite coaches based on your timezone and specific pressure-point weaknesses.
-        </div>
-      </details>
-
-      <details className="faq-item">
-        <summary className="faq-summary">What happens if I get injured or miss a week?</summary>
-        <div className="faq-content">
-          You have lifetime access to the digital dashboard and blueprints. If you need to pause your 1-on-1 coaching sessions due to injury, you can easily freeze your account for up to 60 days.
-        </div>
-      </details>
-
-      <details className="faq-item">
-        <summary className="faq-summary">How quickly will I see results?</summary>
-        <div className="faq-content">
-          Players usually notice a shift in their cognitive load within the first 14 days. Measurable improvements in win-rate during high-pressure points typically materialize by week 4 of the protocol.
-        </div>
-      </details>
-    </div>
+      </div>
+    </section>
   );
 }
