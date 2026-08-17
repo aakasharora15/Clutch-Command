@@ -38,7 +38,7 @@ export default function Navbar() {
         {/* Center Logo */}
         <div className={styles.logoCenter}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <Image src={isDark ? "/logo-clutch.png" : "/logo-clutch-white.png"} alt="Clutch Command" width={140} height={40} style={{ objectFit: 'contain' }} priority />
+            <Image src="/logo-clutch-white.png" alt="Clutch Command" width={140} height={40} style={{ objectFit: 'contain' }} priority />
           </Link>
         </div>
         

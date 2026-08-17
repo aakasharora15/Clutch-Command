@@ -11,32 +11,32 @@
 }
 
 .darkNavbar {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(10, 20, 10, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: 16px 0;
 }
 
 .darkNavbar .link {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
 .darkNavbar .link:hover {
-  color: #000;
-  background: rgba(0, 0, 0, 0.05);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .darkNavbar .searchPill {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  color: #111;
-  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .darkNavbar .searchIcon {
-  background: var(--bg-dark);
-  color: #fff;
+  background: var(--lime);
+  color: #111;
 }
 
 .container {

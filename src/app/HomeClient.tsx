@@ -265,8 +265,8 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
               <p style={{ margin: 0, fontSize: '13px', color: '#fff', fontWeight: 500 }}>The Official Online Academy for Competitive Players.</p>
             </div>
             
-            <h1>Win The Points<br/>That Decide Matches.</h1>
-            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '18px', maxWidth: '520px', lineHeight: 1.7, marginTop: '16px', marginBottom: '32px' }}>AI-powered pressure training for competitive tennis players. Diagnose your cognitive breakdown, train under simulated match stress, and close out the points that matter.</p>
+            <h1 style={{ fontSize: 'clamp(64px, 8vw, 120px)', lineHeight: 0.9, letterSpacing: '-0.02em', margin: '0 0 24px 0', textTransform: 'uppercase' }}>Win The Points<br/>That Decide Matches.</h1>
+            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '20px', maxWidth: '560px', lineHeight: 1.6, marginBottom: '40px', fontWeight: 400 }}>AI-powered pressure training for competitive tennis players. Diagnose your cognitive breakdown, train under simulated match stress, and close out the points that matter.</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
               <MagneticElement strength={25}>
                 <a href={CTA.url} className="btn-dark" style={{ background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>{CTA.labelArrow}</a>
@@ -288,8 +288,6 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
           </div>
         </div>
       </header>
-
-      <Marquee text="WIN THE POINTS THAT DECIDE MATCHES • THE NARROW LOSS SOLVED •" />
 
       {/* ===== STATS COUNTER ===== */}
       <section style={{ background: 'var(--bg-dark)', padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
@@ -327,13 +325,13 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       <section className="airy-section section-fade-out section-fade-to-white" id="product">
         <ScrollReveal className="wrap">
           <SectionHeader eyebrow="The Problem" title="You don't lose matches because of technique. You lose them in two points." />
-          <div className="grid-asym-3">
-            <div className="text-col">
+          <div className="grid-asym-3" style={{ alignItems: 'flex-start' }}>
+            <div className="text-col" style={{ position: 'sticky', top: '140px' }}>
               <p>We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.</p>
               <br/>
               <p>When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.</p>
               <MagneticElement strength={20}>
-                <a href={CTA.url} className="btn-dark" style={{ marginTop: '32px' }}>{CTA.labelArrow}</a>
+                <a href={CTA.url} className="btn-dark" style={{ marginTop: '48px' }}>{CTA.labelArrow}</a>
               </MagneticElement>
             </div>
             <ClipReveal className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
@@ -377,31 +375,34 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
 
       <PlatformSneakPeek />
 
-      {/* ===== THE SCIENCE (Asymmetrical) ===== */}
+      {/* ===== THE SCIENCE (Bento Grid) ===== */}
       <section className="airy-section dark" id="science">
         <div className="wrap">
           <SectionHeader eyebrow="The Science" title="We Don't Guess. We Measure Pressure." />
-          <div className="grid-asym-3">
-            <div className="text-col">
-              <h3 style={{ fontSize: '28px', marginBottom: '16px' }}>The Clutch Quotient (CQ)</h3>
-              <p>Pressure isn't a feeling—it's a biological response that ruins technique. The Clutch Quotient (CQ) is the first AI-driven framework to measure cognitive breakdown on the court.</p>
-              <br/>
-              <p>We analyze 30 specific variables, including shot selection under score-pressure, court positioning during breakpoints, and recovery time between high-stress points.</p>
+          <div className="bento-grid">
+            
+            <div className="bento-item" style={{ gridColumn: 'span 5', minHeight: '500px', display: 'flex', justifyContent: 'center' }}>
+              <h3 style={{ fontSize: '32px', marginBottom: '24px', color: '#fff' }}>The Clutch Quotient (CQ)</h3>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>Pressure isn't a feeling—it's a biological response that ruins technique. The Clutch Quotient (CQ) is the first AI-driven framework to measure cognitive breakdown on the court.</p>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', lineHeight: 1.6 }}>We analyze 30 specific variables, including shot selection under score-pressure, court positioning during breakpoints, and recovery time between high-stress points.</p>
             </div>
-            <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
-               <Image src="/tennis_coach_talk.jpg" alt="Biometric Syncing" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-               <div style={{ position: 'absolute', bottom: 24, left: 24, right: 24, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
-                 <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Biometric Syncing</h4>
-                 <p style={{ margin: 0, fontSize: '13px' }}>Overlay heart rate data onto your match footage.</p>
+
+            <div className="bento-item" style={{ gridColumn: 'span 7', padding: 0, minHeight: '500px' }}>
+               <Image src="/tennis_coach_talk.jpg" alt="Biometric Syncing" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 60vw" />
+               <div className="bento-item glass" style={{ position: 'absolute', bottom: '24px', left: '24px', right: '24px', padding: '24px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                 <h4 style={{ color: 'var(--lime)', fontSize: '20px', marginBottom: '8px' }}>Biometric Syncing</h4>
+                 <p style={{ margin: 0, fontSize: '15px', color: '#fff' }}>Overlay heart rate data onto your match footage.</p>
                </div>
             </div>
-            <div className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
-               <Image src="/tennis_shoe_clay.jpg" alt="Cognitive Mapping" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-               <div style={{ position: 'absolute', bottom: 24, left: 24, right: 24, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', zIndex: 10 }}>
-                 <h4 style={{ color: 'var(--lime)', marginBottom: '8px' }}>Cognitive Mapping</h4>
-                 <p style={{ margin: 0, fontSize: '13px' }}>See exactly when decision-making shifts.</p>
+
+            <div className="bento-item" style={{ gridColumn: 'span 12', padding: 0, minHeight: '400px' }}>
+               <Image src="/tennis_shoe_clay.jpg" alt="Cognitive Mapping" fill style={{ objectFit: 'cover', objectPosition: 'center 70%' }} sizes="100vw" />
+               <div className="bento-item glass" style={{ position: 'absolute', bottom: '24px', left: '24px', maxWidth: '400px', padding: '32px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                 <h4 style={{ color: 'var(--lime)', fontSize: '24px', marginBottom: '12px' }}>Cognitive Mapping</h4>
+                 <p style={{ margin: 0, fontSize: '16px', color: '#fff' }}>See exactly when decision-making shifts from offensive to defensive survival mode.</p>
                </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -436,35 +437,39 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </div>
       </section>
 
-      {/* ===== DELIVERABLES (Pill Cards) ===== */}
+      {/* ===== DELIVERABLES (Bento Grid) ===== */}
       <section className="airy-section dark" id="deliverables">
         <div className="wrap">
           <SectionHeader eyebrow="What You Get" title="The Complete Pressure Toolkit" />
-          <div className="grid-cards-3">
-            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div className="bento-grid">
+            
+            <div className="bento-item" style={{ gridColumn: 'span 4', padding: 0, minHeight: '480px' }}>
                <Image src="/tennis_court_night.jpg" alt="3D Memory Surface" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
-                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>01</div>
-                  <h3>3D Memory Surface Report</h3>
-                  <p>A comprehensive digital dashboard breaking down your match footage. See your exact CQ score and where your pressure threshold broke.</p>
+               <div className="bento-item glass" style={{ position: 'absolute', inset: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '32px' }}>
+                  <div style={{ fontSize: '72px', fontWeight: 800, color: 'rgba(255,255,255,0.15)', lineHeight: 0.8, marginBottom: '24px', fontFamily: 'var(--font-heading)' }}>01</div>
+                  <h3 style={{ color: '#fff', fontSize: '24px', marginBottom: '12px' }}>3D Memory Surface Report</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: 0 }}>A comprehensive digital dashboard breaking down your match footage. See your exact CQ score and where your pressure threshold broke.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+
+            <div className="bento-item" style={{ gridColumn: 'span 4', padding: 0, minHeight: '480px' }}>
                <Image src="/tennis_blueprint.jpg" alt="Tactical Blueprints" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
-                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>02</div>
-                  <h3>Weekly Tactical Blueprints</h3>
-                  <p>Custom high-intensity drill routines designed by Grand Slam coaches to rewire your specific pressure weaknesses.</p>
+               <div className="bento-item glass" style={{ position: 'absolute', inset: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '32px' }}>
+                  <div style={{ fontSize: '72px', fontWeight: 800, color: 'rgba(255,255,255,0.15)', lineHeight: 0.8, marginBottom: '24px', fontFamily: 'var(--font-heading)' }}>02</div>
+                  <h3 style={{ color: '#fff', fontSize: '24px', marginBottom: '12px' }}>Weekly Tactical Blueprints</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: 0 }}>Custom high-intensity drill routines designed by Grand Slam coaches to rewire your specific pressure weaknesses.</p>
                </div>
             </div>
-            <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+
+            <div className="bento-item" style={{ gridColumn: 'span 4', padding: 0, minHeight: '480px' }}>
                <Image src="/tennis_racquet_hit.jpg" alt="Coach Reviews" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-               <div className="pill-card-content" style={{ position: 'relative', zIndex: 10 }}>
-                  <div style={{ fontFamily: 'Outfit', fontSize: '64px', fontWeight: 800, color: 'rgba(255,255,255,0.2)', lineHeight: 0.8, marginBottom: '24px' }}>03</div>
-                  <h3>1-on-1 Coach Reviews</h3>
-                  <p>Bi-weekly video calls with your designated elite coach to review your latest match footage and adjust your training cognitive load.</p>
+               <div className="bento-item glass" style={{ position: 'absolute', inset: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '32px' }}>
+                  <div style={{ fontSize: '72px', fontWeight: 800, color: 'rgba(255,255,255,0.15)', lineHeight: 0.8, marginBottom: '24px', fontFamily: 'var(--font-heading)' }}>03</div>
+                  <h3 style={{ color: '#fff', fontSize: '24px', marginBottom: '12px' }}>1-on-1 Coach Reviews</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: 0 }}>Bi-weekly video calls with your designated elite coach to review your latest match footage and adjust your training cognitive load.</p>
                </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -519,8 +524,6 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
           </div>
         </div>
       </section>
-
-      <Marquee text="DIAGNOSE • ISOLATE • OVERLOAD • EXECUTE •" bgColor="#111" textColor="var(--lime)" speed="25s" />
 
       {/* ===== LATEST ARTICLES ===== */}
       <section className="airy-section" style={{ background: '#ffffff', color: '#111' }}>

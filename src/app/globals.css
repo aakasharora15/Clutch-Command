@@ -61,11 +61,11 @@ h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Massive headers, light tracking, massive negative space */
+/* Massive headers, tight tracking, massive negative space */
 .section-header {
-  font-size: clamp(40px, 5vw, 64px);
-  margin-bottom: 80px; /* Massive negative space */
-  text-align: left;
+  font-size: clamp(48px, 6vw, 80px);
+  margin-bottom: 24px;
+  letter-spacing: 0em;
 }
 
 p {
@@ -150,9 +150,10 @@ p {
   color: rgba(255,255,255,0.8);
 }
 
-/* General airy sections */
+/* 4. Layout & Spacing */
 .airy-section {
-  padding: 140px 0;
+  padding: 160px 0;
+  position: relative;
   background: var(--bg-light);
 }
 .airy-section.dark {
@@ -166,16 +167,45 @@ p {
   color: rgba(255,255,255,0.7);
 }
 
-/* 4. Problem/Science sections: .grid-asym-3 (1fr 1.5fr 1fr) */
+/* 4. Problem/Science sections: .grid-asym-3 (1.2fr 0.9fr 0.9fr) */
 .grid-asym-3 {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  gap: 32px;
+  align-items: stretch;
 }
-.grid-asym-3 .text-col {
-  /* Left column */
-  padding-right: 20px;
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+.bento-item {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: var(--bg-dark);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.bento-item.glass {
+  background: rgba(10, 20, 10, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.bento-item img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bento-item:hover img {
+  transform: scale(1.03);
+}
+
+.text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .grid-asym-3 .img-col {
   border-radius: 24px;
