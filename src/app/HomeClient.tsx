@@ -17,6 +17,7 @@ import PlatformSneakPeek from '../components/PlatformSneakPeek';
 import PricingTiers from '../components/PricingTiers';
 import TestimonialWall from '../components/TestimonialWall';
 import VideoModal from '../components/VideoModal';
+import CQAssessment from '../components/CQAssessment';
 import { BlogPost } from '@/lib/markdown';
 
 const ECG_PATH =
@@ -555,58 +556,14 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </ScrollReveal>
       </section>
 
-      {/* ===== NEWSLETTER BREAKOUT ===== */}
-      <section className="airy-section" style={{ background: '#ffffff', paddingTop: '100px', paddingBottom: '120px' }}>
+      {/* ===== INTERACTIVE LEAD MAGNET ===== */}
+      <section className="airy-section dark" style={{ paddingBottom: '160px' }}>
         <ScrollReveal className="wrap">
-          
-          <div className="newsletter-container" style={{ 
-            background: 'linear-gradient(135deg, #222 0%, #151515 100%)', 
-            borderRadius: '24px', 
-            position: 'relative',
-            boxShadow: '0 32px 64px rgba(0,0,0,0.1)',
-            display: 'flex',
-          }}>
-            
-            {/* Left Content Column */}
-            <div style={{ position: 'relative', zIndex: 20, display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: '500px' }}>
-              <h2 style={{ color: '#fff', fontSize: 'clamp(48px, 6vw, 72px)', lineHeight: 1.05, margin: '0 0 64px 0', fontWeight: 300, letterSpacing: '-0.03em' }}>
-                Newsletter<br/>Subscription
-              </h2>
-              
-              {/* Styled like the input field from the reference, but functioning as an external link for compliance */}
-              <a href="https://kit.com" target="_blank" rel="noopener noreferrer" style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'space-between',
-                background: 'rgba(255,255,255,0.08)', 
-                border: '1px solid rgba(255,255,255,0.15)', 
-                borderRadius: '100px', 
-                padding: '8px 8px 8px 24px', 
-                color: 'rgba(255,255,255,0.5)', 
-                textDecoration: 'none',
-                width: '100%',
-                maxWidth: '400px',
-                transition: 'border-color 0.2s ease, background 0.2s ease'
-              }}>
-                <span style={{ fontSize: '16px' }}>clutchcommand@gmail.com</span>
-                <div style={{ background: 'rgba(255,255,255,0.2)', borderRadius: '100px', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                </div>
-              </a>
-            </div>
-
-            {/* Breakout Player Image with Gradient Fade */}
-            <div className="newsletter-player">
-              <Image 
-                src="/federer_cutout.png" 
-                alt="Newsletter Highlight" 
-                fill 
-                style={{ objectFit: 'contain', objectPosition: 'bottom center' }} 
-              />
-            </div>
-
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <h2 className="section-header" style={{ textAlign: 'center', marginBottom: '24px' }}>Test Your Pressure Threshold</h2>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', maxWidth: '600px', margin: '0 auto' }}>Take the 60-second Clutch Quotient Diagnostic to uncover exactly why your game breaks down on deciding points.</p>
           </div>
-
+          <CQAssessment />
         </ScrollReveal>
       </section>
 
