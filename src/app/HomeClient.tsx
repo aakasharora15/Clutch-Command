@@ -19,7 +19,6 @@ import TestimonialWall from '../components/TestimonialWall';
 import VideoModal from '../components/VideoModal';
 import CQAssessment from '../components/CQAssessment';
 import { BlogPost } from '@/lib/markdown';
-import MockDiagnosisDropzone from '../components/MockDiagnosisDropzone';
 
 const ECG_PATH =
   "M0,75 L14,75 Q16,52 18,60 L22,75 L34,75 L38,83 L42,75 L46,40 L50,130 L54,70 L58,92 L62,68 L66,75 L150,75 " +
@@ -339,8 +338,11 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                 <a href={CTA.url} className="btn-dark" style={{ marginTop: '48px' }}>{CTA.labelArrow}</a>
               </MagneticElement>
             </div>
-            <ClipReveal className="img-col" style={{ position: 'relative', overflow: 'hidden', gridColumn: 'span 2' }}>
-               <MockDiagnosisDropzone />
+            <ClipReveal className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
+               <Image src="/tennis_player_exhausted.jpg" alt="Exhausted Player" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
+            </ClipReveal>
+            <ClipReveal className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
+               <Image src="/bento_player_serve_1783528130916.jpg" alt="Player Serve" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
             </ClipReveal>
           </div>
         </ScrollReveal>
