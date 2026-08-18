@@ -17,6 +17,7 @@ export default function Footer() {
             <Link href="/singles-academy" className={styles.link}>Singles Academy</Link>
             <Link href="/doubles-academy" className={styles.link}>Doubles Academy</Link>
             <Link href="/ai-engine" className={styles.link}>AI Engine</Link>
+            <Link href="/labs" className={styles.link}>Labs (Beta)</Link>
             <Link href="/playbook" className={styles.link}>The £9 Playbook</Link>
           </div>
 

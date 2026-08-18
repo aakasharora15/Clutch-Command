@@ -30,8 +30,8 @@ export default function Navbar() {
         <div className={styles.linksLeft}>
           <div className={styles.linksPill}>
             <Link href="/product" className={styles.link}>Product</Link>
-            <Link href="/promises" className={styles.link}>Promises</Link>
             <Link href="/co-founders" className={styles.link}>Co-Founders</Link>
+            <Link href="/labs" className={styles.link}>Labs</Link>
           </div>
         </div>
         
