@@ -8,7 +8,7 @@ export default function ProductPage() {
     <div className="page-wrapper dark" style={{ paddingTop: '100px' }}>
       
       {/* ===== HERO NARRATIVE ===== */}
-      <section className="airy-section" id="story">
+      <section className="airy-section dark" id="story">
         <div className="wrap">
           <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
             <h1 style={{ fontSize: 'clamp(64px, 8vw, 120px)', lineHeight: 0.9, letterSpacing: '-0.02em', margin: '0 0 32px 0', textTransform: 'uppercase', color: '#fff' }}>

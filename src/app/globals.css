@@ -166,6 +166,11 @@ p {
 .airy-section.dark p {
   color: rgba(255,255,255,0.7);
 }
+.page-wrapper.dark {
+  background: var(--bg-dark);
+  color: #fff;
+  min-height: 100vh;
+}
 
 /* 4. Problem/Science sections: .grid-asym-3 (1.2fr 0.9fr 0.9fr) */
 .grid-asym-3 {

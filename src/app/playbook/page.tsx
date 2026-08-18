@@ -10,7 +10,7 @@ export const metadata = {
 export default function PlaybookPage() {
   return (
     <div className="page-wrapper dark" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
-      <section className="airy-section">
+      <section className="airy-section dark">
         <div className="wrap" style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
           
           <div style={{ display: 'inline-block', background: 'var(--lime)', color: '#111', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '32px' }}>
