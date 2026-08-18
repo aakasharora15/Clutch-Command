@@ -1,6 +1,7 @@
 import React from 'react';
 import ScrollReveal from '../../components/ScrollReveal';
 import VideoHoverCard from '../../components/VideoHoverCard';
+import SymptomNodeMap from '../../components/SymptomNodeMap';
 
 export const metadata = {
   title: 'Vlado Platenik Singles Academy | Clutch Command',
@@ -29,6 +30,13 @@ export default function SinglesAcademyPage() {
             <p style={{ fontSize: '22px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, maxWidth: '700px', margin: '0 auto 64px auto' }}>
               Engineered by former WTA Top 10 coach Vlado Platenik. Learn how to dictate play, construct points under severe pressure, and turn defense into a lethal offense.
             </p>
+          </ScrollReveal>
+        </div>
+        
+        {/* Interactive Symptom Map */}
+        <div className="wrap" style={{ marginBottom: '80px' }}>
+          <ScrollReveal delay={0.4}>
+            <SymptomNodeMap />
           </ScrollReveal>
         </div>
 
