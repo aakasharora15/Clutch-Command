@@ -3,7 +3,6 @@ import ScrollReveal from '../../components/ScrollReveal';
 import HeartRateSimulator from '../../components/HeartRateSimulator';
 import ROICalculator from '../../components/ROICalculator';
 import CognitiveTest from '../../components/CognitiveTest';
-import ProMatchOverlay from '../../components/ProMatchOverlay';
 
 export const metadata = {
   title: 'Labs | Clutch Command',
@@ -48,10 +47,6 @@ export default function LabsPage() {
 
             <ScrollReveal>
               <CognitiveTest />
-            </ScrollReveal>
-
-            <ScrollReveal>
-              <ProMatchOverlay />
             </ScrollReveal>
 
           </div>
