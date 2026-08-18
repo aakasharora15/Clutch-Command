@@ -21,7 +21,7 @@ export default function HeartRateSimulator() {
           position: 'fixed',
           inset: 0,
           pointerEvents: 'none',
-          zIndex: 9999,
+          zIndex: 0,
           background: `radial-gradient(circle, transparent 30%, rgba(0,0,0,${vignetteOpacity}) 100%)`,
           backdropFilter: `blur(${blurAmount}px)`,
           transition: 'all 0.3s ease',
