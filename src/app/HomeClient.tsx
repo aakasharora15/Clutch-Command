@@ -290,6 +290,9 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </div>
       </header>
 
+      {/* ===== SCROLLING MARQUEE ===== */}
+      <Marquee text="Mental Toughness • Tactical Execution • Cognitive Resilience" speed="20s" />
+
       {/* ===== STATS COUNTER ===== */}
       <section style={{ background: 'var(--bg-dark)', padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="wrap">
