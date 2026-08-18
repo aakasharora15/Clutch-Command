@@ -2,6 +2,7 @@ import React from 'react';
 import ScrollReveal from '../../components/ScrollReveal';
 import AIVisualizer from '../../components/AIVisualizer';
 import TiltCard from '../../components/TiltCard';
+import PressureScrubber from '../../components/PressureScrubber';
 
 export const metadata = {
   title: 'AI Engine | Clutch Command',
@@ -57,6 +58,27 @@ export default function AIEnginePage() {
             </ScrollReveal>
 
           </div>
+        </div>
+        
+        {/* Pressure Scrubber Section */}
+        <div className="wrap" style={{ marginTop: '120px' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', marginBottom: '60px' }}>
+            <ScrollReveal>
+              <h2 style={{ fontSize: 'clamp(40px, 5vw, 64px)', lineHeight: 1, letterSpacing: '-0.02em', textTransform: 'uppercase', color: '#fff', marginBottom: '24px' }}>
+                The Invisible Breakdown
+              </h2>
+              <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
+                Drag the slider to see how the AI detects a 12° drop in shoulder rotation when the score reaches 30-30.
+              </p>
+            </ScrollReveal>
+          </div>
+          
+          <ScrollReveal delay={0.2}>
+            <PressureScrubber 
+              beforeImage="/bento_player_serve_1783528130916.jpg" 
+              afterImage="/hero_tennis_court_1783528122643.jpg" 
+            />
+          </ScrollReveal>
         </div>
       </section>
     </div>
