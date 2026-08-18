@@ -14,6 +14,7 @@ export default function Footer() {
           <div className={styles.navCol}>
             <h4 className={styles.colTitle}>Platform</h4>
             <Link href="/" className={styles.link}>Home</Link>
+            <Link href="/academies" className={styles.link}>Academies</Link>
             <Link href="/singles-academy" className={styles.link}>Singles Academy</Link>
             <Link href="/doubles-academy" className={styles.link}>Doubles Academy</Link>
             <Link href="/ai-engine" className={styles.link}>AI Engine</Link>
