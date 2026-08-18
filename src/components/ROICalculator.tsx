@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import AnimatedCounter from './AnimatedCounter';
 
 export default function ROICalculator() {
   const [utr, setUtr] = useState(6.0);
@@ -74,7 +73,7 @@ export default function ROICalculator() {
           <div>
             <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Projected UTR (Clutch Adjusted)</div>
             <div style={{ fontSize: '56px', color: 'var(--lime)', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-              <AnimatedCounter end={newUtr} decimals={1} />
+              {newUtr.toFixed(1)}
             </div>
           </div>
         </div>
