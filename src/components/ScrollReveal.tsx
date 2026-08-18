@@ -1,47 +1,30 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
+  delay?: number;
+  style?: React.CSSProperties;
 }
 
-export default function ScrollReveal({ children, className = '' }: ScrollRevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const currentRef = ref.current;
-    
-    if (!currentRef) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(currentRef);
-        }
-      },
-      {
-        threshold: 0.1, 
-        rootMargin: '0px 0px -50px 0px' 
-      }
-    );
-
-    observer.observe(currentRef);
-
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
-  }, []);
-
+export default function ScrollReveal({ children, className = '', delay = 0, style }: ScrollRevealProps) {
   return (
-    <div 
-      ref={ref} 
-      className={`reveal-on-scroll ${isVisible ? 'is-visible' : ''} ${className}`}
+    <motion.div 
+      className={className}
+      style={style}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ 
+        duration: 0.8, 
+        ease: [0.16, 1, 0.3, 1], // Custom cubic bezier matching Apple-like motion
+        delay: delay 
+      }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
