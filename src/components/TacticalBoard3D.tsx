@@ -69,8 +69,7 @@ export default function TacticalBoard3D() {
             height: '600px', 
             background: '#1A2C1A', // Dark green court
             border: '2px solid rgba(255,255,255,0.4)',
-            marginTop: '100px',
-            transformStyle: 'preserve-3d'
+            marginTop: '100px'
           }}
           initial={{ rotateX: 60, rotateZ: -30, scale: 0.8 }}
           animate={{ rotateX: 55, rotateZ: scenario === 'aggressive' ? -25 : scenario === 'choking' ? -35 : -15 }}
@@ -88,34 +87,33 @@ export default function TacticalBoard3D() {
           {/* Grid Overlay for Tech Vibe */}
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(217,248,127,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(217,248,127,0.05) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
 
-          {/* Player Heatmap */}
+          {/* Player Heatmap & Dot */}
           <motion.div
-            animate={{ top: pos.player.top, left: pos.player.left, backgroundColor: pos.color }}
+            animate={{ top: pos.player.top, left: pos.player.left }}
             transition={{ duration: 0.8, type: "spring" }}
             style={{
               position: 'absolute',
               width: '80px',
               height: '80px',
-              borderRadius: '50%',
-              filter: 'blur(15px)',
-              transform: 'translate(-50%, -50%)',
-              zIndex: 10
+              x: '-50%',
+              y: '-50%',
+              zIndex: 10,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
-          />
-          {/* Player Dot */}
-          <motion.div
-            animate={{ top: pos.player.top, left: pos.player.left, backgroundColor: pos.color }}
-            transition={{ duration: 0.8, type: "spring" }}
-            style={{
-              position: 'absolute',
-              width: '8px',
-              height: '8px',
-              borderRadius: '50%',
-              transform: 'translate(-50%, -50%)',
-              zIndex: 11,
-              boxShadow: '0 0 10px #fff'
-            }}
-          />
+          >
+            {/* The Blur Halo */}
+            <motion.div 
+               animate={{ backgroundColor: pos.color }}
+               style={{ position: 'absolute', inset: 0, borderRadius: '50%', filter: 'blur(15px)' }}
+            />
+            {/* The Solid Dot */}
+            <motion.div 
+               animate={{ backgroundColor: pos.color }}
+               style={{ position: 'relative', zIndex: 2, width: '8px', height: '8px', borderRadius: '50%', boxShadow: '0 0 10px rgba(255,255,255,0.8)' }}
+            />
+          </motion.div>
 
           {/* Opponent Heatmap (Fainter) */}
           <motion.div
@@ -128,7 +126,8 @@ export default function TacticalBoard3D() {
               borderRadius: '50%',
               backgroundColor: 'rgba(255,255,255,0.3)',
               filter: 'blur(15px)',
-              transform: 'translate(-50%, -50%)',
+              x: '-50%',
+              y: '-50%',
               zIndex: 10
             }}
           />
