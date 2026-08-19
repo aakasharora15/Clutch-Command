@@ -686,3 +686,34 @@ p {
     mask-image: linear-gradient(to bottom, black 30%, transparent 95%);
   }
 }
+
+/* ====== DESIGN SYSTEM UPGRADES ====== */
+
+/* Refined Glass Surfaces */
+.glass {
+  background: rgba(15, 20, 15, 0.45) !important;
+  backdrop-filter: blur(32px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(120%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 24px 48px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Micro Interactions & Purposeful Motion */
+.bento-item {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.bento-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 32px 64px rgba(0, 0, 0, 0.5) !important;
+}
+.btn-dark {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.btn-dark:active {
+  transform: scale(0.96) translateY(0) !important;
+}
+
+/* Bold Typography Refinements */
+h1, h2, h3, h4 {
+  letter-spacing: -0.03em;
+}
