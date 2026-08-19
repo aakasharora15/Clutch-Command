@@ -39,9 +39,9 @@ export default function DoublesAcademyPage() {
             <ScrollReveal className="col-span-8" delay={0.4} style={{ gridColumn: 'span 8' }}>
               <VideoHoverCard 
                 videoSrc="/hero-video.mp4" 
-                posterSrc="/media__1785580600508.png"
-                title="The Poaching Protocol"
-                description="When to move, where to move, and how to read the returner's shoulders before they even hit the ball."
+                posterSrc="/bento_player_celebrate_1783528150116.jpg"
+                title="The Doubles Symphony"
+                description="Synchronized movement and covering the middle under severe cognitive load."
                 className="h-full"
               />
             </ScrollReveal>
@@ -50,8 +50,8 @@ export default function DoublesAcademyPage() {
               <VideoHoverCard 
                 videoSrc="/hero-video.mp4" 
                 posterSrc="/bento_player_serve_1783528130916.jpg"
-                title="First Volley Fundamentals"
-                description="The exact footwork required to stick the first volley in no-man's land."
+                title="Poaching Execution"
+                description="The exact geometric angles to close the net on second serves."
                 className="h-full"
               />
             </ScrollReveal>
@@ -59,9 +59,9 @@ export default function DoublesAcademyPage() {
             <ScrollReveal className="col-span-6" delay={0.6} style={{ gridColumn: 'span 6' }}>
               <VideoHoverCard 
                 videoSrc="/hero-video.mp4" 
-                posterSrc="/media__1785542072660.png"
-                title="I-Formation Tactics"
-                description="Disrupting the returner's rhythm with unpredictable serving formations."
+                posterSrc="/tennis_court_night.jpg"
+                title="Communication in Chaos"
+                description="Verbal and non-verbal cues to reset momentum after being broken."
                 className="h-full"
               />
             </ScrollReveal>

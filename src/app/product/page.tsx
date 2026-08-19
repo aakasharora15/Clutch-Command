@@ -45,7 +45,7 @@ export default function ProductPage() {
                  <div style={{ display: 'inline-block', background: 'var(--lime)', color: '#111', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '24px' }}>Tactics</div>
                  <h3 style={{ color: '#fff', fontSize: '40px', marginBottom: '16px', lineHeight: 1.1, letterSpacing: '-0.01em' }}>Two More Points At 5-5:<br/>How To Win The Tiebreak</h3>
                  <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', lineHeight: 1.6, marginBottom: '32px', maxWidth: '500px' }}>Learn how to shift your identity when facing championship point. We break down the exact mechanics required to help you win the points that matter.</p>
-                 <a href="#" style={{ color: '#fff', textDecoration: 'none', borderBottom: '1px solid var(--lime)', paddingBottom: '4px', fontSize: '15px', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Read Article &rarr;</a>
+                 <a href="/blog/tactics-evolution" style={{ color: '#fff', textDecoration: 'none', borderBottom: '1px solid var(--lime)', paddingBottom: '4px', fontSize: '15px', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Read Article &rarr;</a>
                </div>
             </div>
             

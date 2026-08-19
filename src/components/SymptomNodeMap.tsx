@@ -161,7 +161,7 @@ export default function SymptomNodeMap() {
             exit={{ opacity: 0, y: -20 }}
             style={{ textAlign: 'center', marginTop: '60px' }}
           >
-            <a href="#checkout" className="btn-dark" style={{ background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>
+            <a href="/playbook" className="btn-dark" style={{ background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>
               Unlock {CURES.find(c => c.id === activeCure)?.label}
             </a>
           </motion.div>

@@ -12,20 +12,17 @@ interface VideoHoverCardProps {
 }
 
 export default function VideoHoverCard({ videoSrc, posterSrc, title, description, className = '' }: VideoHoverCardProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(e => console.log('Autoplay prevented:', e));
-      videoRef.current.style.transform = 'scale(1.1)';
+    if (imgRef.current) {
+      imgRef.current.style.transform = 'scale(1.1)';
     }
   };
 
   const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0; // Reset to start
-      videoRef.current.style.transform = 'scale(1.05)';
+    if (imgRef.current) {
+      imgRef.current.style.transform = 'scale(1.05)';
     }
   };
 
@@ -38,16 +35,12 @@ export default function VideoHoverCard({ videoSrc, posterSrc, title, description
       transition={{ duration: 0.3, ease: "easeOut" }}
       style={{ padding: 0, cursor: 'pointer', overflow: 'hidden', minHeight: '380px' }}
     >
-      {/* Video Background Layer */}
+      {/* Background Layer */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        {/* We use an image fallback if video fails, but normally we rely on poster */}
-        <video 
-          ref={videoRef}
-          src={videoSrc} 
-          poster={posterSrc}
-          loop 
-          muted 
-          playsInline
+        <img 
+          ref={imgRef}
+          src={posterSrc}
+          alt={title}
           style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)', transform: 'scale(1.05)' }}
         />
         {/* Dark overlay so text is legible */}

@@ -45,7 +45,7 @@ export default function PricingTiers() {
                 </li>
               ))}
             </ul>
-            <a href="/product" className="btn-dark" style={{ background: 'var(--lime)', color: '#111', textAlign: 'center' }}>Join the Academy</a>
+            <a href="/academies" className="btn-dark" style={{ background: 'var(--lime)', color: '#111', textAlign: 'center' }}>Join the Academy</a>
           </SpotlightCard>
 
         </div>

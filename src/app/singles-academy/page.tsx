@@ -47,7 +47,7 @@ export default function SinglesAcademyPage() {
             <ScrollReveal className="col-span-8" delay={0.4} style={{ gridColumn: 'span 8' }}>
               <VideoHoverCard 
                 videoSrc="/hero-video.mp4" 
-                posterSrc="/media__1783528047317.jpg"
+                posterSrc="/hero_tennis_court_1783528122643.jpg"
                 title="The Inside-Out Forehand Paradigm"
                 description="Why your inside-out forehand breaks down at 30-30, and how to reconstruct the kinetic chain for maximum penetration."
                 className="h-full"
@@ -57,7 +57,7 @@ export default function SinglesAcademyPage() {
             <ScrollReveal className="col-span-4" delay={0.5} style={{ gridColumn: 'span 4' }}>
               <VideoHoverCard 
                 videoSrc="/hero-video.mp4" 
-                posterSrc="/media_1786071530296.png"
+                posterSrc="/tennis_shoe_clay.jpg"
                 title="Return of Serve Positioning"
                 description="Aggressive vs passive return positions to instantly neutralize first serves."
                 className="h-full"
@@ -67,7 +67,7 @@ export default function SinglesAcademyPage() {
             <ScrollReveal className="col-span-6" delay={0.6} style={{ gridColumn: 'span 6' }}>
               <VideoHoverCard 
                 videoSrc="/hero-video.mp4" 
-                posterSrc="/media__1785580667248.png"
+                posterSrc="/tennis_blueprint.jpg"
                 title="Pattern Recognition"
                 description="Identifying opponent patterns within the first 3 games."
                 className="h-full"
