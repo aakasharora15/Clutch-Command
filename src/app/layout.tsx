@@ -21,14 +21,20 @@ import SmoothScrolling from "@/components/SmoothScrolling";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL 
+  ? process.env.NEXT_PUBLIC_SITE_URL 
+  : process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : 'https://clutch-command-mu.vercel.app';
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://clutchcommand.com"),
+  metadataBase: new URL(siteUrl),
   title: "Clutch Command | Win Two More Points",
   description: "An AI-powered tennis pressure-performance platform. The narrow loss, solved.",
   openGraph: {
     title: "Clutch Command | Win Two More Points",
     description: "An AI-powered tennis pressure-performance platform.",
-    url: "https://clutchcommand.com",
+    url: siteUrl,
     siteName: "Clutch Command",
     images: [
       {
