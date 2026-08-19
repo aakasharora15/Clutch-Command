@@ -4,6 +4,7 @@ import HeartRateSimulator from '../../components/HeartRateSimulator';
 import ROICalculator from '../../components/ROICalculator';
 import CognitiveTest from '../../components/CognitiveTest';
 import TacticalBoard3D from '../../components/TacticalBoard3D';
+import DecisionMatrix from '../../components/DecisionMatrix';
 
 export const metadata = {
   title: 'Labs | Clutch Command',
@@ -48,6 +49,10 @@ export default function LabsPage() {
 
             <ScrollReveal>
               <CognitiveTest />
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <DecisionMatrix />
             </ScrollReveal>
 
             <ScrollReveal>
