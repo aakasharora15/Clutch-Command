@@ -3,6 +3,7 @@ import ScrollReveal from '../../components/ScrollReveal';
 import AIVisualizer from '../../components/AIVisualizer';
 import TiltCard from '../../components/TiltCard';
 import PressureScrubber from '../../components/PressureScrubber';
+import TacticalBoard3D from '../../components/TacticalBoard3D';
 
 export const metadata = {
   title: 'AI Engine | Clutch Command',
@@ -58,6 +59,13 @@ export default function AIEnginePage() {
             </ScrollReveal>
 
           </div>
+        </div>
+
+        {/* 3D Tactical Board Section */}
+        <div className="wrap" style={{ marginTop: '80px' }}>
+          <ScrollReveal delay={0.6}>
+            <TacticalBoard3D />
+          </ScrollReveal>
         </div>
         
         {/* Pressure Scrubber Section */}
