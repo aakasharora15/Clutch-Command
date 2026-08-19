@@ -31,9 +31,9 @@ export default function Footer() {
 
           <div className={styles.navCol}>
             <h4 className={styles.colTitle}>Social</h4>
-            <a href="#" className={styles.link}>X (Twitter)</a>
-            <a href="#" className={styles.link}>Facebook</a>
-            <a href="#" className={styles.link}>LinkedIn</a>
+            <a href="https://x.com/clutchcommand" className={styles.link} target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+            <a href="https://facebook.com/clutchcommand" className={styles.link} target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://linkedin.com/company/clutchcommand" className={styles.link} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
       </div>
