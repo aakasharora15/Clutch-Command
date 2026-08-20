@@ -18,6 +18,7 @@ import PricingTiers from '../components/PricingTiers';
 import TestimonialWall from '../components/TestimonialWall';
 import VideoModal from '../components/VideoModal';
 import CQAssessment from '../components/CQAssessment';
+import DecisionMatrix from '../components/DecisionMatrix';
 import { BlogPost } from '@/lib/markdown';
 
 const ECG_PATH =
@@ -399,12 +400,8 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                </div>
             </div>
 
-            <div className="bento-item" style={{ gridColumn: 'span 12', padding: 0, minHeight: '400px' }}>
-               <Image src="/tennis_shoe_clay.jpg" alt="Cognitive Mapping" fill style={{ objectFit: 'cover', objectPosition: 'center 70%' }} sizes="100vw" />
-               <div className="bento-item glass" style={{ position: 'absolute', bottom: '24px', left: '24px', maxWidth: '400px', padding: '32px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                 <h4 style={{ color: 'var(--lime)', fontSize: '24px', marginBottom: '12px' }}>Cognitive Mapping</h4>
-                 <p style={{ margin: 0, fontSize: '16px', color: '#fff' }}>See exactly when decision-making shifts from offensive to defensive survival mode.</p>
-               </div>
+            <div style={{ gridColumn: 'span 12', marginTop: '24px' }}>
+              <DecisionMatrix />
             </div>
 
           </div>
