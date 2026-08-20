@@ -1,35 +1,33 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 export default function DecisionMatrix() {
-  const [oppPos, setOppPos] = useState({ x: 0.5, y: 0.15 }); // 0-1 scale relative to court
+  const [oppPos, setOppPos] = useState({ x: 0.5, y: 0.15 }); 
+  const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Derived Target Zone Logic
   const getTargetZone = () => {
-    // Basic logic: hit where they aren't
     let tx = 0.5;
     let ty = 0.8;
     let shotType = "Deep Center Rally";
     let prob = 52;
 
     if (oppPos.y > 0.4) {
-      // Opponent at net
-      ty = 0.1; // Deep lob
+      ty = 0.1; 
       tx = oppPos.x > 0.5 ? 0.1 : 0.9;
       shotType = "Topspin Lob / Passing Shot";
       prob = 68;
     } else {
-      // Opponent back
       ty = 0.8;
       if (oppPos.x < 0.3) {
-        tx = 0.8; // Go right
+        tx = 0.85; 
         shotType = "Aggressive Cross-Court";
         prob = 74;
       } else if (oppPos.x > 0.7) {
-        tx = 0.2; // Go left
+        tx = 0.15; 
         shotType = "Inside-Out Forehand";
         prob = 71;
       } else {
@@ -44,23 +42,38 @@ export default function DecisionMatrix() {
 
   const target = getTargetZone();
 
-  const handleDrag = (e: any, info: any) => {
+  const updatePosition = (clientX: number, clientY: number) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     
-    // Calculate new relative position (0 to 1)
-    let newX = (info.point.x - rect.left) / rect.width;
-    let newY = (info.point.y - rect.top) / rect.height;
+    let newX = (clientX - rect.left) / rect.width;
+    let newY = (clientY - rect.top) / rect.height;
 
-    // Clamp values
     newX = Math.max(0.05, Math.min(newX, 0.95));
-    newY = Math.max(0.05, Math.min(newY, 0.45)); // Only let them drag on their side of the net
+    newY = Math.max(0.05, Math.min(newY, 0.45)); 
 
     setOppPos({ x: newX, y: newY });
   };
 
+  const handlePointerDown = (e: React.PointerEvent) => {
+    setIsDragging(true);
+    e.currentTarget.setPointerCapture(e.pointerId);
+    updatePosition(e.clientX, e.clientY);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (isDragging) {
+      updatePosition(e.clientX, e.clientY);
+    }
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    setIsDragging(false);
+    e.currentTarget.releasePointerCapture(e.pointerId);
+  };
+
   return (
-    <div className="bento-item glass" style={{ padding: '40px', minHeight: '700px', display: 'flex', flexDirection: 'column', gap: '40px' }}>
+    <div className="bento-item glass" style={{ padding: '40px', minHeight: '700px', display: 'flex', flexDirection: 'column', gap: '40px', touchAction: 'none' }}>
       
       {/* Header */}
       <div>
@@ -79,10 +92,15 @@ export default function DecisionMatrix() {
           
           <div 
             ref={containerRef}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
             style={{ 
               width: '240px', height: '480px', background: '#111', 
               border: '2px solid rgba(255,255,255,0.1)', position: 'relative',
-              borderRadius: '8px', overflow: 'hidden'
+              borderRadius: '8px', overflow: 'hidden', cursor: isDragging ? 'grabbing' : 'pointer',
+              touchAction: 'none'
             }}
           >
             {/* 2D Court Lines */}
@@ -92,26 +110,25 @@ export default function DecisionMatrix() {
             
             {/* Draggable Opponent */}
             <motion.div
-              drag
-              dragElastic={0}
-              dragMomentum={false}
-              onDrag={handleDrag}
+              animate={{ 
+                x: oppPos.x * 240 - 12, 
+                y: oppPos.y * 480 - 12,
+                scale: isDragging ? 1.2 : 1
+              }}
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
               style={{
                 position: 'absolute',
-                top: 0, left: 0, // Pos driven by transform via state
-                x: `calc(${oppPos.x * 240}px - 12px)`,
-                y: `calc(${oppPos.y * 480}px - 12px)`,
+                top: 0, left: 0, 
                 width: '24px', height: '24px',
                 borderRadius: '50%', background: '#fff',
-                cursor: 'grab', zIndex: 10,
+                zIndex: 10, pointerEvents: 'none',
                 boxShadow: '0 0 15px rgba(255,255,255,0.5)'
               }}
-              whileDrag={{ scale: 1.2, cursor: 'grabbing' }}
             />
 
             {/* Target Indicator on 2D */}
             <motion.div 
-              animate={{ x: `calc(${target.x * 240}px - 12px)`, y: `calc(${target.y * 480}px - 12px)` }}
+              animate={{ x: target.x * 240 - 12, y: target.y * 480 - 12 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
               style={{
                 position: 'absolute', top: 0, left: 0,
