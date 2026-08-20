@@ -41,7 +41,7 @@ export default function AcademiesHubPage() {
               <Link href="/singles-academy" style={{ display: 'flex', flexDirection: 'column', width: '100%', textDecoration: 'none' }}>
                 <div className="bento-item glass hover-scale" style={{ flex: 1, padding: 0, position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ position: 'relative', height: '300px', width: '100%' }}>
-                    <Image src="/hero_tennis_court_1783528122643.jpg" alt="Singles Court" fill style={{ objectFit: 'cover' }} />
+                    <Image src="/tennis_portrait.jpg" alt="Singles Court" fill style={{ objectFit: 'cover', objectPosition: 'center 20%' }} />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,20,10,1) 0%, transparent 100%)' }} />
                   </div>
                   <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', flex: 1 }}>
@@ -62,7 +62,7 @@ export default function AcademiesHubPage() {
               <Link href="/doubles-academy" style={{ display: 'flex', flexDirection: 'column', width: '100%', textDecoration: 'none' }}>
                 <div className="bento-item glass hover-scale" style={{ flex: 1, padding: 0, position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ position: 'relative', height: '300px', width: '100%' }}>
-                    <Image src="/media__1785580667248.png" alt="Doubles Court" fill style={{ objectFit: 'cover' }} />
+                    <Image src="/tennis_court_night.jpg" alt="Doubles Court" fill style={{ objectFit: 'cover' }} />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,20,10,1) 0%, transparent 100%)' }} />
                   </div>
                   <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', flex: 1 }}>
