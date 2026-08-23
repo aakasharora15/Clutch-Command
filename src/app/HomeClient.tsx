@@ -19,6 +19,8 @@ import TestimonialWall from '../components/TestimonialWall';
 import VideoModal from '../components/VideoModal';
 import CQAssessment from '../components/CQAssessment';
 import DecisionMatrix from '../components/DecisionMatrix';
+import ScrollytellingHero from '../components/ScrollytellingHero';
+import VisionSlider from '../components/VisionSlider';
 import { BlogPost } from '@/lib/markdown';
 
 const ECG_PATH =
@@ -238,58 +240,8 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
     <div className="page-wrapper">
       {!introDone && <PressureIntro onDone={handleIntroDone} />}
 
-      {/* ===== HERO ===== */}
-      <header className="hero" style={{ background: 'none' }}>
-        {/* Video Background Structure */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          poster="/media__1783528047317.jpg"
-          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-        >
-          {/* <source src="/hero-video.mp4" type="video/mp4" /> */}
-        </video>
-        <div className="hero-overlay" style={{ zIndex: 1 }}></div>
-        <div className="hero-inner wrap" style={{ zIndex: 2 }}>
-          <div>
-            <div style={{ 
-              display: 'inline-flex', alignItems: 'center', gap: '16px', 
-              background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)',
-              padding: '6px 20px 6px 8px', borderRadius: '40px', marginBottom: '24px' 
-            }}>
-              <div style={{ display: 'flex' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'url(/mark_jeffery.png) center/cover', border: '2px solid #111' }}></div>
-                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#ddd', border: '2px solid #111', marginLeft: '-12px' }}></div>
-                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#bbb', border: '2px solid #111', marginLeft: '-12px' }}></div>
-              </div>
-              <p style={{ margin: 0, fontSize: '13px', color: '#fff', fontWeight: 500 }}>The Official Online Academy for Competitive Players.</p>
-            </div>
-            
-            <h1 style={{ fontSize: 'clamp(64px, 8vw, 120px)', lineHeight: 0.9, letterSpacing: '-0.02em', margin: '0 0 24px 0', textTransform: 'uppercase' }}>Win The Points<br/>That Decide Matches.</h1>
-            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '20px', maxWidth: '560px', lineHeight: 1.6, marginBottom: '40px', fontWeight: 400 }}>AI-powered pressure training for competitive tennis players. Diagnose your cognitive breakdown, train under simulated match stress, and close out the points that matter.</p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-              <MagneticElement strength={25}>
-                <a href={CTA.url} className="btn-dark" style={{ background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>{CTA.labelArrow}</a>
-              </MagneticElement>
-              <button 
-                onClick={() => setIsVideoOpen(true)}
-                style={{ 
-                  background: 'none', border: 'none', color: '#fff', fontSize: '15px', fontWeight: 600, 
-                  display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer',
-                  padding: '16px 0'
-                }}
-              >
-                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-                Watch Trailer
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* ===== SCROLLYTELLING HERO ===== */}
+      <ScrollytellingHero />
 
       {/* ===== SCROLLING MARQUEE ===== */}
       <Marquee text="Mental Toughness • Tactical Execution • Cognitive Resilience" speed="20s" />
@@ -326,26 +278,16 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </div>
       </section>
 
-      {/* ===== THE PROBLEM (Asymmetrical) ===== */}
-      <section className="airy-section section-fade-out section-fade-to-white" id="product">
-        <ScrollReveal className="wrap">
-          <SectionHeader eyebrow="The Problem" title="You don't lose matches because of technique. You lose them in two points." />
-          <div className="grid-asym-3" style={{ alignItems: 'flex-start' }}>
-            <div className="text-col" style={{ position: 'sticky', top: '140px' }}>
-              <p>We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.</p>
-              <br/>
-              <p>When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.</p>
-              <MagneticElement strength={20}>
-                <a href={CTA.url} className="btn-dark" style={{ marginTop: '48px' }}>{CTA.labelArrow}</a>
-              </MagneticElement>
-            </div>
-            <ClipReveal className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
-               <Image src="/tennis_player_exhausted.jpg" alt="Exhausted Player" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-            </ClipReveal>
-            <ClipReveal className="img-col" style={{ position: 'relative', overflow: 'hidden' }}>
-               <Image src="/bento_player_serve_1783528130916.jpg" alt="Player Serve" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 50vw" />
-            </ClipReveal>
+      {/* ===== THE VISION SLIDER (Interactive Split-Screen) ===== */}
+      <section className="airy-section section-fade-out section-fade-to-white" id="product" style={{ background: '#0a0a0a', paddingBottom: '160px' }}>
+        <ScrollReveal className="wrap" style={{ maxWidth: '1440px', padding: '0 40px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <h2 style={{ fontSize: 'clamp(40px, 6vw, 80px)', color: '#fff', textTransform: 'uppercase', letterSpacing: '-0.02em', marginBottom: '24px' }}>Amateur Vision <span style={{ color: 'rgba(255,255,255,0.2)' }}>vs</span> Clutch Vision</h2>
+            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '20px', maxWidth: '800px', margin: '0 auto' }}>
+              The match isn't lost on match point. It's lost 3 points earlier in your head. Drag the slider to experience how Elite players process court geometry under high cognitive load versus amateurs who revert to survival mode.
+            </p>
           </div>
+          <VisionSlider />
         </ScrollReveal>
       </section>
 
