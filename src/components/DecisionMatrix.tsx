@@ -179,8 +179,8 @@ export default function DecisionMatrix() {
                 transition={{ type: "spring", stiffness: 200, damping: 25 }}
                 style={{
                   position: 'absolute', width: '40px', height: '40px',
-                  background: 'rgba(255,255,255,0.8)', filter: 'blur(8px)',
-                  transform: 'translate(-50%, -50%)', borderRadius: '50%'
+                  background: 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)',
+                  transform: 'translate(-50%, -50%)', borderRadius: '50%', zIndex: 2
                 }}
               />
 
@@ -190,8 +190,8 @@ export default function DecisionMatrix() {
                 transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 style={{
                   position: 'absolute', width: '80px', height: '80px',
-                  background: 'rgba(217,248,127,0.3)', filter: 'blur(12px)',
-                  transform: 'translate(-50%, -50%)', borderRadius: '50%'
+                  background: 'radial-gradient(circle, rgba(217,248,127,0.4) 0%, rgba(217,248,127,0) 70%)',
+                  transform: 'translate(-50%, -50%)', borderRadius: '50%', zIndex: 1
                 }}
               />
               <motion.div
@@ -199,8 +199,8 @@ export default function DecisionMatrix() {
                 transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 style={{
                   position: 'absolute', width: '12px', height: '12px',
-                  background: 'var(--lime)', boxShadow: '0 0 20px var(--lime)',
-                  transform: 'translate(-50%, -50%)', borderRadius: '50%'
+                  background: 'var(--lime)',
+                  transform: 'translate(-50%, -50%)', borderRadius: '50%', zIndex: 2
                 }}
               />
 
