@@ -1,6 +1,7 @@
 import React from 'react';
 import ScrollReveal from '../../components/ScrollReveal';
 import VideoHoverCard from '../../components/VideoHoverCard';
+import DoublesSymphony from '../../components/DoublesSymphony';
 
 export const metadata = {
   title: 'Dan Kiernan Doubles Academy | Clutch Command',
@@ -29,6 +30,13 @@ export default function DoublesAcademyPage() {
             <p style={{ fontSize: '22px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, maxWidth: '700px', margin: '0 auto 64px auto' }}>
               Engineered by doubles specialist Dan Kiernan. Learn how to control the net, master non-verbal communication, and execute high-percentage poaching under pressure.
             </p>
+          </ScrollReveal>
+        </div>
+
+        {/* Interactive Physics Sandbox */}
+        <div className="wrap" style={{ marginBottom: '80px' }}>
+          <ScrollReveal delay={0.4}>
+            <DoublesSymphony />
           </ScrollReveal>
         </div>
 
