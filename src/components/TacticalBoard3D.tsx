@@ -105,13 +105,13 @@ export default function TacticalBoard3D() {
           >
             {/* The Blur Halo */}
             <motion.div 
-               animate={{ backgroundColor: pos.color }}
-               style={{ position: 'absolute', inset: 0, borderRadius: '50%', filter: 'blur(15px)' }}
+               animate={{ background: `radial-gradient(circle, ${pos.color} 0%, rgba(255,255,255,0) 70%)` }}
+               style={{ position: 'absolute', inset: 0, borderRadius: '50%', opacity: 0.6 }}
             />
             {/* The Solid Dot */}
             <motion.div 
                animate={{ backgroundColor: pos.color }}
-               style={{ position: 'relative', zIndex: 2, width: '8px', height: '8px', borderRadius: '50%', boxShadow: '0 0 10px rgba(255,255,255,0.8)' }}
+               style={{ position: 'relative', zIndex: 2, width: '8px', height: '8px', borderRadius: '50%' }}
             />
           </motion.div>
 
@@ -124,8 +124,7 @@ export default function TacticalBoard3D() {
               width: '60px',
               height: '60px',
               borderRadius: '50%',
-              backgroundColor: 'rgba(255,255,255,0.3)',
-              filter: 'blur(15px)',
+              background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%)',
               x: '-50%',
               y: '-50%',
               zIndex: 10
