@@ -1,6 +1,7 @@
 import React from 'react';
 import { CTA } from '../../config/cta';
 import SectionHeader from '../../components/SectionHeader';
+import AnimatedCounter from '../../components/AnimatedCounter';
 import StaggerReveal from '../../components/StaggerReveal';
 import SpotlightCard from '../../components/SpotlightCard';
 import Image from 'next/image';
@@ -26,7 +27,7 @@ export default function PromisesPage() {
             
             <SpotlightCard spotlightColor="rgba(0,0,0,0.05)" className="step-card" style={{ padding: '48px 32px', background: '#fff', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.04)', boxShadow: '0 12px 32px rgba(0,0,0,0.03)', textAlign: 'center' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1.5px var(--bg-dark)', fontWeight: 800, fontSize: '80px', marginBottom: '16px', lineHeight: 1 }}>
-                14
+                <AnimatedCounter end={14} />
               </div>
               <h3 style={{ fontSize: '22px', marginBottom: '12px', fontWeight: 600, color: 'var(--bg-dark)' }}>Days To Shift</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '15px', lineHeight: 1.6 }}>The timeframe required to biologically adapt to high-pressure scenarios using our cognitive stress protocols.</p>
@@ -34,7 +35,7 @@ export default function PromisesPage() {
             
             <SpotlightCard spotlightColor="rgba(0,0,0,0.05)" className="step-card" style={{ padding: '48px 32px', background: '#fff', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.04)', boxShadow: '0 12px 32px rgba(0,0,0,0.03)', textAlign: 'center' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1.5px var(--bg-dark)', fontWeight: 800, fontSize: '80px', marginBottom: '16px', lineHeight: 1 }}>
-                30
+                <AnimatedCounter end={30} />
                 <span style={{ fontSize: '48px' }}>%</span>
               </div>
               <h3 style={{ fontSize: '22px', marginBottom: '12px', fontWeight: 600, color: 'var(--bg-dark)' }}>Win Rate Increase</h3>
@@ -43,7 +44,7 @@ export default function PromisesPage() {
 
             <SpotlightCard className="step-card" style={{ padding: '48px 32px', background: 'var(--bg-dark)', color: '#fff', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.1)', textAlign: 'center' }}>
               <div style={{ color: 'var(--lime)', fontWeight: 800, fontSize: '80px', marginBottom: '16px', lineHeight: 1 }}>
-                100
+                <AnimatedCounter end={100} />
                 <span style={{ fontSize: '48px' }}>%</span>
               </div>
               <h3 style={{ fontSize: '22px', marginBottom: '12px', fontWeight: 600 }}>Money Back</h3>
