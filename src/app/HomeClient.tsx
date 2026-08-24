@@ -12,211 +12,15 @@ import ClipReveal from '../components/ClipReveal';
 import StaggerReveal from '../components/StaggerReveal';
 import SpotlightCard from '../components/SpotlightCard';
 import Marquee from '../components/Marquee';
-import AnimatedCounter from '../components/AnimatedCounter';
-import PlatformSneakPeek from '../components/PlatformSneakPeek';
 import PricingTiers from '../components/PricingTiers';
 import TestimonialWall from '../components/TestimonialWall';
 import VideoModal from '../components/VideoModal';
-import CQAssessment from '../components/CQAssessment';
 
 import { BlogPost } from '@/lib/markdown';
 
-const ECG_PATH =
-  "M0,75 L14,75 Q16,52 18,60 L22,75 L34,75 L38,83 L42,75 L46,40 L50,130 L54,70 L58,92 L62,68 L66,75 L150,75 " +
-  "L164,75 Q166,52 168,60 L172,75 L184,75 L188,83 L192,75 L196,20 L200,130 L204,70 L208,92 L212,68 L216,75 L300,75 " +
-  "L314,75 Q316,52 318,60 L322,75 L334,75 L338,83 L342,75 L346,6 L350,130 L354,70 L358,92 L362,68 L366,75 L450,75 " +
-  "L464,75 Q466,52 468,60 L472,75 L484,75 L488,83 L492,75 L496,22 L500,130 L504,70 L508,92 L512,68 L516,75 L600,75 " +
-  "L614,75 Q616,52 618,60 L622,75 L634,75 L638,83 L642,75 L646,42 L650,130 L654,70 L658,92 L662,68 L666,75 L750,75 L760,75";
-
-const TOTAL_MS = 3200;
-
-function vibrate(pattern: number | number[]) {
-  if (typeof navigator !== 'undefined' && navigator.vibrate) {
-    try { navigator.vibrate(pattern); } catch (e) { /* noop */ }
-  }
-}
-
-function PressureIntro({ onDone }: { onDone?: () => void }) {
-  const introRef = useRef<HTMLDivElement>(null);
-  const traceRef = useRef<SVGPathElement>(null);
-  const scanRef = useRef<SVGCircleElement>(null);
-  const pressureRef = useRef<HTMLDivElement>(null);
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [phase, setPhase] = useState<'idle' | 'pulsing' | 'reveal' | 'gone'>('idle');
-
-  useEffect(() => {
-    if (traceRef.current) {
-      const len = traceRef.current.getTotalLength();
-      traceRef.current.style.strokeDasharray = `${len}`;
-      traceRef.current.style.strokeDashoffset = `${len}`;
-    }
-  }, []);
-
-  function handleSkip() {
-    const audio = audioRef.current;
-    if (audio) { 
-      try { audio.pause(); audio.currentTime = 0; } catch (e) {} 
-    }
-    if (onDone) onDone();
-  }
-
-  function run() {
-    setPhase('pulsing');
-    vibrate(40);
-
-    const trace = traceRef.current;
-    const scan = scanRef.current;
-    const pressureEl = pressureRef.current;
-    const audio = audioRef.current;
-    const len = trace ? trace.getTotalLength() : 2000;
-
-    if (!audio) { setPhase('reveal'); setTimeout(() => { if (onDone) onDone(); }, 1000); return; }
-
-    let actx: AudioContext | undefined, analyser: AnalyserNode | null = null, dataArr: Uint8Array | undefined, gainNode: GainNode | undefined;
-    try {
-      // @ts-ignore
-      actx = new (window.AudioContext || window.webkitAudioContext)();
-      const srcNode = actx.createMediaElementSource(audio);
-      analyser = actx.createAnalyser();
-      analyser.fftSize = 512;
-      dataArr = new Uint8Array(analyser.frequencyBinCount);
-      gainNode = actx.createGain();
-      srcNode.connect(analyser);
-      analyser.connect(gainNode);
-      gainNode.connect(actx.destination);
-    } catch (e) {
-      analyser = null;
-    }
-
-    let start: number | null = null;
-    let lastBeat = -999;
-    let rafId: number;
-
-    function frame(ts: number) {
-      if (!start) start = ts;
-      const elapsed = ts - start;
-      const p = Math.min(elapsed / TOTAL_MS, 1);
-
-      if (trace) trace.style.strokeDashoffset = `${len * (1 - p)}`;
-      if (scan && trace) {
-        const pt = trace.getPointAtLength(len * p);
-        scan.setAttribute('cx', `${pt.x}`);
-        scan.setAttribute('cy', `${pt.y}`);
-        scan.style.opacity = '1';
-      }
-      if (pressureEl) pressureEl.textContent = (p * 87.4).toFixed(1);
-
-      if (analyser && dataArr) {
-        // @ts-ignore
-        analyser.getByteTimeDomainData(dataArr);
-        let maxDev = 0;
-        for (let i = 0; i < dataArr.length; i++) {
-          const d = Math.abs(dataArr[i] - 128);
-          if (d > maxDev) maxDev = d;
-        }
-        if (maxDev > 34 && elapsed - lastBeat > 140) {
-          lastBeat = elapsed;
-          if (scan) scan.setAttribute('r', '7');
-          vibrate(30);
-          setTimeout(() => { if (scan) scan.setAttribute('r', '4'); }, 90);
-        }
-      }
-
-      if (elapsed < TOTAL_MS) {
-        rafId = requestAnimationFrame(frame);
-      } else {
-        setPhase('reveal');
-        setTimeout(() => { if (onDone) onDone(); }, 1000);
-      }
-    }
-
-    audio.currentTime = 0;
-    if (gainNode && actx) {
-      const now = actx.currentTime;
-      const fadeStart = TOTAL_MS - 900;
-      gainNode.gain.cancelScheduledValues(now);
-      gainNode.gain.setValueAtTime(1, now);
-      gainNode.gain.setValueAtTime(1, now + fadeStart / 1000);
-      gainNode.gain.linearRampToValueAtTime(0.0001, now + TOTAL_MS / 1000);
-    }
-    const playPromise = audio.play();
-    rafId = requestAnimationFrame(frame);
-    setTimeout(() => { if (audio) audio.pause(); }, TOTAL_MS);
-    if (playPromise && playPromise.catch) {
-      playPromise.catch(() => { /* autoplay blocked */ });
-    }
-
-    return () => { if (rafId) cancelAnimationFrame(rafId); };
-  }
-
-  if (phase === 'gone') return null;
-
-  const content = (
-    <div
-      id="intro"
-      ref={introRef}
-      className={phase === 'pulsing' ? 'pulsing' : phase === 'reveal' ? 'pulsing reveal' : ''}
-    >
-      <div className="grid-bg"></div>
-      <div className="vignette"></div>
-      <div className="intro-readout">
-        <span>CLUTCH&#8202;//&#8202;PRESSURE&nbsp;SIGNAL</span>
-        <span className="live">Live Feed</span>
-      </div>
-      <div className="ecg">
-        <svg viewBox="0 0 760 150" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="ecgGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#6FD9C9" />
-              <stop offset="32%" stopColor="#8FE3FF" />
-              <stop offset="50%" stopColor="#EAFFC8" />
-              <stop offset="68%" stopColor="#8FE3FF" />
-              <stop offset="100%" stopColor="#6FD9C9" />
-            </linearGradient>
-          </defs>
-          <line className="base" x1="0" y1="75" x2="760" y2="75" />
-          <path className="trace" ref={traceRef} d={ECG_PATH} />
-          <circle className="scan" ref={scanRef} r="4" cx="0" cy="75" />
-        </svg>
-      </div>
-      <div className="intro-metrics">
-        <div><div className="k">Signal</div><div className="v">CQ&nbsp;<b>3D</b></div></div>
-        <div><div className="k">Pressure Index</div><div className="v" ref={pressureRef}>00.0</div></div>
-        <div><div className="k">Status</div><div className="v"><b>Locked</b></div></div>
-      </div>
-      <div className="intro-score">
-        30&#8202;&#8211;&#8202;30
-        <small>The point that decides it</small>
-      </div>
-      <div style={{ display: 'flex', gap: '16px', marginTop: '38px', position: 'relative', zIndex: 10 }}>
-        <button className="enter-btn" style={{ marginTop: 0 }} onClick={run}>Enter The Arena</button>
-        <button className="intro-skip" style={{ marginTop: 0, padding: '15px 34px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '4px', color: '#fff', fontSize: '11px', letterSpacing: '0.2em', cursor: 'pointer' }} onClick={handleSkip}>Skip Animation</button>
-      </div>
-      <audio ref={audioRef} src="/audio/heartbeat.mp3" preload="auto" />
-    </div>
-  );
-
-  if (typeof window === 'undefined') return content;
-  
-  // Need react-dom/client portal, but React.createPortal is available directly from react-dom
-  const ReactDOM = require('react-dom');
-  return ReactDOM.createPortal(content, document.body);
-}
-
 export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>[] }) {
-  const [introDone, setIntroDone] = useState(true);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
-  useEffect(() => {
-    if (!sessionStorage.getItem('clutch_intro_done')) {
-      setIntroDone(false);
-    }
-  }, []);
-
-  function handleIntroDone() {
-    sessionStorage.setItem('clutch_intro_done', 'true');
-    setIntroDone(true);
-  }
 
   // Parallax hero observer
   useEffect(() => {
@@ -236,7 +40,6 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
 
   return (
     <div className="page-wrapper">
-      {!introDone && <PressureIntro onDone={handleIntroDone} />}
 
       {/* ===== HERO ===== */}
       <header className="hero" style={{ background: 'none' }}>
@@ -294,38 +97,6 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
       {/* ===== SCROLLING MARQUEE ===== */}
       <Marquee text="Mental Toughness • Tactical Execution • Cognitive Resilience" speed="20s" />
 
-      {/* ===== STATS COUNTER ===== */}
-      <section style={{ background: 'var(--bg-dark)', padding: '80px 0', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="wrap">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', textAlign: 'center' }}>
-            <div>
-              <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                <AnimatedCounter end={30} />
-              </div>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Variables Analyzed</p>
-            </div>
-            <div>
-              <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: 'var(--lime)', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                <AnimatedCounter end={87.4} suffix="%" decimals={1} />
-              </div>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Avg CQ Improvement</p>
-            </div>
-            <div>
-              <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                <AnimatedCounter end={14} />
-              </div>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Days to First Results</p>
-            </div>
-            <div>
-              <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                <AnimatedCounter end={2} />
-              </div>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Points That Decide It</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ===== THE PROBLEM (Asymmetrical) ===== */}
       <section className="airy-section section-fade-out section-fade-to-white" id="product">
         <ScrollReveal className="wrap">
@@ -378,7 +149,6 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </ScrollReveal>
       </section>
 
-      <PlatformSneakPeek />
 
       {/* ===== THE SCIENCE (Bento Grid) ===== */}
       <section className="airy-section dark" id="science">
@@ -567,7 +337,6 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             <h2 className="section-header" style={{ textAlign: 'center', marginBottom: '24px' }}>Test Your Pressure Threshold</h2>
             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', maxWidth: '600px', margin: '0 auto' }}>Take the 60-second Clutch Quotient Diagnostic to uncover exactly why your game breaks down on deciding points.</p>
           </div>
-          <CQAssessment />
         </ScrollReveal>
       </section>
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import ScrollReveal from '../../components/ScrollReveal';
 import VideoHoverCard from '../../components/VideoHoverCard';
-import SymptomNodeMap from '../../components/SymptomNodeMap';
 
 export const metadata = {
   title: 'Vlado Platenik Singles Academy | Clutch Command',
@@ -35,9 +34,6 @@ export default function SinglesAcademyPage() {
         
         {/* Interactive Symptom Map */}
         <div className="wrap" style={{ marginBottom: '80px' }}>
-          <ScrollReveal delay={0.4}>
-            <SymptomNodeMap />
-          </ScrollReveal>
         </div>
 
         {/* Video Grid */}

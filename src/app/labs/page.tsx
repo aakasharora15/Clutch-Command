@@ -1,9 +1,5 @@
 import React from 'react';
 import ScrollReveal from '../../components/ScrollReveal';
-import HeartRateSimulator from '../../components/HeartRateSimulator';
-import ROICalculator from '../../components/ROICalculator';
-import CognitiveTest from '../../components/CognitiveTest';
-import TacticalBoard3D from '../../components/TacticalBoard3D';
 
 
 export const metadata = {
@@ -39,22 +35,10 @@ export default function LabsPage() {
         <div className="wrap">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '64px' }}>
             
-            <ScrollReveal>
-              <HeartRateSimulator />
-            </ScrollReveal>
-
-            <ScrollReveal>
-              <ROICalculator />
-            </ScrollReveal>
-
-            <ScrollReveal>
-              <CognitiveTest />
-            </ScrollReveal>
 
 
-            <ScrollReveal>
-              <TacticalBoard3D />
-            </ScrollReveal>
+
+
 
           </div>
         </div>
