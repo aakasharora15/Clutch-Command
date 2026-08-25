@@ -379,7 +379,6 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </ScrollReveal>
       </section>
 
-      <PlatformSneakPeek />
 
       {/* ===== THE SCIENCE (Bento Grid) ===== */}
       <section className="airy-section dark" id="science">
@@ -512,7 +511,6 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </div>
       </section>
 
-      <TestimonialWall />
 
       {/* ===== FAQ ===== */}
       <section className="airy-section dark" id="faq" style={{ paddingBottom: '160px' }}>
