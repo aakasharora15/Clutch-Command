@@ -18,7 +18,7 @@ export default function AIEnginePage() {
           
           <ScrollReveal delay={0.1}>
             <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', padding: '6px 16px', borderRadius: '100px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '32px', backdropFilter: 'blur(10px)' }}>
-              Proprietary Technology
+              The Coaching Engine
             </div>
           </ScrollReveal>
           
@@ -30,7 +30,7 @@ export default function AIEnginePage() {
 
           <ScrollReveal delay={0.3}>
             <p style={{ fontSize: '22px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, maxWidth: '700px', margin: '0 auto 64px auto' }}>
-              We ingest your match footage and run it through the Clutch Command AI to detect micro-breakdowns in your kinetic chain when the score is 30-30.
+              Our Grand Slam coaching team reviews your match footage frame-by-frame to detect micro-breakdowns in your technique, positioning, and decision-making when the score tightens.
             </p>
           </ScrollReveal>
         </div>
@@ -47,13 +47,13 @@ export default function AIEnginePage() {
               <div className="bento-item glass" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <h3 style={{ fontSize: '28px', color: '#fff', marginBottom: '16px' }}>Data-Driven Diagnosis</h3>
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
-                  Our AI doesn't just look at whether the ball went in or out. It analyzes:
+                  Our coaching team doesn't just look at whether the ball went in or out. They analyze:
                 </p>
                 <ul style={{ color: 'rgba(255,255,255,0.7)', paddingLeft: '20px', fontSize: '16px', lineHeight: 1.8, marginBottom: '0' }}>
-                  <li><strong>Shoulder rotation degree</strong> at the point of contact.</li>
+                  <li><strong>Shoulder rotation and follow-through</strong> at the point of contact.</li>
                   <li><strong>Recovery time</strong> between defensive strikes.</li>
-                  <li><strong>Heart rate variability</strong> (when synced with wearables).</li>
-                  <li><strong>Decision fatigue</strong> in points extending past 8 shots.</li>
+                  <li><strong>Body language shifts and tension patterns</strong> under pressure.</li>
+                  <li><strong>Decision patterns</strong> in rallies extending past 8 shots.</li>
                 </ul>
               </div>
             </ScrollReveal>
@@ -76,7 +76,7 @@ export default function AIEnginePage() {
                 The Invisible Breakdown
               </h2>
               <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
-                Drag the slider to see how the AI detects a 12° drop in shoulder rotation when the score reaches 30-30.
+                Drag the slider to see how technique visibly degrades when the score tightens — the kind of micro-breakdown our coaches identify in your match footage.
               </p>
             </ScrollReveal>
           </div>

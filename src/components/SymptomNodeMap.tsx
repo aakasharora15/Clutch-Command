@@ -42,10 +42,10 @@ export default function SymptomNodeMap() {
     <div className="bento-item glass" style={{ position: 'relative', minHeight: '500px', padding: '60px 40px', overflow: 'hidden' }}>
       
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-        <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--lime)', marginBottom: '16px' }}>Interactive Diagnostic</div>
-        <h3 style={{ fontSize: '32px', color: '#fff', marginBottom: '16px' }}>Symptom to Cure Blueprint</h3>
+        <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--lime)', marginBottom: '16px' }}>The Platenik Method</div>
+        <h3 style={{ fontSize: '32px', color: '#fff', marginBottom: '16px' }}>Symptom → Root Cause → Training Module</h3>
         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', maxWidth: '500px', margin: '0 auto' }}>
-          Select your most common breakdown under pressure. Our AI engine traces the biological root cause and prescribes the exact Academy module to fix it.
+          Select your most common breakdown under pressure. Based on Vlado Platenik's 25+ years coaching WTA Top 10 players, each symptom maps to a specific root cause and a targeted training module.
         </p>
       </div>
 

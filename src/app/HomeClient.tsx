@@ -268,7 +268,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             </div>
             
             <h1 style={{ fontSize: 'clamp(64px, 8vw, 120px)', lineHeight: 0.9, letterSpacing: '-0.02em', margin: '0 0 24px 0', textTransform: 'uppercase' }}>Win The Points<br/>That Decide Matches.</h1>
-            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '20px', maxWidth: '560px', lineHeight: 1.6, marginBottom: '40px', fontWeight: 400 }}>AI-powered pressure training for competitive tennis players. Diagnose your cognitive breakdown, train under simulated match stress, and close out the points that matter.</p>
+            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '20px', maxWidth: '560px', lineHeight: 1.6, marginBottom: '40px', fontWeight: 400 }}>Pressure training engineered by Grand Slam coaches Vlado Platenik and Dan Kiernan. Diagnose your cognitive breakdown, train under real match stress, and close out the points that matter.</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
               <MagneticElement strength={25}>
                 <a href={CTA.url} className="btn-dark" style={{ background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>{CTA.labelArrow}</a>
@@ -300,27 +300,28 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', textAlign: 'center' }}>
             <div>
               <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                <AnimatedCounter end={30} />
+                <span>25+</span>
               </div>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Variables Analyzed</p>
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Years On Tour</p>
             </div>
             <div>
               <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: 'var(--lime)', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                <AnimatedCounter end={87.4} suffix="%" decimals={1} />
+                <span>7</span>
               </div>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Avg CQ Improvement</p>
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>WTA Top 10 Players Coached</p>
             </div>
             <div>
               <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                <AnimatedCounter end={14} />
+                <span>2</span>
               </div>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Days to First Results</p>
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>US Open Doubles Titles</p>
             </div>
             <div>
               <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                <AnimatedCounter end={2} />
+                <span>2</span>
               </div>
               <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Points That Decide It</p>
+              <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '10px', marginTop: '4px', fontStyle: 'italic' }}>Based on ATP/WTA match analysis</p>
             </div>
           </div>
         </div>
@@ -357,12 +358,12 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             <SpotlightCard spotlightColor="rgba(0,0,0,0.05)" className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px var(--bg-dark)', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>01</div>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Diagnostic Testing</h3>
-              <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Take our cognitive diagnostic. We establish your baseline pressure threshold and identify exactly which of the 30 variables causes you to revert to defensive habits during match points.</p>
+              <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Take our cognitive diagnostic. We establish your baseline pressure threshold and identify the specific patterns causing you to revert to defensive habits during match points.</p>
             </SpotlightCard>
             <SpotlightCard spotlightColor="rgba(0,0,0,0.05)" className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px var(--bg-dark)', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>02</div>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Match Film Analysis</h3>
-              <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Submit footage of your most difficult matches. Our proprietary AI and Grand Slam coaches analyze your movement, decision-making, and stroke degradation under pressure.</p>
+              <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Submit footage of your most difficult matches. Our Grand Slam coaching team — led by Vlado Platenik (WTA Top 10) and Dan Kiernan (ATP/WTA Doubles) — analyze your movement, decision-making, and stroke degradation under pressure.</p>
             </SpotlightCard>
             <SpotlightCard spotlightColor="rgba(0,0,0,0.05)" className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px var(--bg-dark)', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>03</div>
@@ -388,8 +389,8 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             
             <div className="bento-item" style={{ gridColumn: 'span 5', minHeight: '500px', display: 'flex', justifyContent: 'center' }}>
               <h3 style={{ fontSize: '32px', marginBottom: '24px', color: '#fff' }}>The Clutch Quotient (CQ)</h3>
-              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>Pressure isn't a feeling—it's a biological response that ruins technique. The Clutch Quotient (CQ) is the first AI-driven framework to measure cognitive breakdown on the court.</p>
-              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', lineHeight: 1.6 }}>We analyze 30 specific variables, including shot selection under score-pressure, court positioning during breakpoints, and recovery time between high-stress points.</p>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>Pressure isn't a feeling — it's a biological response that ruins technique. The Clutch Quotient (CQ) is a coaching framework built on 25+ years of elite tour experience to measure and train cognitive performance under match pressure.</p>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', lineHeight: 1.6 }}>Our coaches analyze shot selection under score-pressure, court positioning during breakpoints, stroke mechanics degradation, and recovery patterns between high-stress points — grounded in the Yerkes-Dodson Law of optimal performance under arousal.</p>
             </div>
 
             <div className="bento-item" style={{ gridColumn: 'span 7', padding: 0, minHeight: '500px' }}>
@@ -432,10 +433,10 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                </div>
             </div>
             <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', padding: '16px' }}>
-               <Image src="/bento_player_backhand_1783528140582.jpg" alt="AI Pressure Scoring" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <Image src="/bento_player_backhand_1783528140582.jpg" alt="Expert Match Analysis" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
                <div className="pill-card-content" style={{ position: 'relative', zIndex: 10, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Proprietary AI Scoring</h3>
-                  <p style={{ margin: 0, fontSize: '14px' }}>Our exclusive backend engine scores your match footage against 30 variables to expose your pressure leaks.</p>
+                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Expert Match Analysis</h3>
+                  <p style={{ margin: 0, fontSize: '14px' }}>Our coaching team reviews your match footage frame-by-frame to expose your pressure leaks and prescribe targeted interventions.</p>
                </div>
             </div>
           </div>
@@ -588,7 +589,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(10,20,10,0.95) 0%, rgba(10,20,10,0.4) 100%)', zIndex: 1 }}></div>
         <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
            <h2 className="section-header" style={{ color: '#fff', marginBottom: '24px', fontSize: 'clamp(40px, 6vw, 72px)' }}>Ready to train<br/>with us ?</h2>
-           <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '500px', fontSize: '18px' }}>Experience pressure training like never before – tactical drills, AI scoring, and a community that builds resilience.</p>
+           <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '500px', fontSize: '18px' }}>Experience pressure training like never before — tactical drills, expert coaching from Grand Slam veterans, and a community that builds resilience.</p>
            <MagneticElement strength={25}>
              <a href={CTA.url} className="btn-dark" style={{ marginTop: '32px', background: 'var(--lime)', color: '#111', padding: '16px 32px', fontSize: '15px' }}>{CTA.labelArrow}</a>
            </MagneticElement>

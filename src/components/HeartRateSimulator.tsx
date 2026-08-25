@@ -51,12 +51,12 @@ export default function HeartRateSimulator() {
       {/* UI Content */}
       <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', width: '100%', maxWidth: '400px', padding: '24px' }}>
         <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--lime)', marginBottom: '16px' }}>
-          Biological Pressure Simulation
+          Sports Science Demo
         </div>
         
         <h3 style={{ fontSize: '32px', color: '#fff', marginBottom: '8px' }}>Tunnel Vision</h3>
         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', marginBottom: '40px' }}>
-          Drag the slider to simulate the cognitive impairment caused by a spike in heart rate at 30-30.
+          Drag the slider to simulate the cognitive impairment caused by a spike in heart rate at 30-30. Based on the Yerkes-Dodson Law — cognitive performance peaks at moderate arousal and degrades sharply under extreme stress.
         </p>
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px', marginBottom: '24px' }}>
