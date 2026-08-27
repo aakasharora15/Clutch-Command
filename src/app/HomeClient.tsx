@@ -18,6 +18,7 @@ import PricingTiers from '../components/PricingTiers';
 import TestimonialWall from '../components/TestimonialWall';
 import VideoModal from '../components/VideoModal';
 import CQAssessment from '../components/CQAssessment';
+import WaitlistCapture from "../components/WaitlistCapture";
 
 import { BlogPost } from '@/lib/markdown';
 
@@ -333,7 +334,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
           <SectionHeader eyebrow="The Problem" title="You don't lose matches because of technique. You lose them in two points." />
           <div className="grid-asym-3" style={{ alignItems: 'flex-start' }}>
             <div className="text-col" style={{ position: 'sticky', top: '140px' }}>
-              <p>We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.</p>
+              <p>Traditional academies drill forehands until your arm falls off. But they do not train your nervous system. Clutch Command is the first AI-assisted platform engineered to measure and repair your cognitive breakdown under score-pressure. We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak.</p>
               <br/>
               <p>When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.</p>
               <MagneticElement strength={20}>
@@ -559,6 +560,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </ScrollReveal>
       </section>
 
+      {/* ===== BETA WAITLIST ===== */}n      <section className="airy-section dark" style={{ paddingBottom: "80px" }}>n        <ScrollReveal className="wrap">n          <WaitlistCapture />n        </ScrollReveal>n      </section>n
       {/* ===== INTERACTIVE LEAD MAGNET ===== */}
       <section className="airy-section dark" style={{ paddingBottom: '160px' }}>
         <ScrollReveal className="wrap">
