@@ -3,7 +3,6 @@ import { Inter, Bebas_Neue } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from "next/script";
 import "./globals.css";
-import LiveBanner from "../components/LiveBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
