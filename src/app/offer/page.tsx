@@ -23,7 +23,7 @@ export default function OfferPage() {
 
           <div className="prog-card">
             <h3>AI Pressure<br />Scoring</h3>
-            <p>Upload your match footage and let our proprietary AI engine score you against the 30 variables of the Clutch Quotient. For the first time ever, pressure performance is completely objective. You will receive a 3D Memory Surface report detailing exactly where your cognitive execution breaks down.</p>
+            <p>Upload your training footage and let our coaching team analyze your mechanics and decision-making. For the first time ever, pressure performance is completely objective. You will receive a 3D Memory Surface report detailing exactly where your cognitive execution breaks down.</p>
             <a href={CTA.url}>{CTA.labelArrow}</a>
           </div>
           <div className="ph"><em>AI Scoring</em></div>

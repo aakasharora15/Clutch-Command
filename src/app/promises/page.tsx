@@ -39,7 +39,7 @@ export default function PromisesPage() {
                 <span style={{ fontSize: '48px' }}>%</span>
               </div>
               <h3 style={{ fontSize: '22px', marginBottom: '12px', fontWeight: 600, color: 'var(--bg-dark)' }}>Win Rate Increase</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '15px', lineHeight: 1.6 }}>The average expected increase in break points saved and decisive tiebreak points won during match play.</p>
+              <p style={{ color: 'var(--text-muted)', fontSize: '15px', lineHeight: 1.6 }}>The average expected increase in break points saved and decisive tiebreak points won during pressure training.</p>
             </SpotlightCard>
 
             <SpotlightCard className="step-card" style={{ padding: '48px 32px', background: 'var(--bg-dark)', color: '#fff', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.1)', textAlign: 'center' }}>
@@ -93,7 +93,7 @@ export default function PromisesPage() {
                 We don't measure success by how pretty your forehand looks in practice. We measure it by how many decisive points you win when it matters.
               </p>
               <p style={{ color: 'var(--muted)', lineHeight: 1.6, marginBottom: '16px' }}>
-                The <strong>Clutch Quotient (CQ)</strong> is our proprietary algorithm that scores your performance across 30 distinct variables during match play. We analyze your footage to pinpoint exactly where your baseline strategy breaks down—whether you drop your court position by 2 meters, abandon your crosscourt patterns, or rush your serve routine.
+                The <strong>Clutch Quotient (CQ)</strong> is our proprietary algorithm that scores your performance across 30 distinct variables during pressure training. We analyze your footage to pinpoint exactly where your baseline strategy breaks down—whether you drop your court position by 2 meters, abandon your crosscourt patterns, or rush your serve routine.
               </p>
               <p style={{ color: 'var(--muted)', lineHeight: 1.6 }}>
                 By identifying and patching these specific tactical leaks, our athletes experience an average 30% increase in break points saved and deciding tiebreaks won. You aren't hitting the ball better; you are simply refusing to beat yourself.
@@ -116,7 +116,7 @@ export default function PromisesPage() {
             <div className="section-eyebrow">Promise 03</div>
             <h2 className="section-header" style={{ color: '#111', marginBottom: '32px' }}>The 100% Ironclad Guarantee</h2>
             <p style={{ color: '#444', fontSize: '18px', lineHeight: 1.6, marginBottom: '24px' }}>
-              We are in the business of elite performance, not empty promises. If you commit to the program, execute the drills, and submit your match footage for review, you will see a measurable improvement in your Clutch Quotient.
+              We are in the business of elite performance, not empty promises. If you commit to the program, execute the drills, and submit your training footage for review, you will see a measurable improvement in your Clutch Quotient.
             </p>
             <p style={{ color: '#555', lineHeight: 1.6, marginBottom: '48px' }}>
               If, after 30 days of following the TRUST protocol, your AI scoring does not show a definitive improvement in your high-pressure point win rate, we will refund 100% of your investment. No endless customer service loops, no hidden clauses. We either make you a more dangerous competitor, or you don't pay.

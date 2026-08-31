@@ -30,7 +30,7 @@ export default function AIEnginePage() {
 
           <ScrollReveal delay={0.3}>
             <p style={{ fontSize: '22px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, maxWidth: '700px', margin: '0 auto 64px auto' }}>
-              Our Grand Slam coaching team reviews your match footage frame-by-frame to detect micro-breakdowns in your technique, positioning, and decision-making when the score tightens.
+              Our Grand Slam coaching team reviews your training footage frame-by-frame to detect micro-breakdowns in your technique, positioning, and decision-making when the score tightens.
             </p>
           </ScrollReveal>
         </div>
@@ -76,7 +76,7 @@ export default function AIEnginePage() {
                 The Invisible Breakdown
               </h2>
               <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
-                Drag the slider to see how technique visibly degrades when the score tightens — the kind of micro-breakdown our coaches identify in your match footage.
+                Drag the slider to see how technique visibly degrades when the score tightens — the kind of micro-breakdown our coaches identify in your training footage.
               </p>
             </ScrollReveal>
           </div>
