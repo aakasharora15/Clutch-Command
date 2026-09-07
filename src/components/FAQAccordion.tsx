@@ -16,8 +16,8 @@ const faqs = [
     answer: "The Playbook is the foundational theory. It breaks down the exact biological mechanisms of a 'choke', how cortisol destroys your spatial tracking, and the 3 immediate on-court physical triggers you can use to reset your nervous system mid-match."
   },
   {
-    question: "Is there a money-back guarantee?",
-    answer: "Yes. If you apply the protocols in the Playbook and do not see a measurable difference in your ability to close out tight matches within 30 days, we will refund you entirely."
+    question: "Why will this work when everything else doesn't?",
+    answer: "Because we do not just train your forehand. Traditional coaching ignores the cognitive load of a high-pressure situation. Our T.R.U.S.T methodology targets the biological response—cortisol spikes and narrowed vision—that causes technique to break down. We rewire your nervous system to execute when the score is 30-30."
   }
 ];
 

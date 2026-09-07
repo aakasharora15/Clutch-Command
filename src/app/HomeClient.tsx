@@ -312,16 +312,16 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             </div>
             <div>
               <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
-                <span>2</span>
+                <span>3</span>
               </div>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>US Open Doubles Titles</p>
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Grand Slam Titles</p>
             </div>
             <div>
               <div style={{ fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 300, color: '#fff', fontFamily: 'var(--font-heading)', lineHeight: 1 }}>
                 <span>2</span>
               </div>
               <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', marginTop: '12px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Points That Decide It</p>
-              <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '10px', marginTop: '4px', fontStyle: 'italic' }}>Based on ATP/WTA match analysis</p>
+              <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '10px', marginTop: '4px', fontStyle: 'italic' }}>Based on ATP/WTA training analysis</p>
             </div>
           </div>
         </div>
@@ -333,9 +333,9 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
           <SectionHeader eyebrow="The Problem" title="You don't lose matches because of technique. You lose them in two points." />
           <div className="grid-asym-3" style={{ alignItems: 'flex-start' }}>
             <div className="text-col" style={{ position: 'sticky', top: '140px' }}>
-              <p>We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.</p>
+              <p>We focus on the exact moments where matches are won or lost: 30-30 in the final set, 5-5 in the breaker, or 8-8 in the deciding tiebreak. Traditional clubs and academies spend years drilling perfect technique and physical endurance, but they completely ignore the cognitive load of a high-pressure situation.</p>
               <br/>
-              <p>When you have chances to close out a match, something else takes over. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.</p>
+              <p>When you have chances to close out a match, something else takes over. Your brain gets hijacked. Your strokes fall apart. Your heart rate spikes, your vision narrows, and you revert to defensive habits. That is not a skill you are missing. It is a biological response that has never actually been measured or trained for - until now.</p>
               <MagneticElement strength={20}>
                 <a href={CTA.url} className="btn-dark" style={{ marginTop: '48px' }}>{CTA.labelArrow}</a>
               </MagneticElement>
@@ -373,7 +373,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             <SpotlightCard spotlightColor="rgba(0,0,0,0.05)" className="step-card" style={{ padding: '24px', background: 'var(--bg-light)', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)' }}>
               <div style={{ color: 'var(--lime)', WebkitTextStroke: '1px var(--bg-dark)', fontWeight: 800, fontSize: '56px', marginBottom: '16px', lineHeight: 1 }}>04</div>
               <h3 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: 600 }}>Execution & Review</h3>
-              <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Execute the blueprint. Every two weeks, you review new match footage with your designated coach to measure your Clutch Quotient progress and recalibrate.</p>
+              <p style={{ color: '#555', fontSize: '15px', lineHeight: 1.6 }}>Execute the blueprint. Every two weeks, you review new training footage with your designated coach to measure your Clutch Quotient progress and recalibrate.</p>
             </SpotlightCard>
           </StaggerReveal>
         </ScrollReveal>
@@ -396,15 +396,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                <Image src="/tennis_coach_talk.jpg" alt="Biometric Syncing" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 60vw" />
                <div className="bento-item glass" style={{ position: 'absolute', bottom: '24px', left: '24px', right: '24px', padding: '24px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
                  <h4 style={{ color: 'var(--lime)', fontSize: '20px', marginBottom: '8px' }}>Biometric Syncing</h4>
-                 <p style={{ margin: 0, fontSize: '15px', color: '#fff' }}>Overlay heart rate data onto your match footage.</p>
-               </div>
-            </div>
-
-            <div className="bento-item" style={{ gridColumn: 'span 12', padding: 0, minHeight: '400px' }}>
-               <Image src="/tennis_shoe_clay.jpg" alt="Cognitive Mapping" fill style={{ objectFit: 'cover', objectPosition: 'center 70%' }} sizes="100vw" />
-               <div className="bento-item glass" style={{ position: 'absolute', bottom: '24px', left: '24px', maxWidth: '400px', padding: '32px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                 <h4 style={{ color: 'var(--lime)', fontSize: '24px', marginBottom: '12px' }}>Cognitive Mapping</h4>
-                 <p style={{ margin: 0, fontSize: '16px', color: '#fff' }}>See exactly when decision-making shifts from offensive to defensive survival mode.</p>
+                 <p style={{ margin: 0, fontSize: '15px', color: '#fff' }}>Overlay heart rate data onto your training footage.</p>
                </div>
             </div>
 
@@ -420,22 +412,22 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
             <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', padding: '16px' }}>
                <Image src="/tennis_serve_shadow.jpg" alt="Singles Blueprint" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
                <div className="pill-card-content" style={{ position: 'relative', zIndex: 10, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Singles Masterclass</h3>
+                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Vlado Platenik Clutch Singles Academy</h3>
                   <p style={{ margin: 0, fontSize: '14px' }}>Grand Slam singles coaching led by Vlado Platenik. Weekly tactical blueprints and high-intensity repetition drills.</p>
                </div>
             </div>
             <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', padding: '16px' }}>
                <Image src="/bento_player_celebrate_1783528150116.jpg" alt="Doubles Blueprint" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
                <div className="pill-card-content" style={{ position: 'relative', zIndex: 10, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Doubles Mastery</h3>
+                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Dan Kiernan Clutch Doubles Academy</h3>
                   <p style={{ margin: 0, fontSize: '14px' }}>Elite doubles strategies with Dan Kiernan. Court positioning, communication, and exploiting opponent weaknesses.</p>
                </div>
             </div>
             <div className="pill-card" style={{ position: 'relative', overflow: 'hidden', padding: '16px' }}>
-               <Image src="/bento_player_backhand_1783528140582.jpg" alt="Expert Match Analysis" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+               <Image src="/bento_player_backhand_1783528140582.jpg" alt="Clutch Command" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
                <div className="pill-card-content" style={{ position: 'relative', zIndex: 10, background: 'rgba(10,15,10,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Expert Match Analysis</h3>
-                  <p style={{ margin: 0, fontSize: '14px' }}>Our coaching team reviews your match footage frame-by-frame to expose your pressure leaks and prescribe targeted interventions.</p>
+                  <h3 style={{ color: 'var(--lime)', fontSize: '22px' }}>Clutch Command</h3>
+                  <p style={{ margin: 0, fontSize: '14px' }}>Upload your training footage to the members area for our proprietary AI and coaching team to identify your cognitive breakdowns under pressure.</p>
                </div>
             </div>
           </div>
@@ -452,8 +444,8 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                <Image src="/tennis_court_night.jpg" alt="3D Memory Surface" fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
                <div className="bento-item glass" style={{ position: 'absolute', inset: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '32px' }}>
                   <div style={{ fontSize: '72px', fontWeight: 800, color: 'rgba(255,255,255,0.15)', lineHeight: 0.8, marginBottom: '24px', fontFamily: 'var(--font-heading)' }}>01</div>
-                  <h3 style={{ color: '#fff', fontSize: '24px', marginBottom: '12px' }}>3D Memory Surface Report</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: 0 }}>A comprehensive digital dashboard breaking down your match footage. See your exact CQ score and where your pressure threshold broke.</p>
+                  <h3 style={{ color: '#fff', fontSize: '24px', marginBottom: '12px' }}>Training Diagnostic Report</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: 0 }}>A comprehensive breakdown of your submitted training footage. See your exact CQ score and which cognitive load triggers need attention.</p>
                </div>
             </div>
 
@@ -471,7 +463,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                <div className="bento-item glass" style={{ position: 'absolute', inset: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '32px' }}>
                   <div style={{ fontSize: '72px', fontWeight: 800, color: 'rgba(255,255,255,0.15)', lineHeight: 0.8, marginBottom: '24px', fontFamily: 'var(--font-heading)' }}>03</div>
                   <h3 style={{ color: '#fff', fontSize: '24px', marginBottom: '12px' }}>1-on-1 Coach Reviews</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: 0 }}>Bi-weekly video calls with your designated elite coach to review your latest match footage and adjust your training cognitive load.</p>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: 0 }}>Bi-weekly video calls with your designated elite coach to review your latest training footage and adjust your training cognitive load.</p>
                </div>
             </div>
 
@@ -492,13 +484,13 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
                <div style={{ position: 'absolute', bottom: '32px', left: '32px', right: '32px' }}>
                   <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'url(/mark_jeffery.png) center/cover', border: '2px solid var(--lime)', marginBottom: '16px' }}></div>
                   <h3 style={{ color: '#fff', fontSize: '28px', marginBottom: '8px' }}>Mark Jeffery</h3>
-                  <p style={{ color: 'var(--lime)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px' }}>Founder & Head of Human Performance</p>
+                  <p style={{ color: 'var(--lime)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '13px' }}>Founder & Head of CLUTCH</p>
                </div>
             </ClipReveal>
             <div>
               <h3 style={{ fontSize: 'clamp(32px, 4vw, 48px)', marginBottom: '24px', lineHeight: 1.1, color: '#fff' }}>Built to answer a question no one could answer him.</h3>
               <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, marginBottom: '24px' }}>
-                He didn't build it from a theory. He built it from a memory. Two match points up against the RAF's number one, on the grass at Wimbledon, and still finding a way to give it away. 
+                Trust the training. The training will kick in. And the realisation that wasn't training for tennis, for when it's all on the line. That you could trust and will kick in. He didn't build it from a theory. He built it from a memory. Two match points up against the RAF's number one, on the grass at Wimbledon, and still finding a way to give it away. 
               </p>
               <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, marginBottom: '40px' }}>
                 Pressure hijacked his brain and body, and the next thing he knew, it was game, set, and match to his opponent. Clutch Quotient started life in the military: training people to make life-or-death decisions with no action replay. Now, it's the ultimate weapon for competitive tennis players.
@@ -570,7 +562,7 @@ export default function HomeClient({ posts }: { posts: Omit<BlogPost, 'content'>
         </ScrollReveal>
       </section>
 
-      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
+      
       
       {/* ===== DIAGNOSTIC CTA ===== */}
       <section className="airy-section" style={{ position: 'relative', overflow: 'hidden', minHeight: '500px', display: 'flex', alignItems: 'center' }}>

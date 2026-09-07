@@ -18,7 +18,7 @@ export default function TermsPage() {
           </div>
           <div>
             <h2 style={{ fontSize: '24px', marginBottom: '16px' }}>3. 100% Money-Back Guarantee</h2>
-            <p style={{ color: 'var(--muted)', lineHeight: 1.6 }}>We offer a 100% money-back guarantee based on measurable improvement. If your Clutch Quotient (CQ) does not improve within 30 days of completing the mandatory training modules and submitting required match footage, you are entitled to a full refund. The guarantee requires proof of completion of all prescribed drills and attendance at all scheduled coaching sessions.</p>
+            <p style={{ color: 'var(--muted)', lineHeight: 1.6 }}>We offer a 100% money-back guarantee based on measurable improvement. If your Clutch Quotient (CQ) does not improve within 30 days of completing the mandatory training modules and submitting required training footage, you are entitled to a full refund. The guarantee requires proof of completion of all prescribed drills and attendance at all scheduled coaching sessions.</p>
           </div>
           <div>
             <h2 style={{ fontSize: '24px', marginBottom: '16px' }}>4. Intellectual Property</h2>
