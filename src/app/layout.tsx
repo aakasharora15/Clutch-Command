@@ -5,6 +5,7 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyCTA from "@/components/StickyCTA";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -87,6 +88,7 @@ export default function RootLayout({
           <Navbar />
           <main style={{ flex: 1 }}>{children}</main>
           <Footer />
+          <StickyCTA />
         </SmoothScrolling>
       </body>
       <GoogleAnalytics gaId="G-XXXXXXXXXX" />
