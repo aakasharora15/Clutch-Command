@@ -13,10 +13,7 @@ import StaggerReveal from '../components/StaggerReveal';
 import SpotlightCard from '../components/SpotlightCard';
 import Marquee from '../components/Marquee';
 import AnimatedCounter from '../components/AnimatedCounter';
-import PlatformSneakPeek from '../components/PlatformSneakPeek';
 import PricingTiers from '../components/PricingTiers';
-import TestimonialWall from '../components/TestimonialWall';
-import VideoModal from '../components/VideoModal';
 import CQAssessment from '../components/CQAssessment';
 
 import { BlogPost } from '@/lib/markdown';

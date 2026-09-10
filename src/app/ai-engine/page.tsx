@@ -1,9 +1,7 @@
 import React from 'react';
 import ScrollReveal from '../../components/ScrollReveal';
-import AIVisualizer from '../../components/AIVisualizer';
 import TiltCard from '../../components/TiltCard';
 import PressureScrubber from '../../components/PressureScrubber';
-import TacticalBoard3D from '../../components/TacticalBoard3D';
 
 export const metadata = {
   title: 'AI Engine | Clutch Command',
@@ -39,9 +37,7 @@ export default function AIEnginePage() {
         <div className="wrap">
           <div className="grid-asym-3" style={{ gridTemplateColumns: '1.2fr 0.8fr', gap: '24px', alignItems: 'stretch' }}>
             
-            <ScrollReveal delay={0.4} className="h-full">
-              <AIVisualizer />
-            </ScrollReveal>
+            
 
             <ScrollReveal delay={0.5} className="h-full">
               <div className="bento-item glass" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -63,9 +59,7 @@ export default function AIEnginePage() {
 
         {/* 3D Tactical Board Section */}
         <div className="wrap" style={{ marginTop: '80px' }}>
-          <ScrollReveal delay={0.6}>
-            <TacticalBoard3D />
-          </ScrollReveal>
+          
         </div>
         
         {/* Pressure Scrubber Section */}

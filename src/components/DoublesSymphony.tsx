@@ -25,9 +25,9 @@ export default function DoublesSymphony() {
       // Partner 2 (Baseline player) shifts to cover the middle/cross
       
       let p1x = 0.25;
-      let p1y = 0.65;
+      const p1y = 0.65;
       let p2x = 0.75;
-      let p2y = 0.85;
+      const p2y = 0.85;
 
       if (v < 0.3) {
         // Ball on left side

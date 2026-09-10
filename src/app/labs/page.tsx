@@ -3,7 +3,6 @@ import ScrollReveal from '../../components/ScrollReveal';
 import HeartRateSimulator from '../../components/HeartRateSimulator';
 import ROICalculator from '../../components/ROICalculator';
 import CognitiveTest from '../../components/CognitiveTest';
-import TacticalBoard3D from '../../components/TacticalBoard3D';
 
 
 export const metadata = {
@@ -52,9 +51,7 @@ export default function LabsPage() {
             </ScrollReveal>
 
 
-            <ScrollReveal>
-              <TacticalBoard3D />
-            </ScrollReveal>
+            
 
           </div>
         </div>
